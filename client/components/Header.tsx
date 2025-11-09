@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-[134px] py-6 lg:py-0 lg:h-[150px] flex items-center justify-center">
         <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center">
           {/* Left Navigation */}
-          <div className="flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[25px] text-sm md:text-base lg:text-2xl">
+          <div className="flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl">
             <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">
               live sound
             </Link>
