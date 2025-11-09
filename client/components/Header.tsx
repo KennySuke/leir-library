@@ -9,9 +9,9 @@ export default function Header() {
     if (!locked) setOpenMenu(menu);
   };
 
-  const handleLeave = (menu) => {
-    // Закрываем только если меню не зафиксировано
-    if (!locked && openMenu === menu) setOpenMenu(null);
+  const handleLeave = (menu, isMenu = false) => {
+    // Закрываем только если меню не зафиксировано и курсор не над меню
+    if (!locked && !isMenu) setOpenMenu(null);
   };
 
   const handleClick = (menu, e) => {
@@ -37,7 +37,7 @@ export default function Header() {
             className={`flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full transition-all duration-300
               ${openMenu === "projs" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
             onMouseEnter={() => handleHover("projs")}
-            onMouseLeave={() => handleLeave("projs")}
+            onMouseLeave={() => handleLeave("projs", true)}
           >
             <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
             <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
@@ -97,7 +97,7 @@ export default function Header() {
             className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full transition-all duration-300
               ${openMenu === "about" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
             onMouseEnter={() => handleHover("about")}
-            onMouseLeave={() => handleLeave("about")}
+            onMouseLeave={() => handleLeave("about", true)} // добавили флаг isMenu
           >
             <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
             <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
