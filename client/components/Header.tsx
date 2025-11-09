@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <header className="w-full bg-black relative">
-      <div className="flex items-center justify-center max-w-[1920px] mx-auto px-4 py-0 md:px-8 lg:px-4 lg:h-[150px]">
+      <div className="flex items-center justify-center max-w-[1920px] mx-auto px-2 py-0 md:px-2 lg:px-4 lg:h-[150px]">
         <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center relative">
 
           {/* LEFT NAVIGATION */}
