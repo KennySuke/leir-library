@@ -7,19 +7,19 @@ export default function Header() {
         <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center">
           {/* Left Navigation */}
           <div className="flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[26px] text-sm md:text-base lg:text-2xl">
-            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
+            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">
               live sound
             </Link>
-            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
+            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">
               light staging
             </Link>
-            <Link to="/events" className="text-white hover:opacity-70 transition-opacity">
+            <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
               events
             </Link>
-            <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity">
+            <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
               commercial
             </Link>
-            <Link to="/art" className="text-white hover:opacity-70 transition-opacity">
+            <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
               art
             </Link>
           </div>
