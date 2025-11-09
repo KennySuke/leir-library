@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Placeholder from "./pages/Placeholder";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/cv" element={<Placeholder title="CV" />} />
+          <Route path="/statement" element={<Placeholder title="Statement" />} />
+          <Route path="/projects" element={<Placeholder title="Projects" />} />
+          <Route path="/about" element={<Placeholder title="About" />} />
+          <Route path="/live-sound" element={<Placeholder title="Live Sound" />} />
+          <Route path="/light-staging" element={<Placeholder title="Light Staging" />} />
+          <Route path="/events" element={<Placeholder title="Events" />} />
+          <Route path="/commercial" element={<Placeholder title="Commercial" />} />
+          <Route path="/art" element={<Placeholder title="Art" />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
