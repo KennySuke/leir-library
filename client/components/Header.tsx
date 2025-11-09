@@ -2,36 +2,43 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [activeMenu, setActiveMenu] = useState(null); // 'left' | 'right' | null
-  const [pinnedMenu, setPinnedMenu] = useState(null); // фиксация кликом
+  const [openMenu, setOpenMenu] = useState(null); // 'projs', 'about', или null
+  const [locked, setLocked] = useState(false);
 
-  const handleMouseEnter = (menu) => {
-    if (!pinnedMenu) setActiveMenu(menu);
+  const handleHover = (menu) => {
+    if (!locked) setOpenMenu(menu);
   };
 
-  const handleMouseLeave = (menu) => {
-    if (!pinnedMenu) setActiveMenu(null);
+  const handleLeave = (menu) => {
+    // Закрываем только если меню не зафиксировано
+    if (!locked && openMenu === menu) setOpenMenu(null);
   };
 
-  const handleClick = (menu) => {
-    if (pinnedMenu === menu) {
-      // снимаем фиксацию
-      setPinnedMenu(null);
-      setActiveMenu(null);
+  const handleClick = (menu, e) => {
+    e.preventDefault();
+    if (locked && openMenu === menu) {
+      // Разблокировать
+      setLocked(false);
+      setOpenMenu(null);
     } else {
-      // фиксируем меню
-      setPinnedMenu(menu);
-      setActiveMenu(menu);
+      // Зафиксировать
+      setOpenMenu(menu);
+      setLocked(true);
     }
   };
 
   return (
     <header className="w-full bg-black relative">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-[134px] py-6 lg:py-0 lg:h-[150px] flex items-center justify-center">
-        <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center">
+        <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center relative">
 
           {/* LEFT NAVIGATION */}
-          <div className="flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl">
+          <div
+            className={`flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full transition-all duration-300
+              ${openMenu === "projs" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("projs")}
+            onMouseLeave={() => handleLeave("projs")}
+          >
             <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
             <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
             <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">events</Link>
@@ -39,20 +46,21 @@ export default function Header() {
             <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
           </div>
 
-          {/* CENTER LOGO + TRIGGERS */}
-          <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0 relative">
+          {/* CENTER LOGO */}
+          <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
+
             {/* PROJS */}
-            <button
-              onMouseEnter={() => handleMouseEnter("left")}
-              onMouseLeave={() => handleMouseLeave("left")}
-              onClick={() => handleClick("left")}
-              className={`text-white text-2xl md:text-3xl lg:text-[40px] transition-opacity whitespace-nowrap ${activeMenu === "left" ? "opacity-70" : ""
-                }`}
+            <Link
+              to="/projects"
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "projs" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("projs")}
+              onMouseLeave={() => handleLeave("projs")}
+              onClick={(e) => handleClick("projs", e)}
             >
               PROJS
-            </button>
+            </Link>
 
-            {/* LOGO */}
+            {/* SVG LOGO */}
             <div className="relative w-[100px] h-[94px] md:w-[120px] md:h-[113px] lg:w-[148px] lg:h-[139px] flex items-center justify-center">
               <svg className="w-full h-full" viewBox="0 0 190 176" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -64,55 +72,40 @@ export default function Header() {
                 </defs>
                 <g filter="url(#eclipse-blur)">
                   <path d="M82.2695 19.7192L97.0875 65.3241H145.039L106.245 93.5095L121.063 139.114L82.2695 110.929L43.4757 139.114L58.2936 93.5095L19.4998 65.3241H67.4516L82.2695 19.7192Z" fill="#D9D9D9" />
-                  <circle cx="93.7695" cy="85.2192" r="37.5" fill="black" />
+                  <path d="M138.115 19.5L128.325 66.4418L169.944 90.2584L122.274 95.4534L112.484 142.395L92.8128 98.6641L45.1432 103.859L80.6552 71.6368L60.9838 27.9057L102.603 51.7223L138.115 19.5Z" fill="#D9D9D9" />
+                  <path d="M153.88 59.3662L123.088 96.1252L148.533 136.769L104.057 118.844L73.2653 155.603L76.5702 107.765L32.095 89.839L78.6127 78.1994L81.9176 30.3616L107.362 71.0057L153.88 59.3662Z" fill="#D9D9D9" />
+                  <circle cx="92.7695" cy="85.2192" r="46.5" fill="#D9D9D9" />
                 </g>
+                <circle cx="93.7695" cy="85.2192" r="37.5" fill="black" />
               </svg>
             </div>
 
             {/* ABOUT */}
-            <button
-              onMouseEnter={() => handleMouseEnter("right")}
-              onMouseLeave={() => handleMouseLeave("right")}
-              onClick={() => handleClick("right")}
-              className={`text-white text-2xl md:text-3xl lg:text-[40px] transition-opacity whitespace-nowrap ${activeMenu === "right" ? "opacity-70" : ""
-                }`}
+            <Link
+              to="/about"
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "about" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("about")}
+              onMouseLeave={() => handleLeave("about")}
+              onClick={(e) => handleClick("about", e)}
             >
               ABOUT
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT NAVIGATION */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl">
+          <div
+            className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full transition-all duration-300
+              ${openMenu === "about" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("about")}
+            onMouseLeave={() => handleLeave("about")}
+          >
             <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
             <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
             <Link to="/statement" className="text-white hover:opacity-70 transition-opacity">statement</Link>
           </div>
+
         </nav>
       </div>
-
-      {/* LEFT DROPDOWN */}
-      {(activeMenu === "left") && (
-        <div
-          className="absolute left-0 top-full w-1/2 bg-black border-t border-gray-700 text-white py-6 px-12 z-50"
-          onMouseEnter={() => handleMouseEnter("left")}
-          onMouseLeave={() => handleMouseLeave("left")}
-        >
-          <p className="text-lg mb-3">Left navigation content</p>
-          <p className="text-sm text-gray-400">Hover или click на PROJS</p>
-        </div>
-      )}
-
-      {/* RIGHT DROPDOWN */}
-      {(activeMenu === "right") && (
-        <div
-          className="absolute right-0 top-full w-1/2 bg-black border-t border-gray-700 text-white py-6 px-12 z-50"
-          onMouseEnter={() => handleMouseEnter("right")}
-          onMouseLeave={() => handleMouseLeave("right")}
-        >
-          <p className="text-lg mb-3">Right navigation content</p>
-          <p className="text-sm text-gray-400">Hover или click на ABOUT</p>
-        </div>
-      )}
     </header>
   );
 }
