@@ -15,10 +15,10 @@ export default function Footer() {
         {/* Scrolling contact links */}
         <div className="absolute bottom-0 left-0 right-0 bg-black shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
           <div className="overflow-hidden py-3 md:py-4">
-            <div className="flex justify-start animate-scroll whitespace-nowrap lg:gap-[39px]">
+            <div className="flex justify-start animate-scroll whitespace-nowrap lg:gap-[35px]">
               {/* Repeat contacts multiple times for continuous scroll */}
               {[...Array(8)].map((_, groupIndex) => (
-                <div key={groupIndex} className="flex items-center gap-6 md:gap-8 lg:gap-[39px]">
+                <div key={groupIndex} className="flex items-center gap-6 md:gap-8 lg:gap-[35px]">
                   {contacts.map((contact, index) => (
                     <a
                       key={`${groupIndex}-${index}`}
