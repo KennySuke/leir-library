@@ -2,71 +2,65 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [activeMenu, setActiveMenu] = useState(null); // 'left' | 'right' | null
+  const [openMenu, setOpenMenu] = useState(null); // 'projs', 'about', или null
+  const [locked, setLocked] = useState(false);
 
-  // Функция открытия меню (по hover или click)
-  const openMenu = (menu) => setActiveMenu(menu);
+  const handleHover = (menu) => {
+    if (!locked) setOpenMenu(menu);
+  };
 
-  // Закрытие меню при уходе с обеих областей
-  const closeMenu = () => setActiveMenu(null);
+  const handleLeave = (menu) => {
+    // Закрываем только если меню не зафиксировано
+    if (!locked && openMenu === menu) setOpenMenu(null);
+  };
 
-  // Переключение меню по клику
-  const toggleMenu = (menu) => {
-    setActiveMenu((prev) => (prev === menu ? null : menu));
+  const handleClick = (menu, e) => {
+    e.preventDefault();
+    if (locked && openMenu === menu) {
+      // Разблокировать
+      setLocked(false);
+      setOpenMenu(null);
+    } else {
+      // Зафиксировать
+      setOpenMenu(menu);
+      setLocked(true);
+    }
   };
 
   return (
     <header className="w-full bg-black relative">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-[134px] py-6 lg:py-0 lg:h-[150px] flex items-center justify-center">
-        <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center">
+        <nav className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 lg:gap-[58px] items-center relative">
 
-          {/* Left Navigation */}
+          {/* LEFT NAVIGATION */}
           <div
-            onMouseEnter={() => openMenu("left")}
-            onMouseLeave={() => closeMenu()}
-            className="relative flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl"
+            className={`flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full transition-all duration-300
+              ${openMenu === "projs" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("projs")}
+            onMouseLeave={() => handleLeave("projs")}
           >
-            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">
-              live sound
-            </Link>
-            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">
-              light staging
-            </Link>
-            <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
-              events
-            </Link>
-            <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
-              commercial
-            </Link>
-            <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">
-              art
-            </Link>
-
-            {/* Выпадающее меню слева */}
-            {activeMenu === "left" && (
-              <div
-                onMouseEnter={() => openMenu("left")}
-                onMouseLeave={() => closeMenu()}
-                className="absolute left-0 top-full mt-2 bg-neutral-900 text-white text-lg rounded-xl shadow-lg p-6 min-w-[220px] z-50"
-              >
-                <p className="mb-2 opacity-80">Left Navigation Menu</p>
-                <Link to="/project-a" className="block hover:text-gray-300">Project A</Link>
-                <Link to="/project-b" className="block hover:text-gray-300">Project B</Link>
-                <Link to="/project-c" className="block hover:text-gray-300">Project C</Link>
-              </div>
-            )}
+            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
+            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
+            <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">events</Link>
+            <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">commercial</Link>
+            <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
           </div>
 
-          {/* Center Logo */}
+          {/* CENTER LOGO */}
           <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
-            <button
-              onMouseEnter={() => openMenu("left")}
-              onClick={() => toggleMenu("left")}
-              className="text-white text-2xl md:text-3xl lg:text-[40px] hover:opacity-70 transition-opacity whitespace-nowrap"
+
+            {/* PROJS */}
+            <Link
+              to="/projects"
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "projs" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("projs")}
+              onMouseLeave={() => handleLeave("projs")}
+              onClick={(e) => handleClick("projs", e)}
             >
               PROJS
-            </button>
+            </Link>
 
+            {/* SVG LOGO */}
             <div className="relative w-[100px] h-[94px] md:w-[120px] md:h-[113px] lg:w-[148px] lg:h-[139px] flex items-center justify-center">
               <svg className="w-full h-full" viewBox="0 0 190 176" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -86,45 +80,30 @@ export default function Header() {
               </svg>
             </div>
 
-            <button
-              onMouseEnter={() => openMenu("right")}
-              onClick={() => toggleMenu("right")}
-              className="text-white text-2xl md:text-3xl lg:text-[40px] hover:opacity-70 transition-opacity whitespace-nowrap"
+            {/* ABOUT */}
+            <Link
+              to="/about"
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "about" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("about")}
+              onMouseLeave={() => handleLeave("about")}
+              onClick={(e) => handleClick("about", e)}
             >
               ABOUT
-            </button>
+            </Link>
           </div>
 
-          {/* Right Navigation */}
+          {/* RIGHT NAVIGATION */}
           <div
-            onMouseEnter={() => openMenu("right")}
-            onMouseLeave={() => closeMenu()}
-            className="relative flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl"
+            className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full transition-all duration-300
+              ${openMenu === "about" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("about")}
+            onMouseLeave={() => handleLeave("about")}
           >
-            <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">
-              cv
-            </Link>
-            <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">
-              bio
-            </Link>
-            <Link to="/statement" className="text-white hover:opacity-70 transition-opacity">
-              statement
-            </Link>
-
-            {/* Выпадающее меню справа */}
-            {activeMenu === "right" && (
-              <div
-                onMouseEnter={() => openMenu("right")}
-                onMouseLeave={() => closeMenu()}
-                className="absolute right-0 top-full mt-2 bg-neutral-900 text-white text-lg rounded-xl shadow-lg p-6 min-w-[220px] z-50"
-              >
-                <p className="mb-2 opacity-80">Right Navigation Menu</p>
-                <Link to="/about-team" className="block hover:text-gray-300">Our Team</Link>
-                <Link to="/about-contacts" className="block hover:text-gray-300">Contacts</Link>
-                <Link to="/about-press" className="block hover:text-gray-300">Press</Link>
-              </div>
-            )}
+            <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
+            <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
+            <Link to="/statement" className="text-white hover:opacity-70 transition-opacity">statement</Link>
           </div>
+
         </nav>
       </div>
     </header>
