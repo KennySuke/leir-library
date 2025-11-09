@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [leftOpen, setLeftOpen] = useState(false);
   const [rightOpen, setRightOpen] = useState(false);
   const [lockedLeft, setLockedLeft] = useState(false);
   const [lockedRight, setLockedRight] = useState(false);
+
+  const location = useLocation();
 
   const handleHover = (side, value) => {
     if (side === "left" && !lockedLeft) setLeftOpen(value);
@@ -23,6 +25,10 @@ export default function Header() {
     }
   };
 
+  const getLinkClass = (path) =>
+    `text-white hover:opacity-70 transition-opacity ${location.pathname === path ? "font-bold" : "font-normal"}`;
+
+
   return (
     <header className="w-full bg-black relative">
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 lg:px-[110px] py-6 lg:py-0 lg:h-[150px] flex items-center justify-center">
@@ -36,11 +42,11 @@ export default function Header() {
     transition-all duration-300 transform
     ${leftOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-1/2 pointer-events-none"}`}
           >
-            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
-            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
-            <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">events</Link>
-            <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">commercial</Link>
-            <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
+            <Link to="/live-sound" className={getLinkClass("/live-sound")}>live sound</Link>
+            <Link to="/light-staging" className={getLinkClass("/light-staging")}>light staging</Link>
+            <Link to="/events" className={getLinkClass("/events")}>events</Link>
+            <Link to="/commercial" className={getLinkClass("/commercial")}>commercial</Link>
+            <Link to="/art" className={getLinkClass("/art")}>art</Link>
           </div>
 
           {/* CENTER LOGO */}
@@ -96,9 +102,9 @@ export default function Header() {
     transition-all duration-300 transform
     ${rightOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-1/2 pointer-events-none"}`}
           >
-            <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
-            <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
-            <Link to="/statement" className="text-white hover:opacity-70 transition-opacity">statement</Link>
+            <Link to="/cv" className={getLinkClass("/cv")}>cv</Link>
+            <Link to="/" className={getLinkClass("/")}>bio</Link>
+            <Link to="/statement" className={getLinkClass("/statement")}>statement</Link>
           </div>
 
         </nav>
