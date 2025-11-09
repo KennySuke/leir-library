@@ -38,7 +38,7 @@ export default function Header() {
           <div
             onMouseEnter={() => handleHover("left", true)}
             onMouseLeave={() => handleHover("left", false)}
-            className={`flex flex-col lg:flex-row items-start lg:items-center justify-end gap-3 md:gap-2 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full
+            className={`flex flex-col lg:flex-row items-start lg:items-center justify-end gap-3 md:gap-2 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0
             transition-all duration-300 transform
             ${leftOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-1/2 pointer-events-none"}`}
           >
