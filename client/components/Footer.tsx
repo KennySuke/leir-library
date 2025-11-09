@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-black mt-auto">
-      <div className="relative overflow-hidden h-[100px] md:h-[120px] lg:h-[150px]">
+      <div className="relative justify-start overflow-hidden h-[100px] md:h-[120px] lg:h-[150px]">
         {/* Blur effect */}
         <div className="absolute inset-0 bg-black blur-[50px] backdrop-blur-sm" />
         
