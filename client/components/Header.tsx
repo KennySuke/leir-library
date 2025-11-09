@@ -98,7 +98,7 @@ export default function Header() {
           <div
             onMouseEnter={() => handleHover("right", true)}
             onMouseLeave={() => handleHover("right", false)}
-            className={`flex flex-col lg:flex-row items-end lg:items-center justify-start gap-2 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-10 lg:top-full
+            className={`flex flex-col lg:flex-row items-end lg:items-center justify-start gap-2 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-15 lg:top-full
             transition-all duration-300 transform
             ${rightOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-1/2 pointer-events-none"}`}
           >
