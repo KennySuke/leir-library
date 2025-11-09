@@ -33,11 +33,11 @@ export default function Header() {
             onMouseEnter={() => handleHover("left", true)}
             onMouseLeave={() => handleHover("left", false)}
             className={`flex items-center justify-end gap-3 md:gap-4 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full 
-              transition-all duration-300 origin-right transform
-              ${leftOpen ? "opacity-100 scale-x-100 pointer-events-auto" : "opacity-0 scale-x-0 pointer-events-none"}`}
+              overflow-hidden transition-all duration-300 origin-right`}
+            style={{ maxWidth: leftOpen ? '100%' : '0' }}
           >
-            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
-            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
+            <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">live sound</Link>
+            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">light staging</Link>
             <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">events</Link>
             <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">commercial</Link>
             <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
@@ -45,6 +45,7 @@ export default function Header() {
 
           {/* CENTER LOGO */}
           <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
+
             {/* PROJS */}
             <Link
               to="/projects"
@@ -93,12 +94,12 @@ export default function Header() {
             onMouseEnter={() => handleHover("right", true)}
             onMouseLeave={() => handleHover("right", false)}
             className={`flex flex-wrap items-center justify-start gap-4 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full 
-              transition-all duration-300 origin-left transform
-              ${rightOpen ? "opacity-100 scale-x-100 pointer-events-auto" : "opacity-0 scale-x-0 pointer-events-none"}`}
+              overflow-hidden transition-all duration-300 origin-left`}
+            style={{ maxWidth: rightOpen ? '100%' : '0' }}
           >
-            <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
-            <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
-            <Link to="/statement" className="text-white hover:opacity-70 transition-opacity">statement</Link>
+            <Link to="/cv" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">cv</Link>
+            <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity whitespace-nowrap">bio</Link>
+            <Link to="/statement" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">statement</Link>
           </div>
 
         </nav>
