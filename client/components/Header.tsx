@@ -44,9 +44,9 @@ export default function Header() {
           >
             <Link to="/live-sound" className={getLinkClass("/live-sound")}>live sound</Link>
             <Link to="/light-staging" className={getLinkClass("/light-staging")}>light staging</Link>
-            <Link to="/events" className={getLinkClass("/events")}>events</Link>
-            <Link to="/commercial" className={getLinkClass("/commercial")}>commercial</Link>
-            <Link to="/art" className={getLinkClass("/art")}>art</Link>
+            <Link to="/events" className={getLinkClass("/events") + whitespace - nowrap}>events</Link>
+            <Link to="/commercial" className={getLinkClass("/commercial") + whitespace - nowrap}>commercial</Link>
+            <Link to="/art" className={getLinkClass("/art") + whitespace - nowrap}>art</Link>
           </div>
 
           {/* CENTER LOGO */}
