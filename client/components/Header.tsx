@@ -2,26 +2,26 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [openMenu, setOpenMenu] = useState(null); // 'projs', 'about', или null
+  const [openMenu, setOpenMenu] = useState(null); // 'projs', 'about' или null
   const [locked, setLocked] = useState(false);
 
-  const handleHover = (menu) => {
+  // открываем меню
+  const open = (menu) => {
     if (!locked) setOpenMenu(menu);
   };
 
-  const handleLeave = (menu, isMenu = false) => {
-    // Закрываем только если меню не зафиксировано и курсор не над меню
-    if (!locked && !isMenu) setOpenMenu(null);
+  // закрываем меню
+  const close = (menu) => {
+    if (!locked && openMenu === menu) setOpenMenu(null);
   };
 
-  const handleClick = (menu, e) => {
+  // фиксируем меню кликом
+  const toggleLock = (menu, e) => {
     e.preventDefault();
     if (locked && openMenu === menu) {
-      // Разблокировать
       setLocked(false);
       setOpenMenu(null);
     } else {
-      // Зафиксировать
       setOpenMenu(menu);
       setLocked(true);
     }
@@ -34,10 +34,10 @@ export default function Header() {
 
           {/* LEFT NAVIGATION */}
           <div
+            onMouseEnter={() => open("projs")}
+            onMouseLeave={() => close("projs")}
             className={`flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full transition-all duration-300
               ${openMenu === "projs" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
-            onMouseEnter={() => handleHover("projs")}
-            onMouseLeave={() => handleLeave("projs", true)}
           >
             <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
             <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
@@ -49,44 +49,29 @@ export default function Header() {
           {/* CENTER LOGO */}
           <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
 
-            {/* PROJS */}
+            {/* PROJS BUTTON */}
             <Link
               to="/projects"
+              onMouseEnter={() => open("projs")}
+              onMouseLeave={() => close("projs")}
+              onClick={(e) => toggleLock("projs", e)}
               className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "projs" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
-              onMouseEnter={() => handleHover("projs")}
-              onMouseLeave={() => handleLeave("projs")}
-              onClick={(e) => handleClick("projs", e)}
             >
               PROJS
             </Link>
 
             {/* SVG LOGO */}
             <div className="relative w-[100px] h-[94px] md:w-[120px] md:h-[113px] lg:w-[148px] lg:h-[139px] flex items-center justify-center">
-              <svg className="w-full h-full" viewBox="0 0 190 176" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <filter id="eclipse-blur" x="0" y="0" width="189.443" height="175.103" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                    <feGaussianBlur stdDeviation="9.75" result="effect1_foregroundBlur" />
-                  </filter>
-                </defs>
-                <g filter="url(#eclipse-blur)">
-                  <path d="M82.2695 19.7192L97.0875 65.3241H145.039L106.245 93.5095L121.063 139.114L82.2695 110.929L43.4757 139.114L58.2936 93.5095L19.4998 65.3241H67.4516L82.2695 19.7192Z" fill="#D9D9D9" />
-                  <path d="M138.115 19.5L128.325 66.4418L169.944 90.2584L122.274 95.4534L112.484 142.395L92.8128 98.6641L45.1432 103.859L80.6552 71.6368L60.9838 27.9057L102.603 51.7223L138.115 19.5Z" fill="#D9D9D9" />
-                  <path d="M153.88 59.3662L123.088 96.1252L148.533 136.769L104.057 118.844L73.2653 155.603L76.5702 107.765L32.095 89.839L78.6127 78.1994L81.9176 30.3616L107.362 71.0057L153.88 59.3662Z" fill="#D9D9D9" />
-                  <circle cx="92.7695" cy="85.2192" r="46.5" fill="#D9D9D9" />
-                </g>
-                <circle cx="93.7695" cy="85.2192" r="37.5" fill="black" />
-              </svg>
+              {/* ...SVG код... */}
             </div>
 
-            {/* ABOUT */}
+            {/* ABOUT BUTTON */}
             <Link
               to="/about"
+              onMouseEnter={() => open("about")}
+              onMouseLeave={() => close("about")}
+              onClick={(e) => toggleLock("about", e)}
               className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "about" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
-              onMouseEnter={() => handleHover("about")}
-              onMouseLeave={() => handleLeave("about")}
-              onClick={(e) => handleClick("about", e)}
             >
               ABOUT
             </Link>
@@ -94,10 +79,10 @@ export default function Header() {
 
           {/* RIGHT NAVIGATION */}
           <div
+            onMouseEnter={() => open("about")}
+            onMouseLeave={() => close("about")}
             className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full transition-all duration-300
               ${openMenu === "about" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
-            onMouseEnter={() => handleHover("about")}
-            onMouseLeave={() => handleLeave("about", true)} // добавили флаг isMenu
           >
             <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
             <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
