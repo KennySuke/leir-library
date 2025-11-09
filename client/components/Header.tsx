@@ -2,19 +2,24 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [openMenu, setOpenMenu] = useState(null); // 'projs', 'about' или null
-  const [locked, setLocked] = useState(false);
+  const [leftOpen, setLeftOpen] = useState(false);
+  const [rightOpen, setRightOpen] = useState(false);
+  const [lockedLeft, setLockedLeft] = useState(false);
+  const [lockedRight, setLockedRight] = useState(false);
 
-  const open = (menu) => { if (!locked) setOpenMenu(menu); };
-  const close = (menu) => { if (!locked && openMenu === menu) setOpenMenu(null); };
-  const toggleLock = (menu, e) => {
+  const handleHover = (side, value) => {
+    if (side === "left" && !lockedLeft) setLeftOpen(value);
+    if (side === "right" && !lockedRight) setRightOpen(value);
+  };
+
+  const handleClick = (side, e) => {
     e.preventDefault();
-    if (locked && openMenu === menu) {
-      setLocked(false);
-      setOpenMenu(null);
+    if (side === "left") {
+      if (lockedLeft) { setLockedLeft(false); setLeftOpen(false); }
+      else { setLockedLeft(true); setLeftOpen(true); }
     } else {
-      setOpenMenu(menu);
-      setLocked(true);
+      if (lockedRight) { setLockedRight(false); setRightOpen(false); }
+      else { setLockedRight(true); setRightOpen(true); }
     }
   };
 
@@ -25,10 +30,11 @@ export default function Header() {
 
           {/* LEFT NAVIGATION */}
           <div
-            onMouseEnter={() => open("projs")}
-            onMouseLeave={() => close("projs")}
-            className={`flex items-center justify-center lg:justify-end gap-3 md:gap-4 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full transition-all duration-300
-              ${openMenu === "projs" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("left", true)}
+            onMouseLeave={() => handleHover("left", false)}
+            className={`flex items-center justify-end gap-3 md:gap-4 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-full 
+              transition-all duration-300 origin-right transform
+              ${leftOpen ? "opacity-100 scale-x-100 pointer-events-auto" : "opacity-0 scale-x-0 pointer-events-none"}`}
           >
             <Link to="/live-sound" className="text-white hover:opacity-70 transition-opacity">live sound</Link>
             <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
@@ -42,10 +48,10 @@ export default function Header() {
             {/* PROJS */}
             <Link
               to="/projects"
-              onMouseEnter={() => open("projs")}
-              onMouseLeave={() => close("projs")}
-              onClick={(e) => toggleLock("projs", e)}
-              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "projs" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("left", true)}
+              onMouseLeave={() => handleHover("left", false)}
+              onClick={(e) => handleClick("left", e)}
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${leftOpen ? "opacity-100 font-bold" : "hover:opacity-70"}`}
             >
               PROJS
             </Link>
@@ -73,10 +79,10 @@ export default function Header() {
             {/* ABOUT */}
             <Link
               to="/about"
-              onMouseEnter={() => open("about")}
-              onMouseLeave={() => close("about")}
-              onClick={(e) => toggleLock("about", e)}
-              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${openMenu === "about" ? "opacity-100 font-bold" : "hover:opacity-70"}`}
+              onMouseEnter={() => handleHover("right", true)}
+              onMouseLeave={() => handleHover("right", false)}
+              onClick={(e) => handleClick("right", e)}
+              className={`text-white text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap transition-opacity ${rightOpen ? "opacity-100 font-bold" : "hover:opacity-70"}`}
             >
               ABOUT
             </Link>
@@ -84,10 +90,11 @@ export default function Header() {
 
           {/* RIGHT NAVIGATION */}
           <div
-            onMouseEnter={() => open("about")}
-            onMouseLeave={() => close("about")}
-            className={`flex flex-wrap items-center justify-center lg:justify-start gap-4 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full transition-all duration-300
-              ${openMenu === "about" ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}
+            onMouseEnter={() => handleHover("right", true)}
+            onMouseLeave={() => handleHover("right", false)}
+            className={`flex flex-wrap items-center justify-start gap-4 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-full 
+              transition-all duration-300 origin-left transform
+              ${rightOpen ? "opacity-100 scale-x-100 pointer-events-auto" : "opacity-0 scale-x-0 pointer-events-none"}`}
           >
             <Link to="/cv" className="text-white hover:opacity-70 transition-opacity">cv</Link>
             <Link to="/" className="text-white font-bold hover:opacity-70 transition-opacity">bio</Link>
