@@ -39,6 +39,7 @@ export default function Header() {
             onMouseEnter={() => handleHover("left", true)}
             onMouseLeave={() => handleHover("left", false)}
             className={`flex flex-col lg:flex-row items-start lg:items-center justify-end gap-3 md:gap-2 lg:gap-[20px] pr-0 md:pr-4 lg:pr-[58px] text-sm md:text-base lg:text-2xl absolute lg:static left-0 top-5 lg:top-full
+            overflow-x-auto whitespace-nowrap scrollbar-hide
             transition-all duration-300 transform
             ${leftOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-1/2 pointer-events-none"}`}
           >
@@ -99,6 +100,7 @@ export default function Header() {
             onMouseEnter={() => handleHover("right", true)}
             onMouseLeave={() => handleHover("right", false)}
             className={`flex flex-col lg:flex-row items-end lg:items-center justify-start gap-2 md:gap-8 lg:gap-[111px] pl-0 md:pl-4 lg:pl-[58px] text-sm md:text-base lg:text-2xl absolute lg:static right-0 top-12 lg:top-full
+            overflow-x-auto whitespace-nowrap scrollbar-hide
             transition-all duration-300 transform
             ${rightOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 -translate-x-1/2 pointer-events-none"}`}
           >
