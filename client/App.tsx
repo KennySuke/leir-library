@@ -22,8 +22,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/cv" element={<Placeholder title="CV" />} />
           <Route path="/statement" element={<Placeholder title="Statement" />} />
-          <Route path="/projects" element={<Placeholder title="Projects" />} />
-          <Route path="/about" element={<Placeholder title="About" />} />
           <Route path="/live-sound" element={<Placeholder title="Live Sound" />} />
           <Route path="/light-staging" element={<Placeholder title="Light Staging" />} />
           <Route path="/events" element={<Placeholder title="Events" />} />
