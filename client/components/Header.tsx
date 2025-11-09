@@ -25,7 +25,7 @@ export default function Header() {
           </div>
 
           {/* Center Logo */}
-          <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 md:gap-4 lg:gap-[21px] my-4 lg:my-0">
             <Link to="/projects" className="text-white text-2xl md:text-3xl lg:text-[40px] hover:opacity-70 transition-opacity whitespace-nowrap">
               PROJS
             </Link>
