@@ -46,7 +46,7 @@ export default function Header() {
             <Link to="/light-staging" className={getLinkClass("/light-staging")}>light staging</Link>
             <Link to="/events" className={getLinkClass("/events") + "whitespace-nowrap"}>events</Link>
             <Link to="/commercial" className={getLinkClass("/commercial") + "whitespace-nowrap"}>commercial</Link>
-            <Link to="/art" className={getLinkClass("/art") + "whitespace-nowrap"}>art</Link>
+            <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
           </div>
 
           {/* CENTER LOGO */}
