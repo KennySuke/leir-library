@@ -20,7 +20,7 @@ export default function Index() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee?width=876"
               alt="Leir portrait"
-              className="w-full max-w-[300px] md:max-w-[350px] lg:w-[438px] aspect-[3/4] object-cover"
+              className="w-full max-w-[300px] md:max-w-[350px] lg:w-[550px] aspect-[3/4] object-cover"
             />
           </div>
 
