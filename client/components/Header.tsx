@@ -37,7 +37,7 @@ export default function Header() {
     ${leftOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-1/2 pointer-events-none"}`}
           >
             <Link to="/live-sound" className="lg:text-center text-white hover:opacity-70 transition-opacity">live sound</Link>
-            <Link to="/light-staging" className="text-white hover:opacity-70 transition-opacity">light staging</Link>
+            <Link to="/light-staging" className="lg:text-center text-white hover:opacity-70 transition-opacity">light staging</Link>
             <Link to="/events" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">events</Link>
             <Link to="/commercial" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">commercial</Link>
             <Link to="/art" className="text-white hover:opacity-70 transition-opacity whitespace-nowrap">art</Link>
