@@ -37,12 +37,12 @@
 
   .animate-spin-variable {
     animation: spin-logo var(--spin-speed, 30s) linear infinite;
-    transition: animation-duration 1.6s ease-in-out;
+    animation-play-state: running;
   }
 
   .animate-spin-reverse {
     animation: spin-logo-reverse var(--spin-speed, 30s) linear infinite;
-    transition: animation-duration 1.6s ease-in-out;
+    animation-play-state: running;
   }
 
   /* Скорости вращения */
@@ -55,7 +55,8 @@
   /* Наведение замедляет вращение */
   .group:hover .animate-spin-variable,
   .group:hover .animate-spin-reverse {
-    --spin-speed: 120s;
+    animation-play-state: paused;
+    transition: all 0.5s ease-in-out;
   }
 }
 
