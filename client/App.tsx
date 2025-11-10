@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Placeholder from "./pages/Placeholder";
+import Statement from "./pages/Statement";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/cv" element={<Placeholder title="CV" />} />
-          <Route path="/statement" element={<Placeholder title="Statement" />} />
+          <Route path="/statement" element={<Statement />} />
           <Route path="/projects" element={<Placeholder title="Projects" />} />
           <Route path="/about" element={<Placeholder title="About" />} />
           <Route path="/live-sound" element={<Placeholder title="Live Sound" />} />
@@ -37,4 +38,11 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+const rootElement = document.getElementById("root")!;
+if (!rootElement._reactRoot) {
+  const root = createRoot(rootElement);
+  rootElement._reactRoot = root;
+  root.render(<App />);
+} else {
+  rootElement._reactRoot.render(<App />);
+}

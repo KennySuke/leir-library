@@ -25,8 +25,10 @@ export default function Header() {
     }
   };
 
-  const getLinkClass = (path) =>
-    `text-white whitespace-nowrap hover:opacity-70 transition-opacity ${location.pathname === path ? "font-bold" : "font-normal"}`;
+  const getLinkClass = (path) => {
+    const isActive = location.pathname === path;
+    return `text-white hover:opacity-70 transition-opacity ${isActive ? "font-bold" : "font-normal"}`;
+  };
 
 
   return (
