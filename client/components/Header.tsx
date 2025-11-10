@@ -101,7 +101,7 @@ export default function Header() {
               onMouseEnter={() => handleHover("left", true)}
               onMouseLeave={() => handleHover("left", false)}
               onClick={(e) => handleClick("left", e)}
-              className="text-text-accent text-2xl md:text-3xl lg:text-[40px] whitespace-nowrap hover:opacity-70 transition-opacity z-50"
+              className="text-text-accent text-4xl md:text-3xl lg:text-[40px] whitespace-nowrap hover:opacity-70 transition-opacity z-50"
             >
               PROJS
             </Link>
