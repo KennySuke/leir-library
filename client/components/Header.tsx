@@ -79,10 +79,28 @@ export default function Header() {
                 </defs>
 
                 <g filter="url(#eclipse-blur)">
-                  <path className="rotate-center animate-spin-slow" d="M82.2695 19.7192L97.0875 65.3241H145.039L106.245 93.5095L121.063 139.114L82.2695 110.929L43.4757 139.114L58.2936 93.5095L19.4998 65.3241H67.4516L82.2695 19.7192Z" fill="#D9D9D9" />
-                  <path className="rotate-center animate-spin-rev-medium" d="M138.115 19.5L128.325 66.4418L169.944 90.2584L122.274 95.4534L112.484 142.395L92.8128 98.6641L45.1432 103.859L80.6552 71.6368L60.9838 27.9057L102.603 51.7223L138.115 19.5Z" fill="#D9D9D9" />
-                  <path className="rotate-center animate-spin-fast" d="M153.88 59.3662L123.088 96.1252L148.533 136.769L104.057 118.844L73.2653 155.603L76.5702 107.765L32.095 89.839L78.6127 78.1994L81.9176 30.3616L107.362 71.0057L153.88 59.3662Z" fill="#D9D9D9" />
-                  <circle cx="92.7695" cy="85.2192" r="46.5" fill="#D9D9D9" />
+                  <path
+                    className="rotate-center animate-spin-variable spin-fast"
+                    d="M82.2695 19.7192L97.0875 65.3241H145.039L106.245 93.5095L121.063 139.114L82.2695 110.929L43.4757 139.114L58.2936 93.5095L19.4998 65.3241H67.4516L82.2695 19.7192Z"
+                    fill="#D9D9D9"
+                  />
+                  <path
+                    className="rotate-center animate-spin-variable spin-medium"
+                    d="M138.115 19.5L128.325 66.4418L169.944 90.2584L122.274 95.4534L112.484 142.395L92.8128 98.6641L45.1432 103.859L80.6552 71.6368L60.9838 27.9057L102.603 51.7223L138.115 19.5Z"
+                    fill="#D9D9D9"
+                  />
+                  <path
+                    className="rotate-center animate-spin-variable spin-fastest"
+                    d="M153.88 59.3662L123.088 96.1252L148.533 136.769L104.057 118.844L73.2653 155.603L76.5702 107.765L32.095 89.839L78.6127 78.1994L81.9176 30.3616L107.362 71.0057L153.88 59.3662Z"
+                    fill="#D9D9D9"
+                  />
+                  <circle
+                    className="rotate-center animate-spin-variable spin-slow"
+                    cx="92.7695"
+                    cy="85.2192"
+                    r="46.5"
+                    fill="#D9D9D9"
+                  />
                 </g>
 
                 <circle cx="93.7695" cy="85.2192" r="37.5" fill="black" />
