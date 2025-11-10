@@ -23,7 +23,7 @@ export default function Index() {
             </div>
 
             {/* Gradient Shadow Outside Text (вверх) */}
-            <div className="absolute top-0 left-0 w-full h-40 z-30 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
+            <div className=" top-0 left-0 w-full h-40 z-30 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
           </div>
         </div>
 
