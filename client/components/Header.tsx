@@ -65,7 +65,7 @@ export default function Header() {
             {/* SVG LOGO с глобальными анимациями */}
             <div className="relative w-[130px] h-[122px] md:w-[156px] md:h-[147px] lg:w-[192px] lg:h-[180px] flex items-center justify-center">
               <svg
-                className="w-full h-full animate-spin-reverse"
+                className="w-full h-full "
                 viewBox="0 0 190 176"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
