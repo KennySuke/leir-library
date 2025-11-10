@@ -78,7 +78,7 @@ export default function Header() {
                   </filter>
                 </defs>
 
-                <g filter="url(#eclipse-blur) group">
+                <g filter="url(#eclipse-blur) ">
                   <path
                     className="rotate-center animate-spin-variable spin-fast"
                     d="M82.2695 19.7192L97.0875 65.3241H145.039L106.245 93.5095L121.063 139.114L82.2695 110.929L43.4757 139.114L58.2936 93.5095L19.4998 65.3241H67.4516L82.2695 19.7192Z"
