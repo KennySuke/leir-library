@@ -29,7 +29,7 @@ export default function Index() {
           </div>
         </div>
         {/* Fixed Background Image for Mobile */}
-        <div className="lg:hidden fixed bottom-0 left-0 justify-center items-center w-full z-10">
+        <div className="lg:hidden relative fixed bottom-0 left-0 justify-center items-center w-full z-10">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee?width=876"
             alt="Leir portrait"
