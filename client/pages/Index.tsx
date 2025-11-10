@@ -14,7 +14,7 @@ export default function Index() {
               className="overflow-auto h-screen mt-[60vh] pb-[20vh] px-4 text-text-main text-lg leading-relaxed"
               style={{
                 backgroundColor: "rgba(0,0,0,0.7)",
-                boxShadow: "inset 0 -100px 80px -20px rgba(0,0,0,1)"
+                boxShadow: "inset 0 100px 80px -20px rgba(0,0,0,1)"
               }}
             >
               <p>
