@@ -94,7 +94,7 @@ export default function Header() {
           </div>
 
           {/* CENTER LOGO */}
-          <div className="flex items-center justify-center -gap-2 md:gap-4 lg:gap-[5px] my-0lg:my-0">
+          <div className="flex items-center justify-center gap-0 md:gap-4 lg:gap-[5px] my-0lg:my-0">
             {/* PROJS */}
             <Link
               to="/projects"
