@@ -20,71 +20,41 @@
     animation: scroll 27s linear infinite;
   }
 
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes spin-reverse {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
-  }
-
-  .animate-spin-slow {
-    animation: spin 24s linear infinite;
-  }
-
-  .animate-spin-medium {
-    animation: spin 14s linear infinite;
-  }
-
-  .animate-spin-fast {
-    animation: spin 8s linear infinite;
-  }
-
-  .animate-spin-rev-slow {
-    animation: spin-reverse 24s linear infinite;
-  }
-
-  .animate-spin-rev-medium {
-    animation: spin-reverse 14s linear infinite;
-  }
-
-  .animate-spin-rev-fast {
-    animation: spin-reverse 8s linear infinite;
-  }
-
-  /* --- вращение логотипа --- */
   @keyframes spin-logo {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-logo-reverse {
+    from { transform: rotate(360deg); }
+    to   { transform: rotate(0deg); }
   }
 
   .rotate-center {
     transform-origin: center;
   }
 
-  /* Переменная скорости анимации */
   .animate-spin-variable {
     animation: spin-logo var(--spin-speed, 30s) linear infinite;
     transition: animation-duration 0.6s ease-in-out;
   }
 
-  /* При наведении – "замедляем" вращение */
-  .group:hover .animate-spin-variable {
-    --spin-speed: 120s; /* медленное вращение вместо полной паузы */
+  .animate-spin-reverse {
+    animation: spin-logo-reverse var(--spin-speed, 30s) linear infinite;
+    transition: animation-duration 0.6s ease-in-out;
+  }
+
+  /* Скорости вращения */
+  .spin-slowest  { --spin-speed: 60s; }
+  .spin-slow     { --spin-speed: 40s; }
+  .spin-medium   { --spin-speed: 30s; }
+  .spin-fast     { --spin-speed: 20s; }
+  .spin-fastest  { --spin-speed: 15s; }
+
+  /* Наведение замедляет вращение */
+  .group:hover .animate-spin-variable,
+  .group:hover .animate-spin-reverse {
+    --spin-speed: 120s;
   }
 }
 
