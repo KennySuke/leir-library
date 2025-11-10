@@ -85,7 +85,7 @@ export default function Header() {
                     fill="#D9D9D9"
                   />
                   <path
-                    className="rotate-center animate-spin-variable spin-medium"
+                    className="rotate-center animate-spin-reverse spin-medium"
                     d="M138.115 19.5L128.325 66.4418L169.944 90.2584L122.274 95.4534L112.484 142.395L92.8128 98.6641L45.1432 103.859L80.6552 71.6368L60.9838 27.9057L102.603 51.7223L138.115 19.5Z"
                     fill="#D9D9D9"
                   />
