@@ -31,6 +31,7 @@
   }
 
   .rotate-center {
+    transform-box: fill-box;
     transform-origin: center;
   }
 
