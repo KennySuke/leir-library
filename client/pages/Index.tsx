@@ -9,7 +9,24 @@ export default function Index() {
       <main>
         <div className="flex-1 relative">
           {/* Mobile Gradient Text Overlay */}
- 
+          <div className="lg:hidden relative z-20">
+            <div
+              className="overflow-auto h-screen pt-[60vh] px-4 text-text-main text-lg leading-relaxed"
+              style={{
+                background: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%)",
+              }}
+            >
+              <p>
+                Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
+              </p>
+              <p className="mt-6">
+                Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
+              </p>
+              <p className="mt-6">
+                В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
+              </p>
+            </div>
+          </div>
           {/* Fixed Background Image for Mobile */}
           <div className="lg:hidden fixed bottom-0 left-0 w-full h-[60vh] z-10">
             <img
