@@ -13,7 +13,7 @@ export default function Index() {
             <div
               className="overflow-auto h-screen pt-[60vh] px-4 text-text-main text-lg leading-relaxed"
               style={{
-                background: "linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)",
+                background: "linear-gradient(to top, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%)",
               }}
             >
               <p>
