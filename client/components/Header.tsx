@@ -81,6 +81,18 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* MOBILE LEFT SLIDEBAR */}
+          <div
+            className={`lg:hidden fixed top-0 left-0 h-full w-[40%] bg-black z-50 flex flex-col p-6 gap-6 text-lg transform transition-transform duration-300 ${leftOpen ? "translate-x-0" : "-translate-x-full"
+              }`}
+          >
+            <Link to="/live-sound" className={getLinkClass("/live-sound")}>live sound</Link>
+            <Link to="/light-staging" className={getLinkClass("/light-staging")}>light staging</Link>
+            <Link to="/events" className={getLinkClass("/events")}>events</Link>
+            <Link to="/commercial" className={getLinkClass("/commercial")}>commercial</Link>
+            <Link to="/art" className={getLinkClass("/art")}>art</Link>
+          </div>
+
           {/* CENTER LOGO */}
           <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-[5px] my-0lg:my-0">
             {/* PROJS */}
