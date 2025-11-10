@@ -7,7 +7,7 @@ export default function Index() {
       <Header />
       
       <main>
-        <div className="flex-1">
+        <div className="flex-1 relative">
           {/* Mobile Gradient Text Overlay */}
           <div className="lg:hidden flex-1 relative z-20">
             <div
