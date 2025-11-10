@@ -33,7 +33,7 @@ export default function Index() {
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee?width=876"
             alt="Leir portrait"
-            className="w-full h-full  justify-center items-center  object-cover"
+            className="absolute bottom-0 left-0 w-full h-full object-cover"
           />
         </div>
 
