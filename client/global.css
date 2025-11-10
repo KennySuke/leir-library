@@ -1,6 +1,23 @@
 /** @import must precede all other statements */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
+
+/* Local NotCourierSans font files provided by user */
+@font-face {
+  font-family: 'NotCourierSans';
+  src: url('https://cdn.builder.io/o/assets%2Fddc9e4df64db4f3d846ed8b73030b483%2F54fb1a9ffc8f4bd084f1a068d6663da1?alt=media&token=32528192-4341-41f8-8ade-835a8c115312&apiKey=ddc9e4df64db4f3d846ed8b73030b483') format('opentype'),
+       url('https://cdn.builder.io/o/assets%2Fddc9e4df64db4f3d846ed8b73030b483%2Fc395ef0f377b46638f66b86dcdae1db4?alt=media&token=4a7a7255-51ca-49b2-80bf-2b8d1817be7f&apiKey=ddc9e4df64db4f3d846ed8b73030b483') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'NotCourierSans';
+  src: url('https://cdn.builder.io/o/assets%2Fddc9e4df64db4f3d846ed8b73030b483%2Fb849e48419af468c9b8d2452e0dfb80c?alt=media&token=ee8d4e1a-5eaf-47ff-9737-655391ada0cd&apiKey=ddc9e4df64db4f3d846ed8b73030b483') format('opentype'),
+       url('https://cdn.builder.io/o/assets%2Fddc9e4df64db4f3d846ed8b73030b483%2Fe6630782c0294166a31b40663d36e7fb?alt=media&token=8d65f454-b0eb-45a8-a3b8-6f4bed7a0cbe&apiKey=ddc9e4df64db4f3d846ed8b73030b483') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
