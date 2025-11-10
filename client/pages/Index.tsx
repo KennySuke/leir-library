@@ -10,7 +10,7 @@ export default function Index() {
         {/* Scrollable Container */}
         <div className="relative z-20 overflow-auto h-screen px-0 mt-[60vh] mb-[20vh]">
           {/* Transparent Rectangle on Top */}
-          <div className="absolute -top-40 left-0 w-full h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none z-20" />
+          <div className="absolute -top-40 left-0 w-full h-40 bg-black/70 z-20" />
 
           {/* Text Box Below */}
           <div className="relative z-20 flex flex-col gap-6 px-6 text-text-main bg-black/70">
