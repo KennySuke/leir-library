@@ -7,7 +7,7 @@ export default function Index() {
       <Header />
       
       <main>
-        <div className="flex-1 relative items-top ">
+        <div className="flex-1 relative">
           {/* Mobile Text Overlay */}
           <div className="lg:hidden relative z-20">
             <div className="overflow-auto h-screen mt-[60vh] mb-[20vh] px-4 text-text-main text-lg leading-relaxed relative bg-black/70">
@@ -28,7 +28,7 @@ export default function Index() {
         </div>
 
         {/* Fixed Background Image for Mobile */}
-        <div className="lg:hidden fixed top-[20%] left-0 w-full z-10">
+        <div className="self-start lg:hidden fixed top-[20%] left-0 w-full z-10">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
             alt="Leir portrait"
