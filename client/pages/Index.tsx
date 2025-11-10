@@ -23,12 +23,12 @@ export default function Index() {
             </div>
 
             {/* Gradient Shadow Outside Text (вверх) */}
-            <div className="top-0 left-0 w-full h-40 z-30 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
+            <div className=" self-start top-0 left-0 w-full h-40 z-30 pointer-events-none bg-gradient-to-t from-black/70 to-transparent" />
           </div>
         </div>
 
         {/* Fixed Background Image for Mobile */}
-        <div className="self-start lg:hidden fixed top-[20%] left-0 w-full z-10">
+        <div className="lg:hidden fixed top-[20%] left-0 w-full z-10">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
             alt="Leir portrait"
