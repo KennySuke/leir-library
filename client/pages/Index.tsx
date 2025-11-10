@@ -13,7 +13,7 @@ export default function Index() {
           <div className="absolute -top-40 left-0 w-full h-40 bg-gradient-to-t from-black/70 to-transparent z-0 pointer-events-none" />
 
           {/* Text Box Below */}
-          <div className="relative z-10 flex flex-col gap-6 text-text-main">
+          <div className="relative z-10 flex flex-col gap-6 text-text-main bg-black/70">
             <p>
               Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
             </p>
