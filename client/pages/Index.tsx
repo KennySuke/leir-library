@@ -29,12 +29,14 @@ export default function Index() {
           </div>
         </div>
         {/* Fixed Background Image for Mobile */}
-        <div className="lg:hidden fixed top-[30%] left-0 w-full h-[50vh] z-10 bg-center bg-cover"
-          style={{
-            backgroundImage:
-              "url('https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee')",
-          }}>
+        <div className="lg:hidden fixed top-[20%] left-0 w-full h-[50vh] z-10">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
+            alt="Leir portrait"
+            className="w-full h-full object-cover"
+          />
         </div>
+
 
         <div className="hidden lg:flex-1 lg:flex items-center justify-center px-4 md:px-8 lg:px-[20px] py-12 md:py-16 lg:py-[200px]">
           <div className="w-full max-w-[1474px] grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center">
