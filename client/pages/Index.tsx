@@ -29,7 +29,7 @@ export default function Index() {
           </div>
         </div>
         {/* Fixed Background Image for Mobile */}
-        <div className="lg:hidden fixed bottom-0 left-0 justify-center items-center w-full z-10" style={{
+        <div className="lg:hidden relative w-full h-[60vh] bg-center bg-cover" style={{
           backgroundImage: "url('https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee?width=876')",
         }}>
         
