@@ -9,7 +9,7 @@ export default function Index() {
       <main>
         <div className="flex-1 relative">
           {/* Mobile Gradient Text Overlay */}
-          <div className="lg:hidden flex-1 relative z-20">
+          <div className="lg:hidden relative z-20">
             <div
               className="overflow-auto h-screen pt-[60vh] px-4 text-text-main text-lg leading-relaxed"
               style={{
