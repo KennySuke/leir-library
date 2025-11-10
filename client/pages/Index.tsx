@@ -29,6 +29,15 @@ export default function Index() {
             В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
           </div>
         </div>
+
+        {/* Fixed Background Image for Mobile */}
+        <div className="lg:hidden fixed bottom-0 left-0 w-full h-[60vh] z-10">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee?width=876"
+            alt="Leir portrait"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </main>
 
       <Footer />
