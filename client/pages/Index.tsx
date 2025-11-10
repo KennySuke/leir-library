@@ -8,36 +8,37 @@ export default function Index() {
       
       <main>
         <div className="flex-1 relative">
-          {/* Mobile Gradient Text Overlay */}
+          {/* Mobile Text Overlay */}
           <div className="lg:hidden relative z-20">
-            <div className="relative overflow-auto h-screen pt-[60vh] pb-[20vh] px-4 text-text-main text-lg leading-relaxed">
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
-
-              {/* Text content */}
-              <div className="relative z-20 space-y-6">
-                <p>
-                  Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
-                </p>
-                <p>
-                  Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
-                </p>
-                <p>
-                  В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
-                </p>
-              </div>
+            <div
+              className="overflow-auto h-screen pt-[60vh] pb-[20vh] px-4 text-text-main text-lg leading-relaxed"
+              style={{
+                backgroundColor: "rgba(0,0,0,0.7)",
+                boxShadow: "inset 0 -100px 80px -20px rgba(0,0,0,1)"
+              }}
+            >
+              <p>
+                Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
+              </p>
+              <p className="mt-6">
+                Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
+              </p>
+              <p className="mt-6">
+                В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
+              </p>
             </div>
           </div>
         </div>
 
         {/* Fixed Background Image for Mobile */}
-        <div className="lg:hidden fixed top-[20%] left-0 w-full  z-10">
+        <div className="lg:hidden fixed top-[20%] left-0 w-full z-10">
           <img
             src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
             alt="Leir portrait"
             className="w-full h-full object-cover"
           />
         </div>
+
 
 
         <div className="hidden lg:flex-1 lg:flex items-center justify-center px-4 md:px-8 lg:px-[20px] py-12 md:py-16 lg:py-[200px]">
