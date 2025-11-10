@@ -7,32 +7,34 @@ export default function Index() {
       <Header />
       
       <main>
-        <div className="lg:hidden relative w-full min-h-screen flex flex-col">
-          {/* Фотография фиксированная */}
-          <div className="fixed top-[20%] left-0 w-full h-[50vh] z-0">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
-              alt="Leir portrait"
-              className="w-full h-full object-cover"
-            />
+        <div className="flex-1 relative">
+          {/* Mobile Gradient Text Overlay */}
+          <div className="lg:hidden relative z-20">
+            <div
+              className="overflow-auto h-screen pt-[60vh] pb-[20vh] px-4 text-text-main text-lg leading-relaxed"
+              style={{
+                background: "linear-gradient(to top, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%)",
+              }}
+            >
+              <p>
+                Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
+              </p>
+              <p className="mt-6">
+                Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
+              </p>
+              <p className="mt-6">
+                В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
+              </p>
+            </div>
           </div>
-
-          {/* Текст с градиентом */}
-          <div className="relative z-10 mt-[60vh] p-6 text-text-main overflow-auto"
-            style={{
-              background: "linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.0))"
-            }}
-          >
-            <p>
-              Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
-            </p>
-            <p>
-              Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
-            </p>
-            <p>
-              В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
-            </p>
-          </div>
+        </div>
+        {/* Fixed Background Image for Mobile */}
+        <div className="lg:hidden fixed top-[20%] left-0 w-full  z-10">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/f16ebf025ccd406f25a24d211cf6e69963cce7ee"
+            alt="Leir portrait"
+            className="w-full h-full object-cover"
+          />
         </div>
 
 
