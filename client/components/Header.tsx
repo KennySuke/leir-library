@@ -85,7 +85,7 @@ export default function Header() {
                   <circle className="rotate-center animate-spin-rev-slow" cx="92.7695" cy="85.2192" r="46.5" fill="#D9D9D9" />
                 </g>
 
-                <circle className="rotate-center animate-spin-slow" cx="93.7695" cy="85.2192" r="37.5" fill="black" />
+                <circle cx="93.7695" cy="85.2192" r="37.5" fill="black" />
               </svg>
             </div>
 
