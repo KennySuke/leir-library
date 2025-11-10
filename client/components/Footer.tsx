@@ -15,7 +15,8 @@ export default function Footer() {
         <div className="flex items-center overflow-hidden w-full h-full bg-black shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
 
           <div className="overflow-hidden py-3 md:py-4">
-            <div className="flex justify-start animate-scroll whitespace-nowrap gap-4 lg:gap-[37px]">
+            <div className="flex justify-start animate-scroll whitespace-nowrap gap-4 lg:gap-[37px] py-3 md:py-4">
+
               {/* Repeat contacts multiple times for continuous scroll */}
               {[...Array(footerRepeatCount)].map((_, groupIndex) => (
                 <div
