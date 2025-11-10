@@ -3,7 +3,7 @@ import { footerLinks, footerRepeatCount } from "@/config/siteConfig";
 export default function Footer() {
   return (
     <footer className="w-full fixed bottom-0 left-0 z-50">
-      <div className="relative overflow-hidden h-[100px] md:h-[120px] lg:h-[50px]">
+      <div className="relative overflow-hidden h-[100px] md:h-[120px] lg:h-[150px]">
         {/* Blur effect background */}
         <div className="absolute left-0 right-0 h-[122px] bg-black/80 blur-[50px] backdrop-blur-[1px]" style={{ top: '21px' }} />
 
