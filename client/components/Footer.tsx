@@ -7,7 +7,7 @@ export default function Footer() {
 
         {/* Scrolling contact links with backdrop blur */}
         <div className="absolute bottom-0 left-0 right-0 bg-black shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-          <div className="overflow-hidden py-3 md:py-4" style={{ boxShadow: "43px 1px 100px400px rgba(0, 0, 0, 1)" }}>
+          <div className="overflow-hidden py-3 md:py-4" style={{ boxShadow: "43px 1px 100px 40px rgba(0, 0, 0, 1)" }}>
             <div className="flex justify-start animate-scroll whitespace-nowrap lg:gap-[37px]">
               {/* Repeat contacts multiple times for continuous scroll */}
               {[...Array(footerRepeatCount)].map((_, groupIndex) => (
