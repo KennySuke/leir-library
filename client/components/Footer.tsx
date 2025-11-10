@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full fixed bottom-0 left-0 z-50">
       <div className="relative overflow-hidden h-[100px] md:h-[120px] lg:h-[150px]">
         {/* Blur effect background */}
-        <div className="absolute left-0 right-0 h-[20px] bg-black/100 blur-[50px] backdrop-blur-[1px]" style={{ bottom: '65px' }} />
+        <div className="absolute left-0 right-0 h-[20px] bg-black/100 blur-[50px] backdrop-blur-[1px]" style={{ bottom: '64px' }} />
 
         {/* Scrolling contact links with backdrop blur */}
         <div className="absolute bottom-0 left-0 right-0 bg-black/20 backdrop-blur-md shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
