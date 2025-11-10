@@ -2,7 +2,7 @@ import { footerLinks, footerRepeatCount } from "@/config/siteConfig";
 
 export default function Footer() {
   return (
-    <footer className="w-full fixed bottom-0 left-0 z-50" style={{ background: "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0)) 100%" }} >
+    <footer className="w-full fixed bottom-0 left-0 z-50" style={{ background: "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(0,0,0,0)) 100%" }} >
       <div className="relative overflow-hidden h-[100px] md:h-[120px] lg:h-[150px]">
 
         {/* Scrolling contact links with backdrop blur */}
