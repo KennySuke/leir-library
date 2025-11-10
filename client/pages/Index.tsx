@@ -8,7 +8,7 @@ export default function Index() {
       
       <main>
         {/* Scrollable Container */}
-        <div className="relative z-20 overflow-auto px-0 mt-[60vh] mb-[20vh]">
+        <div className="relative z-20 overflow-auto px-0 mt-[60vh]">
           {/* Transparent Rectangle on Top */}
           <div className=" -top-40 left-0 w-full h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none z-20" />
 
@@ -24,6 +24,7 @@ export default function Index() {
                 В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
             </p>
           </div>
+          <div className=" -top-40 left-0 w-full h-20 bg-black/70 z-20" />
         </div>
 
         {/* Fixed Background Image for Mobile */}
