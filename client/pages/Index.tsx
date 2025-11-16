@@ -67,8 +67,8 @@ export default function Index() {
               {/* Нижняя строка — flex с равномерным распределением ссылок */}
               <div className="flex justify-between items-start">
                 {footerLinks
-                  .filter(link => link.href) // Берем только записи с href
-                  .slice(0, 3) // Берем первые три ссылки
+                  .filter(link => link.href)
+                  .slice(0, 3)
                   .map((link, index) => {
                     const classes = `text-text-main text-sm md:text-lg lg:text-2xl underline hover:no-underline hover:text-accent transition`;
 
@@ -86,9 +86,14 @@ export default function Index() {
                   })}
               </div>
             </div>
+          </div>
 
+          {/* Добавленная надпись "копировать" ниже всего блока */}
+          <div className="w-full max-w-[1474px] text-right mt-4 text-text-main text-sm md:text-lg lg:text-2xl">
+            копировать
           </div>
         </div>
+
         
       </main>
 
