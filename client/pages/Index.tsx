@@ -57,9 +57,43 @@ export default function Index() {
             </div>
 
             {/* Right Text */}
-            <div className="text-text-main text-sm md:text-lg lg:text-2xl text-center leading-normal self-end order-3 lg:order-3 text-justify">
-              В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
+            <div className="grid grid-rows-2 gap-4 order-3">
+              {/* Верхняя строка */}
+              <div className="text-text-main text-sm md:text-lg lg:text-2xl text-center leading-normal self-end order-3 lg:order-3 text-justify">
+                В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
+              </div>
+
+              {/* Нижняя строка — три столбца */}
+              <div className="grid grid-cols-3 items-start">
+                <a
+                  href="https://example.com/left"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline hover:text-accent transition text-left"
+                >
+                  левая ссылка
+                </a>
+
+                <a
+                  href="https://example.com/center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline hover:text-accent transition text-center"
+                >
+                  центральная ссылка
+                </a>
+
+                <a
+                  href="https://example.com/right"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:no-underline hover:text-accent transition text-right"
+                >
+                  правая ссылка
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
         
