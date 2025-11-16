@@ -69,7 +69,7 @@ export default function Index() {
                   href="https://example.com/left"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:no-underline hover:text-accent transition text-left"
+                  className="text-text-main underline hover:no-underline hover:text-accent transition text-left"
                 >
                   левая ссылка
                 </a>
