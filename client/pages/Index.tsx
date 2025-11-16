@@ -89,9 +89,18 @@ export default function Index() {
 
           </div>
           <button
-            className="flex flex-col relative ml-auto appearance-none bg-black text-white rounded px-[25px] py-[15px] text-center cursor-pointer"
+            className="ml-auto flex items-center justify-center w-[251px] h-[56px] rounded-[6px] border-[3px] cursor-pointer"
+            style={{
+              borderColor: 'rgba(134, 134, 134, 0.41)',
+              color: '#BFBFBF',
+              fontFamily: 'NotCourierSans, -apple-system, Roboto, Helvetica, sans-serif',
+              fontSize: '24px',
+              fontWeight: 400,
+              lineHeight: 'normal',
+              background: 'transparent'
+            }}
           >
-            Click me!
+            копировать био
           </button>
         </div>
         
