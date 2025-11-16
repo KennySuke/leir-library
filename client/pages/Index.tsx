@@ -57,7 +57,7 @@ export default function Index() {
             </div>
 
             {/* Right Text */}
-            <div className="grid grid-rows-2 gap-4 order-3 self-end">
+            <div className="grid grid-rows-[auto_auto] gap-4 order-3 self-end">
               {/* Верхняя строка */}
               <div className="text-text-main text-sm md:text-lg lg:text-2xl text-center leading-normal self-end text-justify">
                 В настоящее время исследует возможности создания непрерывной системы из световой, графической и аудиальной составляющих для формирования зрительского опыта в перформативном пространстве.
