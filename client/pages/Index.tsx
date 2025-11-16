@@ -43,7 +43,7 @@ export default function Index() {
           <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center justify-start mx-auto">
             {/* Left Text */}
             <div className="text-text-main text-sm md:text-lg lg:text-2xl text-center leading-normal order-1 lg:order-1 self-start text-justify">
-              Leir, междисциплинарная художница, родилась в 2001 году в Новомо��ковске, живёт и работает в Москве.
+              Leir, междисциплинарная художница, родилась в 2001 году в Новомосковске, живёт и работает в Москве.
               <br /><br />
               Художественная практика включает DIY-электронику, звуковые эксперименты, интерактивные инсталляции и AV-перформансы. В своих работах художница изучает развитие систем власти, порождающих структуры подчинения в расширенном социальном поле.
             </div>
@@ -88,6 +88,11 @@ export default function Index() {
             </div>
 
           </div>
+          <button
+            className="flex flex-col relative ml-auto appearance-none bg-black text-white rounded px-[25px] py-[15px] text-center cursor-pointer"
+          >
+            Click me!
+          </button>
         </div>
         
       </main>
