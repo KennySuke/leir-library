@@ -71,7 +71,7 @@ export default function Index() {
                   rel="noopener noreferrer"
                   className="text-text-main text-sm md:text-lg lg:text-2xl underline hover:no-underline hover:text-accent transition text-left"
                 >
-                  левая ссылка
+                  mail
                 </a>
 
                 <a
@@ -80,7 +80,7 @@ export default function Index() {
                   rel="noopener noreferrer"
                   className="text-text-main text-sm md:text-lg lg:text-2xl underline hover:no-underline hover:text-accent transition text-center"
                 >
-                  центральная ссылка
+                  telegram
                 </a>
 
                 <a
@@ -89,7 +89,7 @@ export default function Index() {
                   rel="noopener noreferrer"
                   className="text-text-main underline text-sm md:text-lg lg:text-2xl hover:no-underline hover:text-accent transition text-right"
                 >
-                  правая ссылка
+                  tg channel
                 </a>
               </div>
             </div>
