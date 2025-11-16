@@ -66,7 +66,10 @@ export default function Index() {
 
               {/* Нижняя строка — три ссылки по колонкам */}
               <div className="grid grid-cols-3 items-start">
-                {footerLinks.slice(0, 3).map((link, index) => {
+                {footerLinks
+                  .filter(link => link.href) // Берем только записи с href
+                  .slice(0, 3) // Берем первые три ссылки
+                  .map((link, index) => {
                   if (!link) return null;
 
                   const alignment =
