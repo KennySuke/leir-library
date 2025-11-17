@@ -21,21 +21,24 @@ export default function Art() {
               key={project.id}
               href={project.href}
               className="
-                relative
-                w-full
-                md:w-[210px]
-                aspect-[118/383]
-                overflow-hidden
-              "
+      relative
+      w-full
+      md:w-[210px]
+      aspect-[118/383]
+      overflow-hidden
+      transition-all duration-500
+      hover:w-[280px]       /* ширина плашки увеличивается вправо */
+      hover:aspect-square    /* новое соотношение 1:1 */
+    "
             >
               {/* Основное изображение */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="
-                  w-full h-full object-cover
-                  transition duration-500
-                "
+        w-full h-full object-cover
+        transition-all duration-500
+      "
                 style={{
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
                   objectPosition: `${project.cropX} center`,
@@ -52,12 +55,13 @@ export default function Art() {
 
               {/* Stroke поверх изображения */}
               <img
-                src="stroke.png"
+                src="/stroke.png"
                 alt="stroke overlay"
-                className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                className="absolute top-0 left-0 w-full h-full pointer-events-none transition-all duration-500"
               />
             </a>
           ))}
+
 
         </div>
       </main>
