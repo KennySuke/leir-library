@@ -56,24 +56,22 @@ export default function Art() {
               key={project.id}
               href={`/projects/${project.id}`}
               className="
-                relative
-                w-full
-                md:w-[236px]
-
-                aspect-[118/350]      /* ← соотношение сторон */
-                overflow-hidden
-                transition-opacity
-                hover:opacity-80
-              "
-              style={{
-                strokeWidth: "22px",
-                stroke: "#000",
-              }}
+    relative
+    w-full
+    md:w-[236px]
+    aspect-[118/350]
+    overflow-hidden
+  "
             >
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="
+      w-full h-full object-cover
+      filter grayscale
+      transition duration-500
+      hover:grayscale-0
+    "
               />
             </a>
           ))}
