@@ -28,6 +28,7 @@ export default function Art() {
                 overflow-hidden
               "
             >
+              {/* Основное изображение */}
               <img
                 src={project.image}
                 alt={project.title}
@@ -37,9 +38,6 @@ export default function Art() {
                 "
                 style={{
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-
-                  // ⬇️ единственное изменение
-                  // shiftXPercent → object-position для контроля, из какой части берётся вырез
                   objectPosition: `${project.cropX} center`,
                 }}
                 onMouseEnter={(e) => {
@@ -50,6 +48,13 @@ export default function Art() {
                   (e.currentTarget as HTMLImageElement).style.filter =
                     `grayscale(1) brightness(${project.grayscaleExposure})`;
                 }}
+              />
+
+              {/* Stroke поверх изображения */}
+              <img
+                src="/stroke.png"
+                alt="stroke overlay"
+                className="absolute top-0 left-0 w-full h-full pointer-events-none"
               />
             </a>
           ))}
