@@ -52,7 +52,7 @@ export default function Art() {
 
               {/* Stroke поверх изображения */}
               <img
-                src="/stroke.png"
+                src="stroke.png"
                 alt="stroke overlay"
                 className="absolute top-0 left-0 w-full h-full pointer-events-none"
               />
