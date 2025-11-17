@@ -14,7 +14,7 @@ export default function Art() {
           px-4 md:px-8 lg:px-16
         "
       >
-        <div className="w-full flex flex-col md:flex-row items-center pt-10 md:items-start justify-start gap-5 md:gap-6 lg:gap-[20px]">
+        <div className="w-full flex flex-col md:flex-row items-center pt-20 md:items-start justify-start gap-5 md:gap-6 lg:gap-[20px]">
 
           {projectList.map((project) => (
             <a
