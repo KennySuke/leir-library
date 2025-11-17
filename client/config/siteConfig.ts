@@ -33,7 +33,7 @@ export const projectList: ProjectConfig[] = [
     href: "/projects/project-1",
     image: "govoryat_doma.png",
     grayscaleExposure: 0.8, 
-    cropX: "50%",       
+    cropX: "70%",       
   },
   {
     id: "project-2",
