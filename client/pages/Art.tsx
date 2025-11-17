@@ -27,16 +27,16 @@ const projects: Project[] = [
 
 export default function Art() {
   return (
-    <div className="min-h-screen bg-black flex flex-col">
+    <div className="h-screen bg-black flex flex-col overflow-hidden">
       <Header />
 
-      <main className="flex-1 flex items-start justify-center px-4 md:px-8 lg:px-[134px] pt-[150px] md:pt-[180px] lg:pt-[208px] pb-[180px]">
+      <main className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-[134px]">
         <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-5 md:gap-6 lg:gap-[20px] max-w-[748px]">
           {projects.map((project) => (
             <a
               key={project.id}
               href={`/projects/${project.id}`}
-              className="relative w-full md:w-[236px] aspect-[118/383] overflow-hidden transition-opacity hover:opacity-80"
+              className="relative w-full h-screen overflow-hidden transition-opacity hover:opacity-80"
               style={{
                 strokeWidth: '22px',
                 stroke: '#000',
