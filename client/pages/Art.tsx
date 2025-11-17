@@ -50,7 +50,7 @@ export default function Art() {
           Контейнер с проектами.
           Его высота НЕ фиксирована — высота управляется внешними отступами main.
         */}
-        <div className="w-full flex flex-col md:flex-row items-start pt-20 md:items-start justify-center gap-5 md:gap-6 lg:gap-[20px] max-w-[748px]">
+        <div className="w-full flex flex-col md:flex-row items-center pt-20 md:items-start justify-center gap-5 md:gap-6 lg:gap-[20px] max-w-[748px]">
           {projects.map((project) => (
             <a
               key={project.id}
