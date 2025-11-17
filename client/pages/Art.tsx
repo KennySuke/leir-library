@@ -27,19 +27,53 @@ const projects: Project[] = [
 
 export default function Art() {
   return (
-    <div className="h-screen bg-black flex flex-col overflow-hidden">
+    <div className="min-h-screen bg-black flex flex-col">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-[134px]">
+      {/* 
+        MAIN HEIGHT:
+        `h-screen` заставляет этот блок занимать ровно высоту экрана
+      */}
+      <main
+        className="
+          h-screen              /* ← основная высота страницы */
+          flex
+          items-start
+          justify-center
+      
+          px-4                 /* ← боковые отступы мобилка */
+          md:px-8              /* ← боковые отступы планшет */
+          lg:px-[134px]        /* ← боковые отступы десктоп */
+      
+          pt-[140px]           /* ← отступ сверху до проекта */
+          md:pt-[160px]        /* ← отступ сверху планшет */
+          lg:pt-[180px]        /* ← отступ сверху десктоп */
+
+          pb-[100px]           /* ← отступ снизу до футера */
+        "
+      >
+        {/* 
+          Контейнер с проектами.
+          Его высота НЕ фиксирована — высота управляется внешними отступами main.
+        */}
         <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-5 md:gap-6 lg:gap-[20px] max-w-[748px]">
           {projects.map((project) => (
             <a
               key={project.id}
               href={`/projects/${project.id}`}
-              className="relative w-full h-screen overflow-hidden transition-opacity hover:opacity-80"
+              className="
+                relative
+                w-full
+                md:w-[236px]
+
+                aspect-[118/383]      /* ← соотношение сторон */
+                overflow-hidden
+                transition-opacity
+                hover:opacity-80
+              "
               style={{
-                strokeWidth: '22px',
-                stroke: '#000',
+                strokeWidth: "22px",
+                stroke: "#000",
               }}
             >
               <img
