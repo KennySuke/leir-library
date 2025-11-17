@@ -9,21 +9,13 @@ export default function Art() {
 
       <main
         className="
-          min-h-screen 
+          min-h-screen flex items-center
           flex items-start justify-center
           px-4 md:px-8 lg:px-16
         "
       >
-        <div
-          className="
-            w-full
-            flex flex-col md:flex-row
-            items-center md:items-start
-            justify-start
-            pt-20
-            gap-5 md:gap-6 lg:gap-[20px]
-          "
-        >
+        <div className="w-full flex flex-col md:flex-row items-center pt-20 md:items-start justify-start gap-5 md:gap-6 lg:gap-[20px]">
+
           {projectList.map((project) => (
             <a
               key={project.id}
@@ -40,16 +32,12 @@ export default function Art() {
                 src={project.image}
                 alt={project.title}
                 className="
-                  w-full h-full
-                  object-cover
-                  transition-all duration-500
+                  w-full h-full object-cover
+                  transition duration-500
                 "
                 style={{
-                  // управление областью кадрирования
-                  objectPosition: `${project.cropX} center`,
-
-                  // управление степенью ч/б экспозиции
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
+                  transform: `translateX(${project.shiftXPercent}%)`,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLImageElement).style.filter =
@@ -62,6 +50,7 @@ export default function Art() {
               />
             </a>
           ))}
+
         </div>
       </main>
 
