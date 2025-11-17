@@ -32,7 +32,7 @@ export default function Art() {
                 src={project.image}
                 alt={project.title}
                 className="
-                  h-full w-auto
+                  h-full object-cover
                   transition duration-500
                 "
                 style={{
