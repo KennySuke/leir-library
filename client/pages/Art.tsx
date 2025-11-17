@@ -30,27 +30,29 @@ export default function Art() {
     <div className="min-h-screen bg-black flex flex-col">
       <Header />
 
-      {/* 
-        MAIN HEIGHT:
-        `h-screen` заставляет этот блок занимать ровно высоту экрана
-      */}
       <main
         className="
-          min-h-screen flex items-center
-          flex
+          min-h-screen 
+          flex 
           items-start
-          justify-center
-      
-          px-4                 /* ← боковые отступы мобилка */
-          md:px-8              /* ← боковые отступы планшет */
-          lg:px-[134px]        /* ← боковые отступы десктоп */
+
+          px-4          /* мобильные отступы */
+          md:px-8       /* планшет */
+          lg:px-[134px] /* десктоп */
         "
       >
-        {/* 
-          Контейнер с проектами.
-          Его высота НЕ фиксирована — высота управляется внешними отступами main.
-        */}
-        <div className="w-full flex flex-col md:flex-row items-center pt-20 md:items-start justify-center gap-5 md:gap-6 lg:gap-[20px] max-w-[748px]">
+        {/* Контейнер проектов → теперь растянут в ширину и прижат к левому краю */}
+        <div
+          className="
+            w-full
+            flex
+            flex-col md:flex-row
+            justify-start      /* ← самое важное: начинать слева */
+            items-start
+            gap-5 md:gap-6 lg:gap-[20px]
+            pt-20
+          "
+        >
           {projects.map((project) => (
             <a
               key={project.id}
@@ -60,15 +62,11 @@ export default function Art() {
                 w-full
                 md:w-[236px]
 
-                aspect-[118/350]      /* ← соотношение сторон */
+                aspect-[118/350]
                 overflow-hidden
                 transition-opacity
                 hover:opacity-80
               "
-              style={{
-                strokeWidth: "22px",
-                stroke: "#000",
-              }}
             >
               <img
                 src={project.imageUrl}
