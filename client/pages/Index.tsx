@@ -73,15 +73,19 @@ export default function Index() {
         <div className="hidden lg:flex-1 lg:flex lg:flex-col items-center justify-center px-4 md:px-8 lg:px-[225px] py-12 md:py-16 lg:py-[200px] gap-6">
           <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center justify-start mx-auto">
             {/* Left Text */}
-            <div className="text-text-main text-sm md:text-lg lg:text-xl text-center leading-normal order-1 lg:order-1 self-start text-justify">
-              Leir, междисциплинарная художница, родилась в 2001 году в
-              Новомосковске, живёт и работает в Москве.
+            <div className="text-text-main text-center leading-normal order-1 lg:order-1 self-start text-justify">
+              <div style={{ fontSize: '20px' }}>
+                Leir, междисциплинарная художница, родилась в 2001 году в
+                Новомосковске, живёт и работает в Москве.
+              </div>
               <br />
               <br />
-              Художественная практика включает DIY-электронику, звуковые
-              эксперименты, интерактивные инсталляции и AV-перформансы. В своих
-              работах художница изучает развитие систем власти, порождающих
-              структуры подчинения в расширенном социальном поле.
+              <div style={{ fontSize: '20px' }}>
+                Художественная практика включает DIY-электронику, звуковые
+                эксперименты, интерактивные инсталляции и AV-перформансы. В своих
+                работах художница изучает развитие систем власти, порождающих
+                структуры подчинения в расширенном социальном поле.
+              </div>
             </div>
 
             {/* Center Image */}
@@ -96,7 +100,7 @@ export default function Index() {
             {/* Right Text */}
             <div className="grid grid-rows-[auto_auto] gap-4 order-3 self-end">
               {/* Верхняя строка */}
-              <div className="text-text-main text-sm md:text-lg lg:text-xl text-center leading-normal self-end text-justify">
+              <div className="text-text-main text-center leading-normal self-end text-justify" style={{ fontSize: '20px' }}>
                 В настоящее время исследует возможности создания непрерывной
                 системы из световой, графической и аудиальной составляющих для
                 формирования зрительского опыта в перформативном пространстве.
@@ -108,7 +112,8 @@ export default function Index() {
                   .filter((link) => link.href) // Берем только записи с href
                   .slice(0, 3) // Берем первые три ссылки
                   .map((link, index) => {
-                    const classes = `text-text-main text-sm md:text-lg lg:text-xl underline hover:no-underline hover:text-accent transition`;
+                    const classes = `text-text-main underline hover:no-underline hover:text-accent transition`;
+                    const linkStyle = { fontSize: '20px' };
 
                     return (
                       <a
@@ -117,6 +122,7 @@ export default function Index() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={classes}
+                        style={linkStyle}
                       >
                         {link.label}
                       </a>
