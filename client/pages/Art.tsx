@@ -23,7 +23,7 @@ export default function Art() {
               className="
       relative
       w-full
-      md:w-[210px]
+      md:w-[118px]
       aspect-[118/383]
       overflow-hidden
       transition-all duration-500
