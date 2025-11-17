@@ -9,7 +9,7 @@ export default function Art() {
 
       <main
         className="
-          min-h-screen flex items-center
+          h-screen flex items-center
           flex items-start justify-center
           px-4 md:px-8 lg:px-16
         "
