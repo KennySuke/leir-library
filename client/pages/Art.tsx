@@ -36,7 +36,7 @@ export default function Art() {
       */}
       <main
         className="
-          h-screen              /* ← основная высота страницы */
+          min-h-screen flex items-center
           flex
           items-start
           justify-center
