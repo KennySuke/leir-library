@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Placeholder from "./pages/Placeholder";
 import Statement from "./pages/Statement";
 import Cv from "./pages/Cv";
+import Art from "./pages/Art";
 
 const queryClient = new QueryClient();
 
