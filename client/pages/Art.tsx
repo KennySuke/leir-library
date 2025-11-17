@@ -11,17 +11,17 @@ const projects: Project[] = [
   {
     id: "project-1",
     title: "Project 1",
-    imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/f7c9085ae19d6144e69536dc179f075481103d7a?width=472",
+    imageUrl: "govoryat_doma.png",
   },
   {
     id: "project-2",
     title: "Project 2",
-    imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/3a9ed9c979d7464ff7e2dc46a4f2109d0163d943?width=472",
+    imageUrl: "vnedreniye_vozmozhno.png",
   },
   {
     id: "project-3",
     title: "Project 3",
-    imageUrl: "https://api.builder.io/api/v1/image/assets/TEMP/5b9d7ef61101dfcee3265d31a2e5885494984675?width=472",
+    imageUrl: "zhivotinka-1.png",
   },
 ];
 
