@@ -37,7 +37,10 @@ export default function Art() {
                 "
                 style={{
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-                  transform: `translateX(${project.shiftXPercent}%)`,
+
+                  // ⬇️ единственное изменение
+                  // shiftXPercent → object-position для контроля, из какой части берётся вырез
+                  objectPosition: `${project.cropX} center`,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLImageElement).style.filter =
