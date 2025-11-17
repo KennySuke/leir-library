@@ -31,26 +31,19 @@ export default function Art() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="
-                  w-full h-full object-cover
-                  transition duration-500
-                "
+                className="h-full w-auto transition duration-500"
                 style={{
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-
-                  // ⬇️ единственное изменение
-                  // shiftXPercent → object-position для контроля, из какой части берётся вырез
                   objectPosition: `${project.cropX} center`,
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.filter =
-                    `grayscale(0) brightness(1)`;
+                  (e.currentTarget as HTMLImageElement).style.filter = `grayscale(0) brightness(1)`;
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.filter =
-                    `grayscale(1) brightness(${project.grayscaleExposure})`;
+                  (e.currentTarget as HTMLImageElement).style.filter = `grayscale(1) brightness(${project.grayscaleExposure})`;
                 }}
               />
+
             </a>
           ))}
 
