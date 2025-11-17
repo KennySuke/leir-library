@@ -114,18 +114,30 @@ export default function Index() {
 
           </div>
           <button
-            className="ml-auto flex items-center justify-center w-[251px] h-[56px] rounded-[6px] border-[3px] cursor-pointer"
+            onClick={handleCopyBio}
+            className="ml-auto flex items-center justify-center w-[251px] h-[56px] rounded-[6px] border-[3px] cursor-pointer transition-all duration-200"
             style={{
-              borderColor: 'rgba(134, 134, 134, 0.41)',
-              color: '#BFBFBF',
+              borderColor: isCopied ? 'rgba(134, 134, 134, 0.41)' : 'rgba(134, 134, 134, 0.41)',
+              color: isCopied ? '#000' : '#BFBFBF',
               fontFamily: 'NotCourierSans, -apple-system, Roboto, Helvetica, sans-serif',
               fontSize: '24px',
               fontWeight: 400,
               lineHeight: 'normal',
-              background: 'transparent'
+              background: isCopied ? '#E8E8E8' : 'transparent',
+              boxShadow: !isCopied ? '0 0 0 0 transparent' : 'none'
+            }}
+            onMouseEnter={(e) => {
+              if (!isCopied) {
+                e.currentTarget.style.background = 'rgba(200, 200, 200, 0.2)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isCopied) {
+                e.currentTarget.style.background = 'transparent';
+              }
             }}
           >
-            копировать био
+            {isCopied ? 'скопировано' : 'копировать био'}
           </button>
         </div>
         
