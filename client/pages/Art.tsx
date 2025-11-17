@@ -21,12 +21,12 @@ export default function Art() {
               key={project.id}
               href={project.href}
               className="
-                relative
-                w-full
-                md:w-[236px]
-                aspect-[118/350]
-                overflow-hidden
-              "
+    relative
+    w-full
+    md:w-[236px]
+    aspect-[118/350]
+    overflow-hidden
+  "
             >
               <img
                 src={project.image}
@@ -34,7 +34,7 @@ export default function Art() {
                 className="h-full w-auto transition duration-500"
                 style={{
                   filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-                  objectPosition: `${project.cropX} center`,
+                  transform: `translateX(${project.shiftXPercent}%)`,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLImageElement).style.filter = `grayscale(0) brightness(1)`;
@@ -43,8 +43,8 @@ export default function Art() {
                   (e.currentTarget as HTMLImageElement).style.filter = `grayscale(1) brightness(${project.grayscaleExposure})`;
                 }}
               />
-
             </a>
+
           ))}
 
         </div>
