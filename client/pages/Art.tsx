@@ -24,48 +24,65 @@ export default function Art() {
       relative
       h-[682px]
       aspect-[118/383]
-      overflow-hidden
+      overflow-visible
       transition-all duration-500
-      hover:aspect-square    /* новое соотношение 1:1 */
+      hover:aspect-square
+      group
     "
             >
-              {/* Основное изображение */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="
-        w-full h-full object-cover
-        transition-all duration-500
-      "
-                style={{
-                  filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-                  objectPosition: `${project.cropX} ${project.cropY}`,
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.filter =
-                    `grayscale(0) brightness(1)`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.filter =
-                    `grayscale(1) brightness(${project.grayscaleExposure})`;
-                }}
-              />
+              <div className="relative w-full h-full overflow-hidden">
+                {/* Основное изображение */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="
+          w-full h-full object-cover
+          transition-all duration-500
+        "
+                  style={{
+                    filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
+                    objectPosition: `${project.cropX} ${project.cropY}`,
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.filter =
+                      `grayscale(0) brightness(1)`;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.filter =
+                      `grayscale(1) brightness(${project.grayscaleExposure})`;
+                  }}
+                />
 
-              {/* Stroke поверх изображения */}
-              <img
-                src="/stroke2.png"
-                alt="stroke overlay"
-                className="absolute top-0  object-cover left-0 pointer-events-none transition-all duration-500 h-full"
-                style={{ height: '100%', objectPosition: 'left top'}}
-              />
-              <img
-                src="/stroke2.png"
-                alt="stroke overlay"
-                className="absolute top-0  object-cover right-0 pointer-events-none transition-all duration-500 h-full"
-                style={{ height: '100%', objectPosition: 'right top' }}
-              />
+                {/* Stroke поверх изображения */}
+                <img
+                  src="/stroke2.png"
+                  alt="stroke overlay"
+                  className="absolute top-0 object-cover left-0 pointer-events-none transition-all duration-500 h-full"
+                  style={{ height: '100%', objectPosition: 'left top'}}
+                />
+                <img
+                  src="/stroke2.png"
+                  alt="stroke overlay"
+                  className="absolute top-0 object-cover right-0 pointer-events-none transition-all duration-500 h-full"
+                  style={{ height: '100%', objectPosition: 'right top' }}
+                />
 
-
+                {/* Название, выезжающее слева */}
+                <div
+                  className="
+                    absolute bottom-0 left-0
+                    bg-black px-6 py-2 md:px-9 md:py-4
+                    transition-transform duration-500 ease-out
+                    -translate-x-full
+                    group-hover:translate-x-0
+                    pointer-events-none
+                  "
+                >
+                  <span className="text-white text-2xl md:text-4xl lg:text-5xl font-normal whitespace-nowrap">
+                    {project.title}
+                  </span>
+                </div>
+              </div>
             </a>
           ))}
 
