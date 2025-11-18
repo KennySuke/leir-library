@@ -101,7 +101,7 @@ export default function ProjectDetail2() {
           </div>
 
           {/* Vimeo player */}
-          <div className="h-screen">
+          <div className="w-screen">
             <div className="h-[80%] aspect-video">
               <iframe
                 src="https://player.vimeo.com/video/1138207770"
