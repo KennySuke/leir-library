@@ -193,7 +193,7 @@ export default function ProjectDetail2() {
             </div>
 
             <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/9e0339496fe58d0de72c489042b68d75bd55a327?width=1328"
+              src="/photo_2025-11-18_22-11-13.png"
               alt="Artist photo"
               className="w-full lg:w-[50%] h-auto object-cover"
             />
