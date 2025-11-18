@@ -55,7 +55,7 @@ export default function Art() {
               <img
                 src="/stroke2.png"
                 alt="stroke overlay"
-                className="absolute object-cover w-full h-full pointer-events-none transition-all duration-500"
+                className="absolute  w-full h-full pointer-events-none transition-all duration-500"
               />
 
             </a>
