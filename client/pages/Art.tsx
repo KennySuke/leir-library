@@ -57,8 +57,7 @@ export default function Art() {
                 alt="stroke overlay"
                 className="absolute top-0 left-0 pointer-events-none transition-all duration-500 w-auto"
                 style={{
-                  height: '100%',      // ширина контейнера
-                  objectFit: 'contain', // вписываем изображение без искажения
+                  height: '100%',       // вписываем изображение без искажения
                   objectPosition: 'left top', // левый верхний угол
                 }}
               />
