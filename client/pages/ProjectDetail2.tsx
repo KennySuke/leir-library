@@ -169,7 +169,7 @@ export default function ProjectDetail2() {
             </div>
 
             <img
-              src="photo_2025-11-18_21-48-12.jpg"
+              src="/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
               className="w-full lg:w-[65%] h-auto object-cover"
             />
