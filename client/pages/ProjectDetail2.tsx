@@ -67,7 +67,7 @@ export default function ProjectDetail2() {
               {/* Right image */}
               <div className="w-full lg:w-[40%]">
                 <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/a2ee5cf2afd4955f97d1fcb5f25471fd29d0505b?width=1512"
+                  src="/image 1.png"
                   alt="Installation view"
                   className="w-full h-auto object-cover"
                 />
