@@ -118,7 +118,7 @@ export default function ProjectDetail2() {
           {/* Two images with text */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-2 lg:gap-2 w-full">
             <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/40457bcb30a2f0bf16c5a57bd47b2816420a278f?width=1172"
+              src="/Последовательность 01.gif"
               alt="Detail view 1"
               className="w-[30%] h-auto object-cover"
             />
