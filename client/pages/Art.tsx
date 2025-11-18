@@ -57,7 +57,7 @@ export default function Art() {
                 alt="stroke overlay"
                 className="absolute top-0  object-cover left-0 pointer-events-none transition-all duration-500 h-full"
                 style={{
-                  height: '100%', objectPosition: 'left top', transform: "rotate(30deg)",
+                  height: '100%', objectPosition: 'left top', transform: "rotate(90deg)",
                   transformOrigin: "center center"
 }}
               />
