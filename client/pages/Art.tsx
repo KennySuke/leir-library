@@ -55,11 +55,21 @@ export default function Art() {
               <img
                 src="/stroke2.png"
                 alt="stroke overlay"
-                className="absolute justify-start top-0 left-0 w-full h-full pointer-events-none transition-all duration-500"
+                className="
+    absolute
+    top-0
+    left-0
+    pointer-events-none
+    transition-all duration-500
+    h-auto       /* высота авто, сохраняем соотношение сторон */
+  "
                 style={{
-                  objectPosition: `left center`,
+                  width: '100%',      // ширина контейнера
+                  objectFit: 'contain', // вписываем изображение без искажения
+                  objectPosition: 'left top', // левый верхний угол
                 }}
               />
+
 
             </a>
           ))}
