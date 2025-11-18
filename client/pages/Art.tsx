@@ -56,6 +56,9 @@ export default function Art() {
                 src="/stroke2.png"
                 alt="stroke overlay"
                 className="absolute justify-start top-0 left-0 w-full h-full pointer-events-none transition-all duration-500"
+                style={{
+                  objectPosition: `left center`,
+                }}
               />
 
             </a>
