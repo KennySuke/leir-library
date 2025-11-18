@@ -58,6 +58,12 @@ export default function Art() {
                 className="absolute top-0  object-cover left-0 pointer-events-none transition-all duration-500 h-full"
                 style={{ height: '100%', objectPosition: 'left top'}}
               />
+              <img
+                src="/stroke2.png"
+                alt="stroke overlay"
+                className="absolute top-0  object-cover right-0 pointer-events-none transition-all duration-500 h-full hover:hidden"
+                style={{ height: '100%', objectPosition: 'right top' }}
+              />
 
 
             </a>
