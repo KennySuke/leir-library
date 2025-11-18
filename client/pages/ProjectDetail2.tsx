@@ -75,7 +75,7 @@ export default function ProjectDetail2() {
             </div>
 
             {/* Arrow down */}
-            <div className="">
+            <div className="mt-8 md:mt-12">
               <svg
                 className="w-24 h-24 md:w-32 md:h-32 lg:w-[168px] lg:h-[187px]"
                 viewBox="0 0 168 187"
