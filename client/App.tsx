@@ -12,7 +12,7 @@ import Placeholder from "./pages/Placeholder";
 import Statement from "./pages/Statement";
 import Cv from "./pages/Cv";
 import Art from "./pages/Art";
-import ProjectDetail2 from "./pages/ProjectDetail";
+import ProjectDetail2 from "./pages/ProjectDetail2";
 
 const queryClient = new QueryClient();
 
