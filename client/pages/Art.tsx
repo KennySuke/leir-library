@@ -56,13 +56,13 @@ export default function Art() {
                 src="/stroke2.png"
                 alt="stroke overlay"
                 className="absolute top-0  object-cover left-0 pointer-events-none transition-all duration-500 h-full"
-                style={{ height: '100%', objectPosition: 'left top', transform: `rotate(${index*90}deg)` }}
+                style={{ height: '100%', objectPosition: 'left top', transform: `rotate(${1*90}deg)` }}
               />
               <img
                 src="/stroke2.png"
                 alt="stroke overlay"
                 className="absolute top-0  object-cover right-0 pointer-events-none transition-all duration-500 h-full"
-                style={{ height: '100%', objectPosition: 'right top', transform: `rotate(${index * 90}deg)` }}
+                style={{ height: '100%', objectPosition: 'right top', transform: `rotate(${1 * 90}deg)` }}
               />
 
 
