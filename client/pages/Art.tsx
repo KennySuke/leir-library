@@ -56,7 +56,7 @@ export default function Art() {
                 src="/stroke2.png"
                 alt="stroke overlay"
                 className="absolute top-0  object-cover left-0 pointer-events-none transition-all duration-500 h-full rotate-90"
-                style={{ height: '100%', objectPosition: 'left top'}}
+                style={{ height: '100%', objectPosition: 'left top', transform-origin: 'center'}}
               />
               <img
                 src="/stroke2.png"
