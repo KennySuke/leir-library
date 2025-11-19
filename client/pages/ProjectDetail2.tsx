@@ -157,7 +157,7 @@ export default function ProjectDetail2() {
                   src="/image1.png"
                   thumb="/thumbs/image1.png" // убедись, что миниатюра существует
                   alt="Installation view"
-                  className="w-full h-auto object-cover"
+                  className="w-full object-cover"
                 />
               </div>
             </div>
