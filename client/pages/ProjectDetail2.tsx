@@ -155,9 +155,9 @@ export default function ProjectDetail2() {
               <div className="w-full lg:w-[40%] order-1 lg:order-2">
                 <BlurUpImage
                   src="/image1.png"
-                  thumb="/thumbs/image1.png" // убедись, что миниатюра существует
+                  thumb="/thumbs/image1.png"
                   alt="Installation view"
-                  className="w-full h-auto object-cover"
+                  className="w-full aspect-[756/707] object-cover"
                 />
               </div>
             </div>
@@ -260,7 +260,7 @@ export default function ProjectDetail2() {
               src="/photo_2025-11-18_21-48-12.jpg"
               thumb="/thumbs/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
-              className="w-full lg:w-[65%] h-auto object-cover"
+              className="w-full lg:w-[65%] aspect-[16/9] object-cover"
             />
           </div>
 
@@ -285,7 +285,7 @@ export default function ProjectDetail2() {
               src="/photo_2025-11-18_22-11-13.png"
               thumb="/thumbs/photo_2025-11-18_22-11-13.png"
               alt="Artist photo"
-              className="w-full lg:w-[50%] h-auto object-cover"
+              className="w-full lg:w-[50%] aspect-[960/999] object-cover"
             />
           </div>
         </div>
