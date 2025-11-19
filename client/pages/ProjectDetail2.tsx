@@ -91,7 +91,7 @@ export default function ProjectDetail2() {
 
                     {/* Desktop: Expanded materials text */}
                     {!isMobile && showMaterials && (
-                      <div className="mt-4 text-base text-white leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
+                      <div className="mt-4 text-base text-white leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300 transition-all duration-500">
                         {materialsText}
                       </div>
                     )}
