@@ -285,7 +285,7 @@ export default function ProjectDetail2() {
               src="/photo_2025-11-18_22-11-13.png"
               thumb="/thumbs/photo_2025-11-18_22-11-13.png"
               alt="Artist photo"
-              className="w-full lg:w-[50%] h-auto object-cover"
+              className="w-full lg:w-[50%] aspect-[960/999] object-cover"
             />
           </div>
         </div>
