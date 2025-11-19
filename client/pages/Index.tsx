@@ -96,7 +96,7 @@ export default function Index() {
                 src="/leir_main.png"
                 thumb="/thumbs/leir_main.jpg"
                 alt="Leir portrait"
-                className="w-full h-full object-cover"
+                className="w-[80%] md:w-[90%] lg:w-[100%] aspect-[3/4] object-cover"
               />
             </div>
 
