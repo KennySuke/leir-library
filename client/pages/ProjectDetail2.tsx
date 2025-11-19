@@ -177,7 +177,7 @@ export default function ProjectDetail2() {
 
           {/* Bio section */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full max-w-7xl">
-            <div className="w-full lg:w-[45%] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
+            <div className="w-full lg:w-[45%] px-2 lg:px-0 text-base md:text-lg lg:text-xl text-justify leading-relaxed">
               <p className="mb-4">
                 Работа была сделана в соавторстве с Федей Лакихилом.
               </p>
