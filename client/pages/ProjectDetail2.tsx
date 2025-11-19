@@ -123,7 +123,7 @@ export default function ProjectDetail2() {
               className="lg:w-[30%] h-auto object-cover"
             />
 
-            <div className="text-base lg:w-[30%]  md:text-lg lg:text-xl text-justify leading-relaxed">
+            <div className="text-base lg:w-[30%] px-2 lg:px-0 md:text-lg lg:text-xl text-justify leading-relaxed">
               <p className="mb-4">
                 Инсталляция состоит из 3 телевизоров, с трансляцией на них
                 искаженных изображений с аналоговых камер видеонаблюдения,
