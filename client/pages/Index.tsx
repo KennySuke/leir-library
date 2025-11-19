@@ -98,7 +98,7 @@ export default function Index() {
             </div>
 
             {/* Right Text */}
-            <div className="grid grid-rows-[auto_auto] gap-4 order-3 self-end">
+            <div className="grid grid-rows-[auto_auto] gap-4 order-3 w-full self-end">
               {/* Верхняя строка */}
               <div className="text-text-main text-center leading-normal self-end text-justify" style={{ fontSize: '20px' }}>
                 В настоящее время исследует возможности создания непрерывной
