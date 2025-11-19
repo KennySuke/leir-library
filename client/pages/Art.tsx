@@ -182,7 +182,7 @@ export default function Art() {
                     src="/stroke2.png"
                     alt="stroke overlay"
                     className="absolute top-0 object-cover right-0 pointer-events-none transition-all duration-500 w-full"
-                    style={{ width: "100%", objectPosition: "right bottom" }}
+                    style={{ width: "100%", objectPosition: "left bottom" }}
                   />
 
                   {/* Название */}
