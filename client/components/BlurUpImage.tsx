@@ -4,7 +4,7 @@ interface BlurUpImageProps extends HTMLAttributes<HTMLDivElement> {
   src: string;
   thumb: string;
   alt: string;
-  style?: React.CSSProperties; // для полной картинки
+  style?: React.CSSProperties; // стили для основной картинки
 }
 
 export default function BlurUpImage({
@@ -18,18 +18,24 @@ export default function BlurUpImage({
 }: BlurUpImageProps) {
   const [loaded, setLoaded] = useState(false);
 
+  // Определяем, нужно ли применять ч/б к миниатюре
+  const thumbStyle: React.CSSProperties = {};
+  if (style && ("filter" in style)) {
+    thumbStyle.filter = style.filter;
+  }
+
   return (
     <div
       className={`relative overflow-hidden ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Маленькая версия — всегда ч/б */}
+      {/* Маленькая версия — ч/б только если передан фильтр для основной картинки */}
       <img
         src={thumb}
         alt=""
         className="absolute inset-0 w-full h-full object-cover thumbnail"
-        style={{ filter: 'grayscale(1) brightness(0.7)' }} // ч/б миниатюра
+        style={thumbStyle}
       />
 
       {/* Основная */}
