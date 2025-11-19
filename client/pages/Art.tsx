@@ -157,7 +157,7 @@ export default function Art() {
                   minHeight: isActive ? "386px" : "148px",
                 }}
               >
-                <div className="relative w-full h-full overflow-hidden border-[0px] border-black">
+                <div className="relative w-full h-full overflow-hidden">
                   {/* Основное изображение */}
                   <img
                     src={project.image}
