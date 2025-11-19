@@ -137,7 +137,7 @@ export default function Art() {
         </div>
 
         {/* Mobile: vertical scrolling layout */}
-        <div className="flex md:hidden flex-col items-center gap-2 w-full max-w-md pt-10 mb-30">
+        <div className="flex md:hidden flex-col items-center gap-2 w-full max-w-md pt-10 pb-30">
           {projectList.map((project, index) => {
             const isActive = index === activeIndex;
 
