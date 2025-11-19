@@ -70,10 +70,10 @@ export default function Index() {
           />
         </div>
 
-        <div className="hidden lg:flex-1 lg:flex lg:flex-col items-center h-screen justify-center px-4 md:px-8 lg:px-[225px] py-12 md:py-16 lg:py-[200px] gap-6">
-          <div className="w-full h-[80%] grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 lg:gap-[6px] items-center justify-start mx-auto">
+        <div className="hidden lg:flex-1 lg:flex lg:flex-col items-center justify-center px-4 md:px-8 lg:px-[225px] py-12 md:py-16 lg:py-[200px] gap-6">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center justify-start mx-auto">
             {/* Left Text */}
-            <div className="text-text-main text-center leading-normal order-1 lg:order-1 w-full self-start text-justify">
+            <div className="text-text-main text-center leading-normal order-1 lg:order-1 self-start text-justify">
               <div style={{ fontSize: '20px' }}>
                 Leir, междисциплинарная художница, родилась в 2001 году в
                 Новомосковске, живёт и работает в Москве.
@@ -89,16 +89,16 @@ export default function Index() {
             </div>
 
             {/* Center Image */}
-            <div className="flex justify-center order-2 lg:order-2 w-full">
+            <div className="flex justify-center order-2 lg:order-2">
               <img
                 src="/leir_main.png"
                 alt="Leir portrait"
-                className="w-[80%] md:w-[90%] lg:w-[60%] aspect-[3/4] object-cover"
+                className="w-[80%] md:w-[90%] lg:w-[100%] aspect-[3/4] object-cover"
               />
             </div>
 
             {/* Right Text */}
-            <div className="grid grid-rows-[auto_auto] gap-4 order-3 w-full self-end">
+            <div className="grid grid-rows-[auto_auto] gap-4 order-3 self-end">
               {/* Верхняя строка */}
               <div className="text-text-main text-center leading-normal self-end text-justify" style={{ fontSize: '20px' }}>
                 В настоящее время исследует возможности создания непрерывной
