@@ -153,11 +153,10 @@ export default function ProjectDetail2() {
 
               {/* Right image */}
               <div className="w-full lg:w-[40%] order-1 lg:order-2">
-                <BlurUpImage
-                  src="/image1.png"
-                  thumb="/thumbs/image1.png" // убедись, что миниатюра существует
+                <img
+                  src="/image 1.png"
                   alt="Installation view"
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>
