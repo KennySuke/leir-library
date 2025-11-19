@@ -99,6 +99,20 @@
     animation-play-state: paused;
     transition: all 2s ease-in-out;
   }
+
+  .full-image {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .full-image.loaded {
+    opacity: 1;
+  }
+  
+  .thumbnail {
+    filter: blur(20px);
+    transform: scale(1.1);
+  }
 }
 
 @layer base {
