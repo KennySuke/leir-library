@@ -4,6 +4,7 @@ interface BlurUpImageProps extends HTMLAttributes<HTMLDivElement> {
   src: string;
   thumb: string;
   alt: string;
+  style?: React.CSSProperties; // для полной картинки
 }
 
 export default function BlurUpImage({
@@ -23,11 +24,12 @@ export default function BlurUpImage({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Маленькая версия */}
+      {/* Маленькая версия — всегда ч/б */}
       <img
         src={thumb}
         alt=""
         className="absolute inset-0 w-full h-full object-cover thumbnail"
+        style={{ filter: 'grayscale(1) brightness(0.7)' }} // ч/б миниатюра
       />
 
       {/* Основная */}
