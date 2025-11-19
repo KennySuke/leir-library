@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlurUpImage from "@/components/BlurUpImage";
 import { projectList } from "@/config/siteConfig";
 
 export default function Art() {
@@ -102,23 +103,26 @@ export default function Art() {
             >
               <div className="relative w-full h-full overflow-hidden">
                 {/* Основное изображение */}
-                <img
-                  src={project.image}
+                <BlurUpImage
+                  src={project.image} // основное изображение
+                  thumb={`/thumbs/${project.image.split("/").pop()}`} // миниатюра в /public/thumbs/
                   alt={project.title}
                   className="w-full h-full object-cover transition-all duration-500"
+                  // если нужны фильтры, можно прокинуть через style
                   style={{
                     filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
                     objectPosition: `${project.cropX} ${project.cropY}`,
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.filter =
-                      `grayscale(0) brightness(1)`;
+                    const img = e.currentTarget.querySelector(".full-image") as HTMLImageElement;
+                    if (img) img.style.filter = `grayscale(0) brightness(1)`;
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.filter =
-                      `grayscale(1) brightness(${project.grayscaleExposure})`;
+                    const img = e.currentTarget.querySelector(".full-image") as HTMLImageElement;
+                    if (img) img.style.filter = `grayscale(1) brightness(${project.grayscaleExposure})`;
                   }}
                 />
+
 
                 {/* Stroke поверх изображения */}
                 <img
