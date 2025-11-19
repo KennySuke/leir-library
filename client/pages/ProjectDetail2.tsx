@@ -154,7 +154,7 @@ export default function ProjectDetail2() {
               {/* Right image */}
               <div className="w-full lg:w-[40%] order-1 lg:order-2">
                 <img
-                  src="/image 1.png"
+                  src="/image1.png"
                   alt="Installation view"
                   className="w-full h-auto object-cover"
                 />
