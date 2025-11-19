@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlurUpImage from "@/components/BlurUpImage";
 
 export default function ProjectDetail2() {
   const [showMaterials, setShowMaterials] = useState(false);
@@ -152,10 +153,11 @@ export default function ProjectDetail2() {
 
               {/* Right image */}
               <div className="w-full lg:w-[40%] order-1 lg:order-2">
-                <img
+                <BlurUpImage
                   src="/image 1.png"
+                  thumb="/thumbs/image 1.png"
                   alt="Installation view"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover transition-all duration-500"
                 />
               </div>
             </div>
@@ -254,10 +256,11 @@ export default function ProjectDetail2() {
               </p>
             </div>
 
-            <img
+            <BlurUpImage
               src="/photo_2025-11-18_21-48-12.jpg"
+              thumb="/thumbs/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
-              className="w-full lg:w-[65%] h-auto object-cover"
+              className="w-full lg:w-[65%] h-auto object-cover transition-all duration-500"
             />
           </div>
 
@@ -278,10 +281,11 @@ export default function ProjectDetail2() {
               </p>
             </div>
 
-            <img
+            <BlurUpImage
               src="/photo_2025-11-18_22-11-13.png"
+              thumb="/thumbs/photo_2025-11-18_22-11-13.png"
               alt="Artist photo"
-              className="w-full lg:w-[50%] h-auto object-cover"
+              className="w-full lg:w-[50%] h-auto object-cover transition-all duration-500"
             />
           </div>
         </div>
