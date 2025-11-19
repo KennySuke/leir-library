@@ -71,7 +71,7 @@ export default function Index() {
         </div>
 
         <div className="hidden lg:flex-1 lg:flex lg:flex-col items-center justify-center px-4 md:px-8 lg:px-[225px] py-12 md:py-16 lg:py-[200px] gap-6">
-          <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center justify-start mx-auto">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr] gap-6 md:gap-8 lg:gap-[36px] items-center justify-start mx-auto">
             {/* Left Text */}
             <div className="text-text-main text-center leading-normal order-1 lg:order-1 self-start text-justify">
               <div style={{ fontSize: '20px' }}>
