@@ -133,7 +133,7 @@ export default function Index() {
           </div>
           <button
             onClick={handleCopyBio}
-            className="ml-auto flex items-center justify-center w-[230px] h-[86px] rounded-[6px] border-[3px] cursor-pointer transition-all duration-200"
+            className="ml-auto flex items-center justify-center w-[230px] h-[56px] rounded-[6px] border-[3px] cursor-pointer transition-all duration-200"
             style={{
               borderColor: isCopied
                 ? "rgba(134, 134, 134, 0.41)"
@@ -141,7 +141,7 @@ export default function Index() {
               color: isCopied ? "#000" : "#BFBFBF",
               fontFamily:
                 "NotCourierSans, -apple-system, Roboto, Helvetica, sans-serif",
-              fontSize: "20px",
+              fontSize: "15px",
               fontWeight: 400,
               lineHeight: "normal",
               background: isCopied ? "#E8E8E8" : "transparent",
