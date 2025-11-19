@@ -156,7 +156,7 @@ export default function ProjectDetail2() {
                 <img
                   src="/image1.png"
                   alt="Installation view"
-                  className="w-full h-auto object-cover"
+                  className="w-full aspect-[1/1] object-cover"
                 />
               </div>
             </div>
