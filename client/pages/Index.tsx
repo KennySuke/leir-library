@@ -89,7 +89,7 @@ export default function Index() {
             </div>
 
             {/* Center Image */}
-            <div className="flex justify-center order-2 lg:order-2 w-[200px]">
+            <div className="flex justify-center order-2 lg:order-2 w-[1000px]">
               <img
                 src="/leir_main.png"
                 alt="Leir portrait"
