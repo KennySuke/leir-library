@@ -141,7 +141,7 @@ export default function Index() {
               color: isCopied ? "#000" : "#BFBFBF",
               fontFamily:
                 "NotCourierSans, -apple-system, Roboto, Helvetica, sans-serif",
-              fontSize: "15px",
+              fontSize: "17px",
               fontWeight: 400,
               lineHeight: "normal",
               background: isCopied ? "#E8E8E8" : "transparent",
