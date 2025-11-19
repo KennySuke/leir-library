@@ -57,22 +57,22 @@ export default function ProjectDetail2() {
 
                 {/* Info box with materials button */}
                 <div className="relative max-w-full lg:max-w-[90%]">
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-2 border-white/70 p-4 md:p-5">
-                    {/* Left: Title and type */}
-                    <div className="flex-1">
-                      <div className="text-lg md:text-xl">
-                        <span className="font-bold">Leir, федя лакихил</span>
-                        <br />
-                        <span>Интерактивная инсталляция</span>
+                  <div className="flex flex-col border-2 border-white/70 p-4 md:p-5">
+                    {/* Top row: Title and button */}
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-0">
+                      {/* Left: Title and type */}
+                      <div className="flex-1">
+                        <div className="text-lg md:text-xl">
+                          <span className="font-bold">Leir, федя лакихил</span>
+                          <br />
+                          <span>Интерактивная инсталляция</span>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Right: Materials button */}
-                    <div className="relative">
+                      {/* Right: Materials button */}
                       <button
                         onClick={() => setShowMaterials(!showMaterials)}
                         className="
-                          group
                           flex items-center justify-center
                           px-5 py-3
                           rounded-md
@@ -86,32 +86,19 @@ export default function ProjectDetail2() {
                         "
                       >
                         материалы
-                        
-                        {/* Desktop: Hover tooltip */}
-                        {!isMobile && (
-                          <div
-                            className={`
-                              absolute right-full mr-4 top-1/2 -translate-y-1/2
-                              w-72 p-4
-                              bg-[#373737] border-2 border-white/70
-                              rounded-md
-                              text-sm text-[#EAEAEA] leading-relaxed
-                              opacity-0 invisible
-                              group-hover:opacity-100 group-hover:visible
-                              transition-all duration-300
-                              pointer-events-none
-                              z-10
-                              ${showMaterials ? "opacity-100 !visible" : ""}
-                            `}
-                          >
-                            {materialsText}
-                            <div className="absolute top-1/2 -translate-y-1/2 -right-2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-[#373737]" />
-                          </div>
-                        )}
                       </button>
+                    </div>
 
-                      {/* Mobile: Popup */}
-                      {isMobile && showMaterials && (
+                    {/* Desktop: Expanded materials text */}
+                    {!isMobile && showMaterials && (
+                      <div className="mt-4 text-base text-white leading-relaxed animate-in fade-in slide-in-from-top-2 duration-300">
+                        {materialsText}
+                      </div>
+                    )}
+
+                    {/* Mobile: Popup */}
+                    {isMobile && showMaterials && (
+                      <>
                         <div
                           className="
                             fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
@@ -132,23 +119,21 @@ export default function ProjectDetail2() {
                           </button>
                           {materialsText}
                         </div>
-                      )}
 
-                      {/* Mobile: Backdrop */}
-                      {isMobile && showMaterials && (
+                        {/* Mobile: Backdrop */}
                         <div
                           className="fixed inset-0 bg-black/50 z-40"
                           onClick={() => setShowMaterials(false)}
                         />
-                      )}
-                    </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
                 {/* Description */}
                 <div className="text-base md:text-lg lg:text-xl text-justify leading-relaxed lg:max-w-[90%]">
                   <p className="mb-4">
-                    Работа является site-specific для выставки глитч-арта в
+                    Работа явля��тся site-specific для выставки глитч-арта в
                     галерее Краснохолмская. Глитч - ошибка в системе, которая
                     создана человеком. Рассматривая институцию галереи, как
                     систему с присущими ей правилами, художники размышляют о
@@ -286,7 +271,7 @@ export default function ProjectDetail2() {
                 Федя Лакихил — художник сферы новых медиа из России, родился и
                 вырос в городе Люберцы, живет и работает в Москве. Окончил в
                 2024 году магистратуру ArtTech — «Технологическое искусство»
-                НИТУ МИСИС. Работает в практике глитч-арта, с��здавая
+                НИТУ МИСИС. Работает в практике глитч-арта, создавая
                 инсталляции, фото- и видеоработы. Его работы выставлялись в
                 таких галереях, как РОСИЗО, Краснохолмская, ГРАУНД Солянка, ЗИЛ
                 (Москва), Волна (Выкса).
