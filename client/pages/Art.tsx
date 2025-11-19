@@ -62,7 +62,7 @@ export default function Art() {
           flex-1
           flex items-center justify-center
           px-2 md:px-8 lg:px-16
-          pt-32 md:pt-20
+          pt-40 md:pt-20
           pb-20 lg:pb-10
         "
       >
