@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useState, HTMLAttributes } from "react";
 
-export default function BlurUpImage({ src, thumb, alt, className = "" }) {
+interface BlurUpImageProps extends HTMLAttributes<HTMLDivElement> {
+  src: string;
+  thumb: string;
+  alt: string;
+}
+
+export default function BlurUpImage({
+  src,
+  thumb,
+  alt,
+  className = "",
+  style,
+  onMouseEnter,
+  onMouseLeave,
+}: BlurUpImageProps) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div
+      className={`relative overflow-hidden ${className}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       {/* Маленькая версия */}
       <img
         src={thumb}
@@ -19,6 +37,7 @@ export default function BlurUpImage({ src, thumb, alt, className = "" }) {
         className={`absolute inset-0 w-full h-full object-cover full-image ${loaded ? "loaded" : ""
           }`}
         onLoad={() => setLoaded(true)}
+        style={style}
       />
     </div>
   );
