@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlurUpImage from "@/components/BlurUpImage";
 import { footerLinks, footerRepeatCount } from "@/config/siteConfig";
 
 export default function Index() {
@@ -63,8 +64,9 @@ export default function Index() {
 
         {/* Fixed Background Image for Mobile */}
         <div className="lg:hidden fixed top-[20%] left-0 w-full z-10">
-          <img
+          <BlurUpImage
             src="/leir_main.png"
+            thumb="/thumbs/leir_main.jpg"
             alt="Leir portrait"
             className="w-full h-full object-cover"
           />
@@ -90,10 +92,11 @@ export default function Index() {
 
             {/* Center Image */}
             <div className="flex justify-center order-2 lg:order-2">
-              <img
+              <BlurUpImage
                 src="/leir_main.png"
+                thumb="/thumbs/leir_main.jpg"
                 alt="Leir portrait"
-                className="w-[80%] md:w-[90%] lg:w-[100%] aspect-[3/4] object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
 
