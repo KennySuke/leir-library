@@ -104,24 +104,25 @@ export default function Art() {
               <div className="relative w-full h-full overflow-hidden">
                 {/* Основное изображение */}
                 <BlurUpImage
-                  src={project.image} // основное изображение
-                  thumb={`/thumbs/${project.image.split("/").pop()}`} // миниатюра в /public/thumbs/
+                  src={project.image}
+                  thumb={`/thumbs/${project.image.split('/').pop()}`} // путь к миниатюре
                   alt={project.title}
                   className="w-full h-full object-cover transition-all duration-500"
-                  // если нужны фильтры, можно прокинуть через style
-                  style={{
-                    filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
-                    objectPosition: `${project.cropX} ${project.cropY}`,
-                  }}
-                  onMouseEnter={(e) => {
-                    const img = e.currentTarget.querySelector(".full-image") as HTMLImageElement;
+                  // Передаем кастомный обработчик onMouseEnter/onMouseLeave
+                  onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                    const img = e.currentTarget.querySelector<HTMLImageElement>('.full-image');
                     if (img) img.style.filter = `grayscale(0) brightness(1)`;
                   }}
-                  onMouseLeave={(e) => {
-                    const img = e.currentTarget.querySelector(".full-image") as HTMLImageElement;
+                  onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                    const img = e.currentTarget.querySelector<HTMLImageElement>('.full-image');
                     if (img) img.style.filter = `grayscale(1) brightness(${project.grayscaleExposure})`;
                   }}
+                  style={{
+                    objectPosition: `${project.cropX} ${project.cropY}`,
+                    filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
+                  }}
                 />
+
 
 
                 {/* Stroke поверх изображения */}
