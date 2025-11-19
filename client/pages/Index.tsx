@@ -133,7 +133,7 @@ export default function Index() {
           </div>
           <button
             onClick={handleCopyBio}
-            className="ml-auto flex items-center justify-center w-[230px] h-[56px] rounded-[6px] border-[3px] cursor-pointer transition-all duration-200"
+            className="ml-auto flex items-center justify-center w-[230px] h-[106px] rounded-[6px] border-[3px] cursor-pointer transition-all duration-200"
             style={{
               borderColor: isCopied
                 ? "rgba(134, 134, 134, 0.41)"
