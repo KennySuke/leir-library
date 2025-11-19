@@ -105,15 +105,14 @@ export default function Art() {
                 {/* Основное изображение */}
                 <BlurUpImage
                   src={project.image}
-                  thumb={`/thumbs/${project.image.split('/').pop()}`} // путь к миниатюре
+                  thumb={`/thumbs/${project.image.split('/').pop()}`}
                   alt={project.title}
                   className="w-full h-full object-cover transition-all duration-500"
-                  // Передаем кастомный обработчик onMouseEnter/onMouseLeave
-                  onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                  onMouseEnter={(e) => {
                     const img = e.currentTarget.querySelector<HTMLImageElement>('.full-image');
                     if (img) img.style.filter = `grayscale(0) brightness(1)`;
                   }}
-                  onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                  onMouseLeave={(e) => {
                     const img = e.currentTarget.querySelector<HTMLImageElement>('.full-image');
                     if (img) img.style.filter = `grayscale(1) brightness(${project.grayscaleExposure})`;
                   }}
@@ -122,6 +121,7 @@ export default function Art() {
                     filter: `grayscale(1) brightness(${project.grayscaleExposure})`,
                   }}
                 />
+
 
 
 
