@@ -256,7 +256,7 @@ export default function ProjectDetail2() {
               </p>
             </div>
 
-            <BlurUpImage
+            <img
               src="/photo_2025-11-18_21-48-12.jpg"
               thumb="/thumbs/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
