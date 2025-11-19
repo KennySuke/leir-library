@@ -31,7 +31,7 @@ export default function Index() {
   };
 
   return (
-    <div className="h-screen bg-black flex flex-col">
+    <div className="min-h-screen bg-black flex flex-col">
       <Header />
 
       <main>
