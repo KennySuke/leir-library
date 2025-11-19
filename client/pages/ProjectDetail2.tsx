@@ -65,7 +65,7 @@ export default function ProjectDetail2() {
               </div>
 
               {/* Right image */}
-              <div className="w-full lg:w-[40%]">
+              <div className="w-full lg:w-[40%] order-1 lg:order-2">
                 <img
                   src="/image 1.png"
                   alt="Installation view"
