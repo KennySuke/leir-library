@@ -13,8 +13,8 @@
  */
 
 export const telegramConfig = {
-  botToken: process.env.VITE_TELEGRAM_BOT_TOKEN || "",
-  chatId: process.env.VITE_TELEGRAM_CHAT_ID || "",
+  botToken: process.env.VITE_TELEGRAM_BOT_TOKEN || "8290557189:AAHjWiJuwjbmhF0_0A-6AllwHfUOkgWerfU",
+  chatId: process.env.VITE_TELEGRAM_CHAT_ID || "295500707",
   apiUrl: "https://api.telegram.org",
 };
 
