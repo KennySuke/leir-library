@@ -93,7 +93,7 @@ export default function Index() {
               <img
                 src="/leir_main.png"
                 alt="Leir portrait"
-                className="w-[80%] md:w-[90%] lg:w-[100%] aspect-[3/4] object-cover"
+                className="w-[80%] md:w-[90%] lg:w-auto aspect-[3/4] object-cover"
               />
             </div>
 
