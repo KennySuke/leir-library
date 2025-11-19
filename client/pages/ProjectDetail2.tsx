@@ -46,7 +46,7 @@ export default function ProjectDetail2() {
               {/* Left content */}
               <div className="flex flex-col px-2 lg:px-0 gap-8 w-full lg:w-[55%] order-2 lg:order-1">
                 {/* Title and year */}
-                <div className="flex flex-col gap-0">
+                <div className="flex flex-col gap-2">
                   <h1 className="text-4xl md:text-5xl lg:text-[77px] font-bold leading-none">
                     ВНЕДРЕНИЕ ВОЗМОЖНО
                   </h1>
