@@ -120,10 +120,10 @@ export default function ProjectDetail2() {
             <img
               src="/Последовательность 01.gif"
               alt="Detail view 1"
-              className="w-[30%] h-auto object-cover"
+              className="lg:w-[30%] h-auto object-cover"
             />
 
-            <div className="text-base w-[30%]  md:text-lg lg:text-xl text-justify leading-relaxed">
+            <div className="text-base lg:w-[30%]  md:text-lg lg:text-xl text-justify leading-relaxed">
               <p className="mb-4">
                 Инсталляция состоит из 3 телевизоров, с трансляцией на них
                 искаженных изображений с аналоговых камер видеонаблюдения,
@@ -143,7 +143,7 @@ export default function ProjectDetail2() {
             <img
               src="/Последовательность 01_3.gif"
               alt="Detail view 2"
-              className="w-[30%] h-auto object-cover"
+              className="lg:w-[30%] h-auto object-cover"
             />
           </div>
 
