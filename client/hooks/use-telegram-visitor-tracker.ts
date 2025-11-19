@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { isTelegramConfigured } from "@/shared/telegram-config";
+import { isTelegramConfigured } from "./shared/telegram-config";
 
 interface VisitorData {
   timestamp: string;
