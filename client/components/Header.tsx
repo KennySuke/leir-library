@@ -40,8 +40,23 @@ export default function Header() {
     return `text-text-accent hover:opacity-70 transition-opacity ${isActive ? "font-bold" : "font-normal"}`;
   };
 
+  const closeMenus = () => {
+    setLeftOpen(false);
+    setRightOpen(false);
+    setLockedLeft(false);
+    setLockedRight(false);
+  };
+
   return (
-    <header
+    <>
+      {/* Backdrop overlay */}
+      {(leftOpen || rightOpen) && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          onClick={closeMenus}
+        />
+      )}
+      <header
       className="w-full fixed top-0 left-0 z-50"
       style={{
         background: "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0))",
@@ -210,5 +225,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    </>
   );
 }
