@@ -148,7 +148,7 @@ export default function ProjectDetail2() {
           </div>
 
           {/* Text with image */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full lg:pl-[150px]">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5 lg:gap-12 w-full lg:pl-[150px]">
             <div className="w-full lg:w-[30%] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
               <p className="mb-4">
                 В процессе создания работы производилось замыкание различных
