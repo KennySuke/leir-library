@@ -256,11 +256,11 @@ export default function ProjectDetail2() {
               </p>
             </div>
 
-            <img
+            <BlurUpImage
               src="/photo_2025-11-18_21-48-12.jpg"
               thumb="/thumbs/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
-              className="w-full lg:w-[65%] h-auto object-cover"
+              className="w-full lg:w-[65%] h-full object-cover"
             />
           </div>
 
