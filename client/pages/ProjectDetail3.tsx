@@ -159,7 +159,7 @@ export default function ProjectDetail3() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/561c92a93adfad7b83d8ba8f8c10a2eed9c665f2?width=692"
               alt="Gallery image 8"
-              className="w-[15%] aspect-[346/1160] object-cover flex-shrink-0"
+              className="w-[12%] aspect-[346/1160] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/e732a5e1fea74aba1e3ab0e68bb1c2bf73087fe4?width=878"
