@@ -82,7 +82,7 @@ export default function ProjectDetail3() {
           </div>
 
           {/* Section 2: Tall image + text */}
-          <div className="flex flex-col lg:flex-row justify-between items-center w-full px-4 lg:px-[246px]">
+          <div className="flex flex-col lg:flex-row justify-between items-center w-full">
             <div className="w-full aspect-video">
               <iframe
                 src="https://player.vimeo.com/video/1154492549"
@@ -95,7 +95,7 @@ export default function ProjectDetail3() {
               />
             </div>
 
-            <div className="w-full  text-base md:text-lg lg:text-xl text-justify leading-relaxed">
+            <div className="w-full lg:w-[564px] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
               <p>
                 Работа над данным проектом была инициирована интуитивно. Импульсом послужила случайная находка на барахолке <span className="font-bold">старые советские транзисторы</span>, форма которых вызвала ассоциации с возможностью создания некоего <span className="font-bold">ручного существа</span>. Эта идея легла в основу дальнейшего развития.
               </p>
