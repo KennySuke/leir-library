@@ -83,11 +83,17 @@ export default function ProjectDetail3() {
 
           {/* Section 2: Tall image + text */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[246px]">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/2e95f348abe127d431a9ff63cad009269d33a345?width=1184"
-              alt="Detail view"
-              className="w-full lg:w-[592px] aspect-[592/1052] object-cover"
-            />
+            <div className="w-full lg:w-[60%] aspect-video">
+              <iframe
+                src="https://player.vimeo.com/video/1154492549"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
 
             <div className="w-full lg:w-[564px] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
               <p>
