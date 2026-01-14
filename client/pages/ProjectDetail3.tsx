@@ -91,7 +91,7 @@ export default function ProjectDetail3() {
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
-                className="h-full"
+                className="w-full h-full"
               />
             </div>
 
