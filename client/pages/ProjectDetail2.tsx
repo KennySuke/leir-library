@@ -56,80 +56,21 @@ export default function ProjectDetail2() {
                   </div>
                 </div>
 
-                {/* Info box with materials button */}
-                <div className="relative max-w-full max-w-[85%] lg:max-w-[58%]">
-                  <div className="flex flex-col border-2 border-white/70 p-4 md:p-5">
-                    {/* Top row: Title and button */}
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-0">
-                      {/* Left: Title and type */}
-                      <div className="flex-1">
-                        <div className="text-lg md:text-xl">
-                          <span className="font-bold">Leir, федя лакихил</span>
-                          <br />
-                          <span>Интерактивная инсталляция</span>
-                        </div>
-                      </div>
-
-                      {/* Right: Materials button */}
-                      <button
-                        onClick={() => setShowMaterials(!showMaterials)}
-                        className="
-                          flex items-center justify-center
-                          px-5 py-3
-                          rounded-md
-                          border-3 border-[#373737]
-                          bg-[#373737]
-                          text-[#EAEAEA]
-                          text-base
-                          transition-all duration-200
-                          hover:bg-[#4a4a4a]
-                          whitespace-nowrap
-                        "
-                      >
-                        материалы
-                      </button>
+                {/* Info box */}
+                <div className="border-2 border-white/70 p-4 lg:p-[16px_21px] w-full lg:w-[545px]">
+                  <div className="flex justify-between items-center mb-2">
+                    <div className="text-lg lg:text-xl font-bold">
+                      <span className="font-bold">Leir, федя лакихил</span>
+                      <br />
+                      Интерактивная инсталляция
                     </div>
-
-                    {/* Desktop: Expanded materials text */}
-                    {!isMobile && showMaterials && (
-                      <div className="mt-4 text-base text-white leading-relaxed animate-in fade-in slide-in-from-top-2 duration-500">
-                        {materialsText}
-                      </div>
-                    )}
-
-                    {/* Mobile: Popup */}
-                    {isMobile && showMaterials && (
-                      <>
-                        <div
-                          className="
-                            fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                            w-[90vw] max-w-sm p-6
-                            bg-[#373737] border-2 border-white/70
-                            rounded-md
-                            text-sm text-[#EAEAEA] leading-relaxed
-                            z-50
-                            animate-in fade-in duration-200
-                          "
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <button
-                            onClick={() => setShowMaterials(false)}
-                            className="absolute top-2 right-2 text-white/70 hover:text-white text-2xl leading-none"
-                          >
-                            ×
-                          </button>
-                          {materialsText}
-                        </div>
-
-                        {/* Mobile: Backdrop */}
-                        <div
-                          className="fixed inset-0 bg-black/50 z-40"
-                          onClick={() => setShowMaterials(false)}
-                        />
-                      </>
-                    )}
+                  </div>
+                  <div className="text-sm lg:text-base">
+                    Аналоговые камеры видеонаблюдения, подверженные circuit-bending, видеомониторы, DIY управляющая плата (15х10х5 см), объект (15х15х15 см, 3D-печать, гипс), фоторезистор
                   </div>
                 </div>
+
+               
 
                 {/* Description */}
                 <div className="text-base md:text-lg lg:text-xl text-justify leading-relaxed lg:max-w-[90%]">
