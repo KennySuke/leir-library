@@ -31,8 +31,6 @@ export default function ProjectDetail2() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile, showMaterials]);
 
-  const materialsText =
-    "Аналоговые камеры видеонаблюдения, подверженные circuit-bending, видеомониторы, DIY управляющая плата (15х10х5 см), объект (15х15х15 см, 3D-печать, гипс), фоторезистор";
 
   return (
     <div className="min-h-screen bg-black text-white">
