@@ -135,42 +135,42 @@ export default function ProjectDetail3() {
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/706ee648871ba2b158c10652f410af5210ed7f41?width=1018"
               alt="Gallery image 2"
-              className="w-[15%] aspect-[509/1119] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[15%] aspect-[509/1119] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/ae554a15bf33b15e573c65e8fca188c2fd907e07?width=1112"
               alt="Gallery image 3"
-              className="w-[18%] aspect-[556/950] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[18%] aspect-[556/950] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/934ea473b1bf9ecd95ab3fbbea02d65fa92e5d60?width=658"
               alt="Gallery image 4"
-              className="w-[12%] aspect-[329/988] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[12%] aspect-[329/988] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/30fa9bca7ecdad0766bfad646e010615ce16fe8a?width=750"
               alt="Gallery image 5"
-              className="w-[14%] aspect-[375/985] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[14%] aspect-[375/985] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/86c900afd85ec09f4010c125a54c2144e9a81992?width=718"
               alt="Gallery image 6"
-              className="w-[12%] aspect-[359/1074] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[12%] aspect-[359/1074] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/9001e0a815ce23f0dab678aba415219b98360f39?width=1196"
               alt="Gallery image 7"
-              className="w-[19%] aspect-[598/988] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[19%] aspect-[598/988] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/561c92a93adfad7b83d8ba8f8c10a2eed9c665f2?width=692"
               alt="Gallery image 8"
-              className="w-[12%] aspect-[346/1160] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[12%] aspect-[346/1160] object-cover flex-shrink-0"
             />
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/e732a5e1fea74aba1e3ab0e68bb1c2bf73087fe4?width=878"
               alt="Gallery image 9"
-              className="w-[15%] aspect-[439/1160] object-cover flex-shrink-0"
+              className="w-[20%] lg:w-[15%] aspect-[439/1160] object-cover flex-shrink-0"
             />
           </div>
         </div>
