@@ -120,7 +120,7 @@ export default function ProjectDetail3() {
           </div>
 
           {/* Gallery of vertical images */}
-          <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-4 lg:gap-[42px] w-[80%] px-4 overflow-x-auto">
+          <div className="flex flex-wrap lg:flex-nowrap items-center justify-center gap-4 lg:gap-[42px] w-full h-[80%] px-4 overflow-x-auto">
             <img
               src="https://api.builder.io/api/v1/image/assets/TEMP/a13a29c6310043eae83d7e62c62f5a9834c87ecc?width=580"
               alt="Gallery image 1"
