@@ -4,15 +4,78 @@ import Footer from "@/components/Footer";
 import BlurUpImage from "@/components/BlurUpImage";
 
 const galleryImages = [
-  { id: "1", src: "/ProjectDetail3/1.png", thumb: "/thumbs/ProjectDetail3/1.png", alt: "Gallery image 1", width: "w-[20%] lg:w-[9%]", aspect: "aspect-[290/1152]" },
-  { id: "2", src: "/ProjectDetail3/2.png", thumb: "/thumbs/ProjectDetail3/2.png", alt: "Gallery image 2", width: "w-[36%] lg:w-[15%]", aspect: "aspect-[509/1119]" },
-  { id: "3", src: "/ProjectDetail3/3.png", thumb: "/thumbs/ProjectDetail3/3.png", alt: "Gallery image 3", width: "w-[40%] lg:w-[18%]", aspect: "aspect-[556/950]" },
-  { id: "4", src: "/ProjectDetail3/4.png", thumb: "/thumbs/ProjectDetail3/4.png", alt: "Gallery image 4", width: "w-[25%] lg:w-[12%]", aspect: "aspect-[329/988]" },
-  { id: "5", src: "/ProjectDetail3/5.png", thumb: "/thumbs/ProjectDetail3/5.png", alt: "Gallery image 5", width: "w-[28%] lg:w-[14%]", aspect: "aspect-[375/985]" },
-  { id: "6", src: "/ProjectDetail3/6.png", thumb: "/thumbs/ProjectDetail3/6.png", alt: "Gallery image 6", width: "w-[24%] lg:w-[12%]", aspect: "aspect-[359/1074]" },
-  { id: "7", src: "/ProjectDetail3/7.png", thumb: "/thumbs/ProjectDetail3/7.png", alt: "Gallery image 7", width: "w-[38%] lg:w-[19%]", aspect: "aspect-[598/988]" },
-  { id: "8", src: "/ProjectDetail3/8.png", thumb: "/thumbs/ProjectDetail3/8.png", alt: "Gallery image 8", width: "w-[24%] lg:w-[12%]", aspect: "aspect-[346/1160]" },
-  { id: "9", src: "/ProjectDetail3/9.png", thumb: "/thumbs/ProjectDetail3/9.png", alt: "Gallery image 9", width: "w-[30%] lg:w-[15%]", aspect: "aspect-[439/1160]" },
+  {
+    id: "1",
+    src: "/ProjectDetail3/1.png",
+    thumb: "/thumbs/ProjectDetail3/1.png",
+    alt: "Gallery image 1",
+    width: "w-[20%] lg:w-[9%]",
+    aspect: "aspect-[290/1152]",
+  },
+  {
+    id: "2",
+    src: "/ProjectDetail3/2.png",
+    thumb: "/thumbs/ProjectDetail3/2.png",
+    alt: "Gallery image 2",
+    width: "w-[36%] lg:w-[15%]",
+    aspect: "aspect-[509/1119]",
+  },
+  {
+    id: "3",
+    src: "/ProjectDetail3/3.png",
+    thumb: "/thumbs/ProjectDetail3/3.png",
+    alt: "Gallery image 3",
+    width: "w-[40%] lg:w-[18%]",
+    aspect: "aspect-[556/950]",
+  },
+  {
+    id: "4",
+    src: "/ProjectDetail3/4.png",
+    thumb: "/thumbs/ProjectDetail3/4.png",
+    alt: "Gallery image 4",
+    width: "w-[25%] lg:w-[12%]",
+    aspect: "aspect-[329/988]",
+  },
+  {
+    id: "5",
+    src: "/ProjectDetail3/5.png",
+    thumb: "/thumbs/ProjectDetail3/5.png",
+    alt: "Gallery image 5",
+    width: "w-[28%] lg:w-[14%]",
+    aspect: "aspect-[375/985]",
+  },
+  {
+    id: "6",
+    src: "/ProjectDetail3/6.png",
+    thumb: "/thumbs/ProjectDetail3/6.png",
+    alt: "Gallery image 6",
+    width: "w-[24%] lg:w-[12%]",
+    aspect: "aspect-[359/1074]",
+  },
+  {
+    id: "7",
+    src: "/ProjectDetail3/7.png",
+    thumb: "/thumbs/ProjectDetail3/7.png",
+    alt: "Gallery image 7",
+    width: "w-[38%] lg:w-[19%]",
+    aspect: "aspect-[598/988]",
+  },
+  {
+    id: "8",
+    src: "/ProjectDetail3/8.png",
+    thumb: "/thumbs/ProjectDetail3/8.png",
+    alt: "Gallery image 8",
+    width: "w-[24%] lg:w-[12%]",
+    aspect: "aspect-[346/1160]",
+  },
+  {
+    id: "9",
+    src: "/ProjectDetail3/9.png",
+    thumb: "/thumbs/ProjectDetail3/9.png",
+    alt: "Gallery image 9",
+    width: "w-[30%] lg:w-[15%]",
+    aspect: "aspect-[439/1160]",
+  },
 ];
 
 function InfiniteGallery() {
@@ -26,7 +89,8 @@ function InfiniteGallery() {
     if (containerRef.current) {
       setTimeout(() => {
         if (containerRef.current) {
-          containerRef.current.scrollLeft = containerRef.current.scrollWidth / 3;
+          containerRef.current.scrollLeft =
+            containerRef.current.scrollWidth / 3;
         }
       }, 0);
     }
@@ -215,7 +279,9 @@ export default function ProjectDetail3() {
                 рефлексировать над собственными побуждениями, стоявшими за этим
                 замыслом. В ходе анализа стало очевидно, что в современной
                 культуре наблюдается устойчивая тенденция к{" "}
-                <span className="font-bold">очеловечиванию домашних животных</span>
+                <span className="font-bold">
+                  очеловечиванию домашних животных
+                </span>
                 . Параллельно с этим в сферу, связанную с уходом и содержанием
                 животных, постепенно проникают стандарты{" "}
                 <span className="font-bold">конвенциональной красоты</span>,
