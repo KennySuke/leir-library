@@ -96,12 +96,12 @@ export default function ProjectDetail3() {
             <div className="w-full aspect-video">
               <iframe
                 src="https://player.vimeo.com/video/1154492549"
-                width="100% lg:[200%]"
-                height="100% lg:[200%]"
+                width="100%"
+                height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
-                className="w-full lg:w-[592px] aspect-[3/1] lg:aspect-[592/1052] object-cover"
+                className="w-full lg:w-[592px] aspect-[3/1] lg:aspect-[592/592] object-cover"
               />
             </div>
 
