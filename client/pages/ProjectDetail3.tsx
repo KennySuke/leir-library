@@ -38,7 +38,7 @@ function InfiniteGallery() {
       if (!container) return;
 
       e.preventDefault();
-      const scrollAmount = e.deltaY > 0 ? 80 : -80;
+      const scrollAmount = e.deltaY > 0 ? 150 : -150;
       container.scrollLeft += scrollAmount;
 
       checkInfiniteScroll();
