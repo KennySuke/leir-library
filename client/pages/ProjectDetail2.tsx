@@ -93,8 +93,8 @@ export default function ProjectDetail2() {
               {/* Right image */}
               <div className="w-full lg:w-[40%] order-1 lg:order-2">
                 <BlurUpImage
-                  src="/image1.png"
-                  thumb="/thumbs/image1.png"
+                  src="/ProjectDetail2/image1.png"
+                  thumb="/thumbs/ProjectDetail2/image1.png"
                   alt="Installation view"
                   className="w-full aspect-[756/707] object-cover"
                 />
@@ -145,7 +145,7 @@ export default function ProjectDetail2() {
           {/* Two images with text */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-5 lg:gap-2 w-full">
             <img
-              src="/Последовательность 01.gif"
+              src="/ProjectDetail2/Последовательность 01.gif"
               alt="Detail view 1"
               className="lg:w-[30%] h-auto object-cover"
             />
@@ -168,7 +168,7 @@ export default function ProjectDetail2() {
             </div>
 
             <img
-              src="/Последовательность 01_3.gif"
+              src="/ProjectDetail2/Последовательность 01_3.gif"
               alt="Detail view 2"
               className="lg:w-[30%] h-auto object-cover"
             />
@@ -196,8 +196,8 @@ export default function ProjectDetail2() {
             </div>
 
             <BlurUpImage
-              src="/photo_2025-11-18_21-48-12.jpg"
-              thumb="/thumbs/photo_2025-11-18_21-48-12.jpg"
+              src="/ProjectDetail2/photo_2025-11-18_21-48-12.jpg"
+              thumb="/thumbs/ProjectDetail2/photo_2025-11-18_21-48-12.jpg"
               alt="Circuit boards"
               className="w-full lg:w-[65%] aspect-[16/9] object-cover"
             />
@@ -221,8 +221,8 @@ export default function ProjectDetail2() {
             </div>
 
             <BlurUpImage
-              src="/photo_2025-11-18_22-11-13.png"
-              thumb="/thumbs/photo_2025-11-18_22-11-13.png"
+              src="/ProjectDetail2/photo_2025-11-18_22-11-13.png"
+              thumb="/thumbs/ProjectDetail2/photo_2025-11-18_22-11-13.png"
               alt="Artist photo"
               className="w-full lg:w-[50%] aspect-[960/999] object-cover"
             />
