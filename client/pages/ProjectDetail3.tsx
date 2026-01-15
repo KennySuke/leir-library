@@ -101,7 +101,7 @@ export default function ProjectDetail3() {
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full lg:w-[592px] lg:aspect-[592/1052] object-cover"
+                className="w-full lg:w-[592px] aspect-[592/592] lg:aspect-[592/1052] object-cover"
               />
             </div>
 
