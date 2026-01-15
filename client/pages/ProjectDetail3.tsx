@@ -92,7 +92,7 @@ export default function ProjectDetail3() {
           </div>
 
           {/* Section 2: Tall image + text */}
-          <div className="flex flex-col lg:flex-row  items-center lg:items-left w-full gap-80 lg:gap-0 px-4 lg:px-[246px]">
+          <div className="flex flex-col lg:flex-row  items-center lg:items-left w-full gap-100 lg:gap-0 px-4 lg:px-[246px]">
             <div className="w-full aspect-video">
               <iframe
                 src="https://player.vimeo.com/video/1154492549"
