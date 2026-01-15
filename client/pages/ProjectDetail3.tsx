@@ -97,7 +97,7 @@ export default function ProjectDetail3() {
               <iframe
                 src="https://player.vimeo.com/video/1154492549"
                 width="200%"
-                height="200%"
+                height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
