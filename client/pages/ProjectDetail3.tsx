@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlurUpImage from "@/components/BlurUpImage";
+
 
 export default function ProjectDetail3() {
   return (
@@ -54,8 +56,9 @@ export default function ProjectDetail3() {
 
               {/* Right image */}
               <div className="w-full lg:w-[756px] order-1 lg:order-2">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/b6e198f100d08b444644fc8672bbcc1a795db358?width=1512"
+                <BlurUpImage
+                  src="/ProjectDetail3/main.png"
+                  thumb="/thumbs//ProjectDetail3/main.png"
                   alt="ЖИВОТИНКА artwork"
                   className="w-full aspect-[756/707] object-cover"
                 />
@@ -155,8 +158,9 @@ export default function ProjectDetail3() {
               </p>
             </div>
 
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/1a40fafab7b07b9e536ffd107172f84e3f757a6e?width=2132"
+            <BlurUpImage
+              src="/ProjectDetail3/second.jpg"
+              thumb="/thumbs//ProjectDetail3/second.jpg"
               alt="Close-up view"
               className="w-full lg:w-[1066px] aspect-[1066/599] object-cover"
             />
@@ -164,48 +168,56 @@ export default function ProjectDetail3() {
 
           {/* Gallery of vertical images */}
           <div className="flex flex-nowrap items-center justify-left gap-4 lg:gap-[42px] w-full px-4 overflow-x-auto">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/a13a29c6310043eae83d7e62c62f5a9834c87ecc?width=580"
+            <BlurUpImage
+              src="/ProjectDetail3/1.png"
+              thumb="/thumbs//ProjectDetail3/1.png"
               alt="Gallery image 1"
               className="w-[20%] lg:w-[9%] aspect-[290/1152] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/706ee648871ba2b158c10652f410af5210ed7f41?width=1018"
+            <BlurUpImage
+              src="/ProjectDetail3/2.png"
+              thumb="/thumbs//ProjectDetail3/2.png"
               alt="Gallery image 2"
               className="w-[36%] lg:w-[15%] aspect-[509/1119] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/ae554a15bf33b15e573c65e8fca188c2fd907e07?width=1112"
+            <BlurUpImage
+              src="/ProjectDetail3/3.png"
+              thumb="/thumbs//ProjectDetail3/3.png"
               alt="Gallery image 3"
               className="w-[40%] lg:w-[18%] aspect-[556/950] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/934ea473b1bf9ecd95ab3fbbea02d65fa92e5d60?width=658"
+            <BlurUpImage
+              src="/ProjectDetail3/4.png"
+              thumb="/thumbs//ProjectDetail3/4.png"
               alt="Gallery image 4"
               className="w-[25%] lg:w-[12%] aspect-[329/988] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/30fa9bca7ecdad0766bfad646e010615ce16fe8a?width=750"
-              alt="Gallery image 5"
+            <BlurUpImage
+              src="/ProjectDetail3/5.png"
+              thumb="/thumbs//ProjectDetail3/5.png"
               className="w-[28%] lg:w-[14%] aspect-[375/985] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/86c900afd85ec09f4010c125a54c2144e9a81992?width=718"
+            <BlurUpImage
+              src="/ProjectDetail3/6.png"
+              thumb="/thumbs//ProjectDetail3/6.png"
               alt="Gallery image 6"
               className="w-[24%] lg:w-[12%] aspect-[359/1074] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/9001e0a815ce23f0dab678aba415219b98360f39?width=1196"
+            <BlurUpImage
+              src="/ProjectDetail3/7.png"
+              thumb="/thumbs//ProjectDetail3/7.png"
               alt="Gallery image 7"
               className="w-[38%] lg:w-[19%] aspect-[598/988] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/561c92a93adfad7b83d8ba8f8c10a2eed9c665f2?width=692"
+            <BlurUpImage
+              src="/ProjectDetail3/8.png"
+              thumb="/thumbs//ProjectDetail3/8.png"
               alt="Gallery image 8"
               className="w-[24%] lg:w-[12%] aspect-[346/1160] object-cover flex-shrink-0"
             />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/e732a5e1fea74aba1e3ab0e68bb1c2bf73087fe4?width=878"
+            <BlurUpImage
+              src="/ProjectDetail3/9.png"
+              thumb="/thumbs//ProjectDetail3/9.png"
               alt="Gallery image 9"
               className="w-[30%] lg:w-[15%] aspect-[439/1160] object-cover flex-shrink-0"
             />
