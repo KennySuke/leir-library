@@ -168,7 +168,7 @@ export default function ProjectDetail4() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full px-4 lg:px-[276px]">
             {/* Large title */}
             <div className="inline-flex px-1 pb-4 bg-white w-fit">
-              <h2 className="text-4xl md:text-6xl lg:text-[96px] font-bold text-black leading-[82.4%] max-w-[601px]">
+              <h2 className="text-4xl md:text-6xl lg:text-[96px] font-bold whitespace-nowrap text-black leading-[82.4%] max-w-[601px]">
                 цифровой паноптикум
               </h2>
             </div>
