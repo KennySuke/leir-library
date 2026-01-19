@@ -224,7 +224,7 @@ export default function ProjectDetail4() {
                 height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
-                className="w-full aspect-[534/277]"
+                className="w-[200px]"
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
