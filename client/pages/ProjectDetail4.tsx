@@ -224,7 +224,7 @@ export default function ProjectDetail4() {
                 height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
-                className="w-[200px]"
+                className="w-full h-full"
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
@@ -235,7 +235,7 @@ export default function ProjectDetail4() {
                 height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
-                className="w-full"
+                className="w-full h-full"
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
@@ -246,7 +246,7 @@ export default function ProjectDetail4() {
                 height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
-                className="w-full"
+                className="w-full h-full"
               />
             </div>
           </div>
