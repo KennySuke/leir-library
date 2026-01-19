@@ -227,18 +227,28 @@ export default function ProjectDetail4() {
                 className="w-full aspect-[534/277]"
               />
             </div>
-            <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Gallery image 2"
-              className="w-full md:w-[534px] aspect-[534/277] object-cover"
-            />
-            <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Gallery image 3"
-              className="w-full md:w-[534px] aspect-[534/277] object-cover"
-            />
+            <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
+              <iframe
+                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
+                title="Installation live stream"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                className="w-full aspect-[534/277]"
+              />
+            </div>
+            <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
+              <iframe
+                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
+                title="Installation live stream"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                className="w-full aspect-[534/277]"
+              />
+            </div>
           </div>
         </div>
       </main>
