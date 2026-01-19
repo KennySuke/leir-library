@@ -216,12 +216,17 @@ export default function ProjectDetail4() {
 
           {/* Bottom gallery - 3 images */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:pt-[128px]">
-            <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Gallery image 1"
-              className="w-full md:w-[534px] aspect-[534/277] object-cover"
-            />
+            <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
+              <iframe
+                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
+                title="Installation live stream"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+                className="w-full h-full"
+              />
+            </div>
             <BlurUpImage
               src="/ProjectDetail4/3.png"
               thumb="/thumbs/ProjectDetail4/3.png"
