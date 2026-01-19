@@ -119,8 +119,8 @@ export default function ProjectDetail4() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full px-4">
             {/* Left image */}
             <BlurUpImage
-              src="/ProjectDetail4/1.png"
-              thumb="/thumbs/ProjectDetail4/1.png"
+              src="/ProjectDetail4/2.png"
+              thumb="/thumbs/ProjectDetail4/2.png"
               alt="Detail view 1"
               className="w-full lg:w-[581px] aspect-[581/327] object-cover"
             />
@@ -207,8 +207,8 @@ export default function ProjectDetail4() {
 
             {/* Right image */}
             <BlurUpImage
-              src="/ProjectDetail4/2.png"
-              thumb="/thumbs/ProjectDetail4/2.png"
+              src="/ProjectDetail4/1.png"
+              thumb="/thumbs/ProjectDetail4/1.png"
               alt="Online cameras grid"
               className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
             />
