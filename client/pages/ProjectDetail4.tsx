@@ -36,7 +36,7 @@ export default function ProjectDetail4() {
                       </div>
 
                       {/* Info box */}
-                      <div className="border-2 border-white/70 p-4 lg:p-[16px_21px] w-full max-w-[545px] mx-auto">
+                      <div className="border-2 border-white/70 p-4 lg:px-[21px] lg:py-[16px] w-full max-w-[545px] mx-auto">
                         <div className="flex justify-between items-center mb-2">
                           <div className="text-lg lg:text-xl font-bold">
                             <span className="font-bold">Leir</span>
