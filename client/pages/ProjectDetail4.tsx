@@ -224,7 +224,7 @@ export default function ProjectDetail4() {
                 height="100%"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
-                className="w-full h-full"
+                className="w-full aspect-[534/277]"
               />
             </div>
             <BlurUpImage
