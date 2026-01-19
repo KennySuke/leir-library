@@ -23,7 +23,7 @@ export default function ProjectDetail4() {
 
                 {/* Centered overlay content */}
                 <div className="absolute inset-0 flex items-center px-4 md:px-8 lg:px-[199px] py-[126px]">
-                  <div className="w-full max-w-[1306px] flex flex-col items-center justify-center gap-[10px]">
+                  <div className="w-full max-w-[1306px] flex flex-col items-center gap-[10px]">
                     <div className="flex flex-col gap-6 lg:gap-[30px] w-full px-2 lg:px-[161px]">
                       {/* Title and year */}
                       <div className="flex flex-col gap-0 lg:gap-[-2px]">
