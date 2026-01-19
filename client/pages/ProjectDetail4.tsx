@@ -119,8 +119,8 @@ export default function ProjectDetail4() {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full px-4">
             {/* Left image */}
             <BlurUpImage
-              src="/ProjectDetail4/detail1.jpg"
-              thumb="/thumbs/ProjectDetail4/detail1.jpg"
+              src="/ProjectDetail4/1.png"
+              thumb="/thumbs/ProjectDetail4/1.png"
               alt="Detail view 1"
               className="w-full lg:w-[581px] aspect-[581/327] object-cover"
             />
@@ -157,8 +157,8 @@ export default function ProjectDetail4() {
 
             {/* Right image */}
             <BlurUpImage
-              src="/ProjectDetail4/detail2.jpg"
-              thumb="/thumbs/ProjectDetail4/detail2.jpg"
+              src="/ProjectDetail4/2.png"
+              thumb="/thumbs/ProjectDetail4/2.png"
               alt="Detail view 2"
               className="w-full lg:w-[588px] aspect-square object-cover"
             />
@@ -207,8 +207,8 @@ export default function ProjectDetail4() {
 
             {/* Right image */}
             <BlurUpImage
-              src="/ProjectDetail4/cameras_grid.jpg"
-              thumb="/thumbs/ProjectDetail4/cameras_grid.jpg"
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
               alt="Online cameras grid"
               className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
             />
@@ -217,20 +217,20 @@ export default function ProjectDetail4() {
           {/* Bottom gallery - 3 images */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:pt-[128px]">
             <BlurUpImage
-              src="/ProjectDetail4/gallery1.jpg"
-              thumb="/thumbs/ProjectDetail4/gallery1.jpg"
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
               alt="Gallery image 1"
               className="w-full md:w-[534px] aspect-[534/277] object-cover"
             />
             <BlurUpImage
-              src="/ProjectDetail4/gallery2.jpg"
-              thumb="/thumbs/ProjectDetail4/gallery2.jpg"
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
               alt="Gallery image 2"
               className="w-full md:w-[534px] aspect-[534/277] object-cover"
             />
             <BlurUpImage
-              src="/ProjectDetail4/gallery3.jpg"
-              thumb="/thumbs/ProjectDetail4/gallery3.jpg"
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
               alt="Gallery image 3"
               className="w-full md:w-[534px] aspect-[534/277] object-cover"
             />
