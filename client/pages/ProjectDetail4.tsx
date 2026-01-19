@@ -169,7 +169,7 @@ export default function ProjectDetail4() {
             {/* Large title */}
             <div className="inline-flex px-1 pb-4 bg-white w-fit">
               <h2 className="text-4xl md:text-6xl lg:text-[96px] font-bold whitespace-nowrap text-black leading-[82.4%] max-w-[601px]">
-                цифровой паноптикум
+                цифровой <br /> паноптикум
               </h2>
             </div>
 
