@@ -1,5 +1,166 @@
+import { useRef, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BlurUpImage from "@/components/BlurUpImage";
+
+const galleryImages = [
+  {
+    id: "1",
+    src: "/ProjectDetail3/1.png",
+    thumb: "/thumbs/ProjectDetail3/1.png",
+    alt: "Gallery image 1",
+    width: "w-[20%] lg:w-[9%]",
+    aspect: "aspect-[290/1152]",
+  },
+  {
+    id: "2",
+    src: "/ProjectDetail3/2.png",
+    thumb: "/thumbs/ProjectDetail3/2.png",
+    alt: "Gallery image 2",
+    width: "w-[36%] lg:w-[15%]",
+    aspect: "aspect-[509/1119]",
+  },
+  {
+    id: "3",
+    src: "/ProjectDetail3/3.png",
+    thumb: "/thumbs/ProjectDetail3/3.png",
+    alt: "Gallery image 3",
+    width: "w-[40%] lg:w-[18%]",
+    aspect: "aspect-[556/950]",
+  },
+  {
+    id: "4",
+    src: "/ProjectDetail3/4.png",
+    thumb: "/thumbs/ProjectDetail3/4.png",
+    alt: "Gallery image 4",
+    width: "w-[25%] lg:w-[12%]",
+    aspect: "aspect-[329/988]",
+  },
+  {
+    id: "5",
+    src: "/ProjectDetail3/5.png",
+    thumb: "/thumbs/ProjectDetail3/5.png",
+    alt: "Gallery image 5",
+    width: "w-[28%] lg:w-[14%]",
+    aspect: "aspect-[375/985]",
+  },
+  {
+    id: "6",
+    src: "/ProjectDetail3/6.png",
+    thumb: "/thumbs/ProjectDetail3/6.png",
+    alt: "Gallery image 6",
+    width: "w-[24%] lg:w-[12%]",
+    aspect: "aspect-[359/1074]",
+  },
+  {
+    id: "7",
+    src: "/ProjectDetail3/7.png",
+    thumb: "/thumbs/ProjectDetail3/7.png",
+    alt: "Gallery image 7",
+    width: "w-[38%] lg:w-[19%]",
+    aspect: "aspect-[598/988]",
+  },
+  {
+    id: "8",
+    src: "/ProjectDetail3/8.png",
+    thumb: "/thumbs/ProjectDetail3/8.png",
+    alt: "Gallery image 8",
+    width: "w-[24%] lg:w-[12%]",
+    aspect: "aspect-[346/1160]",
+  },
+  {
+    id: "9",
+    src: "/ProjectDetail3/9.png",
+    thumb: "/thumbs/ProjectDetail3/9.png",
+    alt: "Gallery image 9",
+    width: "w-[30%] lg:w-[15%]",
+    aspect: "aspect-[439/1160]",
+  },
+];
+
+function InfiniteGallery() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [displayImages, setDisplayImages] = useState(galleryImages);
+
+  useEffect(() => {
+    const tripleImages = [...galleryImages, ...galleryImages, ...galleryImages];
+    setDisplayImages(tripleImages);
+
+    if (containerRef.current) {
+      setTimeout(() => {
+        if (containerRef.current) {
+          containerRef.current.scrollLeft =
+            containerRef.current.scrollWidth / 3;
+        }
+      }, 0);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      e.preventDefault();
+      const scrollAmount = e.deltaY > 0 ? 350 : -350;
+      container.scrollLeft += scrollAmount;
+
+      checkInfiniteScroll();
+    };
+
+    const checkInfiniteScroll = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      const oneThirdWidth = container.scrollWidth / 3;
+      const scrollPos = container.scrollLeft;
+
+      if (scrollPos < oneThirdWidth * 0.2) {
+        container.scrollLeft = scrollPos + oneThirdWidth;
+      } else if (scrollPos > oneThirdWidth * 1.8) {
+        container.scrollLeft = scrollPos - oneThirdWidth;
+      }
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, [displayImages]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="flex flex-nowrap items-center justify-left gap-4 lg:gap-[42px] w-full px-4 overflow-x-auto"
+      style={{
+        scrollBehavior: "smooth",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
+      }}
+    >
+      <style>{`
+        div[data-gallery-scroll]::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      {displayImages.map((image, index) => (
+        <BlurUpImage
+          key={`${image.id}-${index}`}
+          src={image.src}
+          thumb={image.thumb}
+          alt={image.alt}
+          className={`${image.width} ${image.aspect} object-cover flex-shrink-0`}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function ProjectDetail3() {
   return (
@@ -54,8 +215,9 @@ export default function ProjectDetail3() {
 
               {/* Right image */}
               <div className="w-full lg:w-[756px] order-1 lg:order-2">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/b6e198f100d08b444644fc8672bbcc1a795db358?width=1512"
+                <BlurUpImage
+                  src="/ProjectDetail3/main.png"
+                  thumb="/thumbs/ProjectDetail3/main.png"
                   alt="ЖИВОТИНКА artwork"
                   className="w-full aspect-[756/707] object-cover"
                 />
@@ -88,9 +250,9 @@ export default function ProjectDetail3() {
             </div>
           </div>
 
-          {/* Section 2: Tall image + text */}
-          <div className="flex flex-col lg:flex-row justify-between items-center lg:items-left w-full gap-8 lg:gap-0 px-4 lg:px-[246px]">
-            <div className="w-[60%] lg:w-full aspect-video">
+          {/* Section 2: Video + text */}
+          <div className="flex flex-col lg:flex-row  items-center lg:items-left w-full gap-8 lg:gap-0 px-4 lg:px-[246px]">
+            <div className="w-full aspect-video lg:aspect-[592/592]">
               <iframe
                 src="https://player.vimeo.com/video/1154492549"
                 width="100%"
@@ -98,7 +260,7 @@ export default function ProjectDetail3() {
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
-                className="w-full lg:w-[592px] aspect-[592/1052] object-cover"
+                className="w-full lg:w-[592px] aspect-[1/1] object-cover"
               />
             </div>
 
@@ -155,61 +317,16 @@ export default function ProjectDetail3() {
               </p>
             </div>
 
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/1a40fafab7b07b9e536ffd107172f84e3f757a6e?width=2132"
+            <BlurUpImage
+              src="/ProjectDetail3/second.jpg"
+              thumb="/thumbs/ProjectDetail3/second.jpg"
               alt="Close-up view"
               className="w-full lg:w-[1066px] aspect-[1066/599] object-cover"
             />
           </div>
 
-          {/* Gallery of vertical images */}
-          <div className="flex flex-nowrap items-center justify-left gap-4 lg:gap-[42px] w-full px-4 overflow-x-auto">
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/a13a29c6310043eae83d7e62c62f5a9834c87ecc?width=580"
-              alt="Gallery image 1"
-              className="w-[20%] lg:w-[9%] aspect-[290/1152] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/706ee648871ba2b158c10652f410af5210ed7f41?width=1018"
-              alt="Gallery image 2"
-              className="w-[36%] lg:w-[15%] aspect-[509/1119] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/ae554a15bf33b15e573c65e8fca188c2fd907e07?width=1112"
-              alt="Gallery image 3"
-              className="w-[40%] lg:w-[18%] aspect-[556/950] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/934ea473b1bf9ecd95ab3fbbea02d65fa92e5d60?width=658"
-              alt="Gallery image 4"
-              className="w-[25%] lg:w-[12%] aspect-[329/988] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/30fa9bca7ecdad0766bfad646e010615ce16fe8a?width=750"
-              alt="Gallery image 5"
-              className="w-[28%] lg:w-[14%] aspect-[375/985] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/86c900afd85ec09f4010c125a54c2144e9a81992?width=718"
-              alt="Gallery image 6"
-              className="w-[24%] lg:w-[12%] aspect-[359/1074] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/9001e0a815ce23f0dab678aba415219b98360f39?width=1196"
-              alt="Gallery image 7"
-              className="w-[38%] lg:w-[19%] aspect-[598/988] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/561c92a93adfad7b83d8ba8f8c10a2eed9c665f2?width=692"
-              alt="Gallery image 8"
-              className="w-[24%] lg:w-[12%] aspect-[346/1160] object-cover flex-shrink-0"
-            />
-            <img
-              src="https://api.builder.io/api/v1/image/assets/TEMP/e732a5e1fea74aba1e3ab0e68bb1c2bf73087fe4?width=878"
-              alt="Gallery image 9"
-              className="w-[30%] lg:w-[15%] aspect-[439/1160] object-cover flex-shrink-0"
-            />
-          </div>
+          {/* Gallery of vertical images with infinite scroll */}
+          <InfiniteGallery />
         </div>
       </main>
 
