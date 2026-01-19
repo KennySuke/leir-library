@@ -157,8 +157,8 @@ export default function ProjectDetail4() {
 
             {/* Right image */}
             <BlurUpImage
-              src="/ProjectDetail4/2.png"
-              thumb="/thumbs/ProjectDetail4/2.png"
+              src="/ProjectDetail4/1.png"
+              thumb="/thumbs/ProjectDetail4/1.png"
               alt="Detail view 2"
               className="w-full lg:w-[588px] aspect-square object-cover"
             />
@@ -207,8 +207,8 @@ export default function ProjectDetail4() {
 
             {/* Right image */}
             <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
+              src="/ProjectDetail4/2.png"
+              thumb="/thumbs/ProjectDetail4/2.png"
               alt="Online cameras grid"
               className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
             />
