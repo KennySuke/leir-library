@@ -39,6 +39,7 @@ const AppContent = () => {
       <Route path="/projects/project-1" element={<Placeholder />} />
       <Route path="/projects/project-2" element={<ProjectDetail2 />} />
       <Route path="/projects/project-3" element={<ProjectDetail3 />} />
+      <Route path="/projects/project-4" element={<ProjectDetail4 />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
