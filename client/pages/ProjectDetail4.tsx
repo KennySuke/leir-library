@@ -30,7 +30,7 @@ export default function ProjectDetail4() {
                         <h1 className="text-4xl md:text-5xl lg:text-[77px] font-bold leading-none">
                           EYE CORNER
                         </h1>
-                        <div className="text-2xl md:text-3xl lg:text-[43px] font-bold text-center">
+                        <div className="text-2xl md:text-3xl lg:text-[43px] font-bold">
                           2024
                         </div>
                       </div>
