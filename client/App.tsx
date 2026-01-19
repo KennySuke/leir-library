@@ -14,6 +14,7 @@ import Cv from "./pages/Cv";
 import Art from "./pages/Art";
 import ProjectDetail2 from "./pages/ProjectDetail2";
 import ProjectDetail3 from "./pages/ProjectDetail3";
+import ProjectDetail4 from "./pages/ProjectDetail4";
 import { useTelegramVisitorTracker } from "./hooks/use-telegram-visitor-tracker";
 
 const queryClient = new QueryClient();
