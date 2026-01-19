@@ -100,16 +100,16 @@ export default function ProjectDetail4() {
             </div>
           </div>
 
-          {/* Full width embedded content */}
-          <div className="w-full px-4">
-            <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
+          {/* Vimeo player */}
+          <div className="flex justify-center h-auto pb-10 w-full">
+            <div className="w-full lg:w-[60%] aspect-video">
               <iframe
-                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
-                title="Installation live stream"
+                src="https://player.vimeo.com/video/1138207770"
                 width="100%"
                 height="100%"
                 frameBorder="0"
-                allow="autoplay; fullscreen"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
                 className="w-full h-full"
               />
             </div>
