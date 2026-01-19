@@ -55,4 +55,13 @@ export const projectList: ProjectConfig[] = [
     cropX: "20%",    
     cropY: "20%",   
   },
+  {
+    id: "project-4",
+    title: "eye corner",
+    href: "/projects/project-4",
+    image: "zhivotinka-1.png",
+    grayscaleExposure: 1.0,   
+    cropX: "58%",    
+    cropY: "center",   
+  },
 ];
