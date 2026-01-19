@@ -59,7 +59,7 @@ export const projectList: ProjectConfig[] = [
     id: "project-4",
     title: "eye corner",
     href: "/projects/project-4",
-    image: "ProjectDetail4/eye-corner_main.png",
+    image: "ProjectDetail4/eye_corner_main.png",
     grayscaleExposure: 1.0,   
     cropX: "58%",    
     cropY: "center",   
