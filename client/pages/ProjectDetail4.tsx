@@ -215,7 +215,7 @@ export default function ProjectDetail4() {
           </div>
 
           {/* Bottom gallery - 3 images */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:pt-[128px]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:pt-[128px] lg:pd-[128px]">
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
               <iframe
                 src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
