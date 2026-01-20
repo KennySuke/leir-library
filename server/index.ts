@@ -31,7 +31,7 @@ export function createServer() {
 
   // прокси для WebSocket
   app.on('upgrade', (req, socket, head) => {
-    if (req.url?.startsWith('/api/camera/27/mse_ld')) {
+    if (req.url?.startsWith('/27/mse_ld')) {
       wsProxy.ws(req, socket, head);
     }
   });
