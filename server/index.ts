@@ -21,6 +21,20 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  import { createProxyServer } from 'http-proxy';
+
+const wsProxy = createProxyServer({
+  target: 'http://93.157.173.6:8080',
+  ws: true
+});
+
+// прокси для WebSocket
+app.on('upgrade', (req, socket, head) => {
+  if (req.url?.startsWith('/api/camera/27/mse_ld')) {
+    wsProxy.ws(req, socket, head);
+  }
+});
   
   // проксируем embed.html
 app.get('/api/camera/:id/embed.html', async (req, res) => {
@@ -73,19 +87,6 @@ app.use('/api/camera/flu/', async (req, res) => {
   }
 });
 
-import { createProxyServer } from 'http-proxy';
-
-const wsProxy = createProxyServer({
-  target: 'http://93.157.173.6:8080',
-  ws: true
-});
-
-// прокси для WebSocket
-app.on('upgrade', (req, socket, head) => {
-  if (req.url?.startsWith('/api/camera/27/mse_ld')) {
-    wsProxy.ws(req, socket, head);
-  }
-});
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
