@@ -37,8 +37,8 @@ export function createServer() {
   });
 
   
-  app.use('/api/camera/flu/*catchall', async (req, res) => {
-    const path = req.params[0] || ''
+  app.use('/api/camera/flu/:catchall(.*)', async (req, res) => {
+    const path = req.params.catchall || ''
     const queryString = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
     const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${queryString}`
 
