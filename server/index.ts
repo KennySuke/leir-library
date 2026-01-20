@@ -85,9 +85,9 @@ export function createServer() {
     }
   })
 
-  app.use('/:id/*', async (req, res) => {
-    const id = req.params.id       // 27
-    const path = req.params[0] || ''  // всё, что после /27/
+  app.use('/:id/*catchall', async (req, res) => {
+    const id = req.params.id
+    const path = (Array.isArray(req.params.catchall) ? req.params.catchall.join('/') : req.params.catchall) || ''
     const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
     const upstreamUrl = `http://93.157.173.6:8080/${id}/${path}${query}`
 
