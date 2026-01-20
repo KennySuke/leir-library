@@ -54,8 +54,8 @@ export function createServer() {
     }
   })
 
-  app.use('/api/camera/flu/*', async (req, res) => {
-    const path = req.params[0] || ''
+  app.use('/api/camera/flu/*catchall', async (req, res) => {
+    const path = req.params.catchall || ''
     const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
     const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
     const contentType = upstream.headers.get('content-type')
