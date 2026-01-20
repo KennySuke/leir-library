@@ -32,8 +32,12 @@ export async function cameraRoute(req: Request, res: Response) {
     res.setHeader("Expires", "0");
 
     upstream.body.pipe(res);
-  } catch (err) {
-    console.error("Camera proxy error:", err);
+  } catch (err: any) {
+   console.error("Camera proxy error:");
+   console.error(err);
+   console.error("message:", err?.message);
+   console.error("cause:", err?.cause);
     res.status(500).end("Camera proxy failed");
   }
+
 }
