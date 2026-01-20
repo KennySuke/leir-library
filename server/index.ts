@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
 import { handleTelegramNotification } from "./routes/telegram";
+import { cameraRoute } from "./routes/camera";
 
 export function createServer() {
   const app = express();
@@ -19,6 +20,7 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+  app.get("/api/camera/:id", cameraRoute);
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
