@@ -85,8 +85,9 @@ export function createServer() {
     }
   })
 
-  app.use('/:id([0-9]+)/index.m3u8', async (req, res) => {
+  app.use('/:id/index.m3u8', async (req, res, next) => {
     const id = req.params.id
+    if (!/^\d+$/.test(id)) return next()
     const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
     const upstreamUrl = `http://93.157.173.6:8080/${id}/index.m3u8${query}`
 
