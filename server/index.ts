@@ -1,7 +1,8 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import { createProxyServer } from 'http-proxy';
+import httpProxy from "http-proxy";
+const { createProxyServer } = httpProxy;
 import { Readable } from "stream";
 import { handleDemo } from "./routes/demo";
 import { handleTelegramNotification } from "./routes/telegram";
