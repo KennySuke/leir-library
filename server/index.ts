@@ -39,7 +39,7 @@ export function createServer() {
   
   app.use('/:catchall', async (req, res, next) => {
     if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
-    const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}${req.url}`
+    const upstreamUrl = `http://93.157.173.6:8080/${req.params.catchall}${req.url}`
 
     console.log('[ROOT CAMERA PROXY] Request for:', req.url)
     console.log('[ROOT CAMERA PROXY] Upstream URL:', upstreamUrl)
