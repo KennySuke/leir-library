@@ -85,11 +85,9 @@ export function createServer() {
     }
   })
 
-  app.use('/:id/index.m3u8', async (req, res, next) => {
-    const id = req.params.id
-    if (!/^\d+$/.test(id)) return next()
-    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
-    const upstreamUrl = `http://93.157.173.6:8080/${id}/index.m3u8${query}`
+  app.use('/*catchall', async (req, res, next) => {
+    if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
+    const upstreamUrl = `http://93.157.173.6:8080/${req.url}`
 
     console.log('[ROOT CAMERA PROXY] Request for:', req.url)
     console.log('[ROOT CAMERA PROXY] Upstream URL:', upstreamUrl)
