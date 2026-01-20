@@ -63,7 +63,7 @@ app.use('/api/camera/flu/', async (req, res) => {
     const upstream = await fetch(upstreamUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
-        'Referer': `http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c`
+        'Referer': `http://93.157.173.6:8080/27/embed.html?realtime&token=5659696f97548284d`
       }
     });
 
