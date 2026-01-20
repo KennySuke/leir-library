@@ -20,7 +20,22 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
-  app.get("/api/camera/:id", cameraRoute);
+  app.get('/api/camera/:id', async (req, res) => {
+  try {
+    const url = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime`
+
+    const response = await fetch(url)
+    const html = await response.text()
+
+    res.setHeader('Content-Type', 'text/html')
+    res.send(html)
+
+  } catch (e) {
+    console.error(e)
+    res.status(500).send('Camera proxy failed')
+  }
+})
+
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
