@@ -21,40 +21,51 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
   
-  // проксируем embed.html
 app.get('/api/camera/:id/embed.html', async (req, res) => {
   const token = req.query.token ?? '';
   const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime&token=${token}`;
+  console.log('Proxy embed.html request to upstream:', upstreamUrl);
 
   const upstream = await fetch(upstreamUrl);
-  let html = await upstream.text();
+  const html = await upstream.text();
+  console.log('Upstream embed.html status:', upstream.status);
+  console.log('Upstream embed.html starts with:', html.slice(0,200));
 
-  // переписываем пути к JS/CSS
-  html = html
-    .replace(/(src|href)="\/flu\//g, '$1="/api/camera/flu/');
-
+  const modifiedHtml = html.replace(/(src|href)="\/flu\//g, '$1="/api/camera/flu/');
   res.setHeader('Content-Type', 'text/html');
-  res.send(html);
+  res.send(modifiedHtml);
 });
 
-// проксируем все JS/CSS файлы
+
 app.use('/api/camera/flu/', async (req, res) => {
-  // req.url начинается с player/... после /api/camera/flu/
   const upstreamUrl = `http://93.157.173.6:8080/flu${req.url}`;
+  console.log('Proxy request to upstream:', upstreamUrl);
 
-  const upstream = await fetch(upstreamUrl);
+  try {
+    const upstream = await fetch(upstreamUrl);
 
-  upstream.headers.forEach((v, k) => res.setHeader(k, v));
+    console.log('Upstream status:', upstream.status);
 
-  if (!upstream.body) {
-    res.status(500).end('No upstream body');
-    return;
+    // заголовки
+    upstream.headers.forEach((v, k) => console.log('Header', k, v));
+
+    if (!upstream.body) {
+      console.error('No body from upstream');
+      res.status(500).end('No upstream body');
+      return;
+    }
+
+    // читать первые 200 символов тела, чтобы убедиться, что это JS, а не HTML
+    const clone = upstream.clone();
+    const snippet = await clone.text();
+    console.log('Upstream body starts with:', snippet.slice(0, 200));
+
+    upstream.body.pipe(res);
+  } catch (err) {
+    console.error('Error proxying flu:', err);
+    res.status(500).end('Camera resource proxy failed');
   }
-
-  upstream.body.pipe(res);
 });
-
-
 
 
   app.post("/api/notify-telegram", handleTelegramNotification);
