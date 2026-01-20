@@ -20,21 +20,36 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
-  app.get('/api/camera/:id', async (req, res) => {
-  try {
-    const url = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime`
+  app.get('/api/camera/:id/embed.html', async (req, res) => {
+  const token = req.query.token || ''; // передаём токен из запроса
+  const url = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime&token=${token}`;
 
-    const response = await fetch(url)
-    const html = await response.text()
+  const response = await fetch(url);
+  let html = await response.text();
 
-    res.setHeader('Content-Type', 'text/html')
-    res.send(html)
+  // тут переписываем пути к JS/CSS на наш прокси
+  html = html
+    .replace(/src="\/flu\//g, 'src="/api/camera/flu/')
+    .replace(/href="\/flu\//g, 'href="/api/camera/flu/');
 
-  } catch (e) {
-    console.error(e)
-    res.status(500).send('Camera proxy failed')
-  }
-})
+  res.setHeader('Content-Type', 'text/html');
+  res.send(html);
+});
+
+// проксируем весь /flu/ каталог на лету
+app.use('/api/camera/flu/', (req, res) => {
+  const upstreamUrl = `http://93.157.173.6:8080/flu/${req.url}`;
+  fetch(upstreamUrl)
+    .then(r => {
+      r.headers.forEach((v, k) => res.setHeader(k, v));
+      return r.body;
+    })
+    .then(body => {
+      if (body) body.pipe(res);
+    })
+    .catch(() => res.status(500).send('Camera resource proxy failed'));
+});
+
 
 
   app.post("/api/notify-telegram", handleTelegramNotification);
