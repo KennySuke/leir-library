@@ -219,8 +219,10 @@ export default function ProjectDetail4() {
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
               <iframe
                 src="/api/camera/27"
+                title="Installation live stream"
                 className="w-full h-full"
-                allow="autoplay"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
