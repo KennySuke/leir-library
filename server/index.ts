@@ -22,18 +22,48 @@ export function createServer() {
     res.send(html);
   });
 
-  // HTTP-прокси JS/CSS
   app.use('/api/camera/flu/', async (req, res) => {
-    const upstreamUrl = `http://93.157.173.6:8080/flu${req.url}`;
+  try {
+    // req.url: /player/runtime.js
+    const upstreamPath = req.url; 
+    const upstreamUrl = `http://93.157.173.6:8080/flu${upstreamPath}`;
+    console.log('Proxying to upstream:', upstreamUrl);
+
     const upstream = await fetch(upstreamUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
-        'Referer': `http://93.157.173.6:8080/27/embed.html?realtime`
+        'Referer': 'http://93.157.173.6:8080/27/embed.html?realtime'
       }
     });
-    upstream.headers.forEach((v, k) => res.setHeader(k, v));
-    upstream.body.pipe(res);
-  });
+
+    if (!upstream.ok) {
+      console.error('Upstream error', upstream.status, upstream.statusText);
+      res.status(500).end('Upstream error');
+      return;
+    }
+
+    // Content-Type обязательно указывать вручную для JS/CSS
+    const contentType = upstream.headers.get('content-type') || guessMime(upstreamPath);
+    res.setHeader('Content-Type', contentType);
+
+    // Пробрасываем поток
+    const nodeStream = Readable.from(upstream.body);
+    nodeStream.pipe(res);
+
+  } catch (err) {
+    console.error('Error proxying flu:', err);
+    res.status(500).end('Camera resource proxy failed');
+  }
+});
+
+// простая функция для MIME, если upstream не отдал
+function guessMime(path: string) {
+  if (path.endsWith('.js')) return 'application/javascript';
+  if (path.endsWith('.css')) return 'text/css';
+  if (path.endsWith('.html')) return 'text/html';
+  return 'application/octet-stream';
+}
+
 
   // Telegram demo
   app.post("/api/notify-telegram", (_req, res) => res.end("ok"));
