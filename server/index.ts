@@ -24,70 +24,34 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
-  
+  const wsProxy = createProxyServer({
+    target: 'http://93.157.173.6:8080',
+    ws: true
+  });
 
-const wsProxy = createProxyServer({
-  target: 'http://93.157.173.6:8080',
-  ws: true
-});
-
-// прокси для WebSocket
-app.on('upgrade', (req, socket, head) => {
-  if (req.url?.startsWith('/api/camera/27/mse_ld')) {
-    wsProxy.ws(req, socket, head);
-  }
-});
-  
-  // проксируем embed.html
-app.get('/api/camera/:id/embed.html', async (req, res) => {
-  const token = req.query.token ?? '';
-  const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime&token=${token}`;
-
-  const upstream = await fetch(upstreamUrl);
-  let html = await upstream.text();
-
-  // переписываем пути к JS/CSS
-  html = html
-    .replace(/(src|href)="\/flu\//g, '$1="/api/camera/flu/');
-
-  res.setHeader('Content-Type', 'text/html');
-  res.send(html);
-});
-
-app.use('/api/camera/flu/', async (req, res) => {
-  try {
-    const upstreamPath = req.url; // /player/runtime.js
-    const upstreamUrl = `http://93.157.173.6:8080/flu${upstreamPath}`;
-    console.log('Proxying to upstream:', upstreamUrl);
-
-    const upstream = await fetch(upstreamUrl, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0',
-        'Referer': `http://93.157.173.6:8080/27/embed.html?realtime&token=5659696f97548284d`
-      }
-    });
-
-    console.log('Upstream status:', upstream.status);
-
-    if (!upstream.body) {
-      console.error('No upstream body for', upstreamUrl);
-      res.status(500).end('No upstream body');
-      return;
+  // прокси для WebSocket
+  app.on('upgrade', (req, socket, head) => {
+    if (req.url?.startsWith('/api/camera/27/mse_ld')) {
+      wsProxy.ws(req, socket, head);
     }
+  });
+    
+  app.use('/api/camera/:id/*', async (req, res) => {
+    const path = req.params[0] || ''
+    const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
 
-    // Пробрасываем Content-Type
-    const contentType = upstream.headers.get('content-type');
-    if (contentType) res.setHeader('Content-Type', contentType);
+    const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+    const contentType = upstream.headers.get('content-type')
+    if (contentType) res.setHeader('Content-Type', contentType)
 
-    // Конвертируем WHATWG stream в Node.js stream
-    const nodeStream = Readable.from(upstream.body);
-    nodeStream.pipe(res);
-
-  } catch (err) {
-    console.error('Error proxying flu:', err);
-    res.status(500).end('Camera resource proxy failed');
-  }
-});
+    if (contentType?.includes('text/html')) {
+      let body = await upstream.text()
+      body = body.replace(/(src|href)="\/flu\//g, `$1=/api/camera/${req.params.id}/flu/`)
+      res.send(body)
+    } else {
+      upstream.body.pipe(res)
+    }
+  })
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
