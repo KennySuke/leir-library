@@ -37,26 +37,35 @@ app.get('/api/camera/:id/embed.html', async (req, res) => {
   res.send(html);
 });
 
-// проксируем все JS/CSS файлы
 app.use('/api/camera/flu/', async (req, res) => {
-  const upstreamUrl = `http://93.157.173.6:8080/flu${req.url}`;
+  // req.url = /player/runtime.eb43cd9d5f43079ce03b.js
+  const upstreamPath = req.url; // без изменений, сразу идёт после /api/camera/flu/
+  const upstreamUrl = `http://93.157.173.6:8080/flu${upstreamPath}`;
+  console.log('Proxying to:', upstreamUrl);
 
-  const upstream = await fetch(upstreamUrl, {
-    headers: {
-      'User-Agent': 'Mozilla/5.0',
-      'Referer': `http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c`
+  try {
+    const upstream = await fetch(upstreamUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': `http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c`
+      }
+    });
+
+    // пробрасываем все заголовки
+    upstream.headers.forEach((v, k) => res.setHeader(k, v));
+
+    if (!upstream.body) {
+      res.status(500).end('No upstream body');
+      return;
     }
-  });
 
-  upstream.headers.forEach((v, k) => res.setHeader(k, v));
-
-  if (!upstream.body) {
-    res.status(500).end('No upstream body');
-    return;
+    upstream.body.pipe(res);
+  } catch (err) {
+    console.error('Error proxying flu:', err);
+    res.status(500).end('Camera resource proxy failed');
   }
-
-  upstream.body.pipe(res);
 });
+
 
 
 
