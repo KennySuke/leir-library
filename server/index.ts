@@ -87,7 +87,6 @@ app.use('/api/camera/flu/', async (req, res) => {
   }
 });
 
-
   app.post("/api/notify-telegram", handleTelegramNotification);
 
   return app;
