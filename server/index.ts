@@ -85,6 +85,27 @@ export function createServer() {
     }
   })
 
+  app.use('/:id/*', async (req, res) => {
+    const id = req.params.id       // 27
+    const path = req.params[0] || ''  // всё, что после /27/
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
+    const upstreamUrl = `http://93.157.173.6:8080/${id}/${path}${query}`
+
+    console.log('[ROOT CAMERA PROXY] Request for:', req.url)
+    console.log('[ROOT CAMERA PROXY] Upstream URL:', upstreamUrl)
+
+    try {
+      const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+      if (!upstream.body) return res.status(500).send('No upstream body')
+      const contentType = upstream.headers.get('content-type')
+      if (contentType) res.setHeader('Content-Type', contentType)
+      Readable.from(upstream.body).pipe(res)
+    } catch (err) {
+      console.error('[ROOT CAMERA PROXY] Error proxying:', err)
+      res.status(500).send('Proxy failed')
+    }
+  })
+
   app.post("/api/notify-telegram", handleTelegramNotification);
 
   return app;
