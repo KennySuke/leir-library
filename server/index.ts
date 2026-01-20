@@ -29,13 +29,14 @@ export function createServer() {
     ws: true
   });
 
-  // прокси для WebSocket
   app.on('upgrade', (req, socket, head) => {
     if (req.url?.startsWith('/27/mse_ld')) {
-      wsProxy.ws(req, socket, head);
+      console.log('[WS PROXY] Upgrade request:', req.url)
+      wsProxy.ws(req, socket, head)
+    } else {
+      socket.destroy()
     }
-  });
-
+  })
   
   app.use('/:catchall', async (req, res, next) => {
     if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
