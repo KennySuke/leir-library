@@ -19,8 +19,6 @@ export function createServer() {
     res.json({ message: ping });
   });
 
-  console.log("Node version:", process.version);
-
   app.get("/api/demo", handleDemo);
   app.get("/api/camera/:id", cameraRoute);
 
