@@ -49,7 +49,8 @@ export function createServer() {
       body = body.replace(/(src|href)="\/flu\//g, `$1=/api/camera/${req.params.id}/flu/`)
       res.send(body)
     } else {
-      upstream.body.pipe(res)
+      const nodeStream = Readable.from(upstream.body)
+      nodeStream.pipe(res)
     }
   })
 
