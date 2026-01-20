@@ -21,34 +21,39 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
   
-  app.get('/api/camera/:id/embed.html', async (req, res) => {
-    const token = req.query.token ?? '';
-    const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime&token=${token}`;
+  // проксируем embed.html
+app.get('/api/camera/:id/embed.html', async (req, res) => {
+  const token = req.query.token ?? '';
+  const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/embed.html?realtime&token=${token}`;
 
-    const upstream = await fetch(upstreamUrl);
-    let html = await upstream.text();
+  const upstream = await fetch(upstreamUrl);
+  let html = await upstream.text();
 
-    // Заменяем абсолютные пути к JS/CSS на наш прокси
-    html = html
-      .replace(/src="\/flu\//g, 'src="/api/camera/flu/')
-      .replace(/href="\/flu\//g, 'href="/api/camera/flu/');
+  // переписываем пути к JS/CSS
+  html = html
+    .replace(/(src|href)="\/flu\//g, '$1="/api/camera/flu/');
 
-    res.setHeader('Content-Type', 'text/html');
-    res.send(html);
-  });
+  res.setHeader('Content-Type', 'text/html');
+  res.send(html);
+});
 
-  app.use('/api/camera/flu/', async (req, res) => {
-    const upstreamUrl = `http://93.157.173.6:8080/flu/${req.url}`;
+// проксируем все JS/CSS файлы
+app.use('/api/camera/flu/', async (req, res) => {
+  // req.url начинается с player/... после /api/camera/flu/
+  const upstreamUrl = `http://93.157.173.6:8080/flu${req.url}`;
 
-    const upstream = await fetch(upstreamUrl);
+  const upstream = await fetch(upstreamUrl);
 
-    // Пробрасываем Content-Type, иначе браузер думает, что это HTML
-    upstream.headers.forEach((v, k) => res.setHeader(k, v));
+  upstream.headers.forEach((v, k) => res.setHeader(k, v));
 
-    if (!upstream.body) {
-      res.status(500).end('No upstream body');
-      return;
-    }
+  if (!upstream.body) {
+    res.status(500).end('No upstream body');
+    return;
+  }
+
+  upstream.body.pipe(res);
+});
+
 
     upstream.body.pipe(res);
   });
