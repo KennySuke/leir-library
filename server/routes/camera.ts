@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 export function cameraRoute(req: Request, res: Response) {
   const { id } = req.params;
 
-  const cameraUrl = `http://93.157.173.6:8080/${id}/?realtime&token=3685696e50cfb8c8c`;
+  const cameraUrl = `http://93.157.173.6:8080/${id}/embed.html?realtime&token=3685696e50cfb8c8c`;
 
   fetch(cameraUrl, {
     headers: {
