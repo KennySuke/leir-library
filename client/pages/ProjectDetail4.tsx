@@ -226,22 +226,20 @@ export default function ProjectDetail4() {
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              <img
-                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
-                alt="Live camera stream"
-                className="w-full h-full object-cover"
-              />
+              <BlurUpImage
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
+              alt="Online cameras grid"
+              className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
+            />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              <iframe
-                src="http://93.157.173.6:8080/27/embed.html?realtime&token=3685696e50cfb8c8c"
-                title="Installation live stream"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-                className="w-full h-full"
-              />
+              <BlurUpImage
+              src="/ProjectDetail4/3.png"
+              thumb="/thumbs/ProjectDetail4/3.png"
+              alt="Online cameras grid"
+              className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
+            />
             </div>
           </div>
         </div>
