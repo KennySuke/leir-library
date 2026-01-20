@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import { Readable } from "stream";
 import { handleDemo } from "./routes/demo";
 import { handleTelegramNotification } from "./routes/telegram";
 import { cameraRoute } from "./routes/camera";
@@ -39,7 +40,7 @@ app.get('/api/camera/:id/embed.html', async (req, res) => {
 
 app.use('/api/camera/flu/', async (req, res) => {
   try {
-    const upstreamPath = req.url; // /player/runtime....js
+    const upstreamPath = req.url; // /player/runtime.js
     const upstreamUrl = `http://93.157.173.6:8080/flu${upstreamPath}`;
     console.log('Proxying to upstream:', upstreamUrl);
 
@@ -50,7 +51,7 @@ app.use('/api/camera/flu/', async (req, res) => {
       }
     });
 
-    console.log('Upstream status:', upstream.status, upstream.statusText);
+    console.log('Upstream status:', upstream.status);
 
     if (!upstream.body) {
       console.error('No upstream body for', upstreamUrl);
@@ -62,8 +63,9 @@ app.use('/api/camera/flu/', async (req, res) => {
     const contentType = upstream.headers.get('content-type');
     if (contentType) res.setHeader('Content-Type', contentType);
 
-    console.log('Streaming body...');
-    upstream.body.pipe(res);
+    // Конвертируем WHATWG stream в Node.js stream
+    const nodeStream = Readable.from(upstream.body);
+    nodeStream.pipe(res);
 
   } catch (err) {
     console.error('Error proxying flu:', err);
