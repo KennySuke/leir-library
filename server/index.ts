@@ -37,6 +37,25 @@ export function createServer() {
   });
 
   
+  app.use('/*catchall', async (req, res, next) => {
+    if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
+    const upstreamUrl = `http://93.157.173.6:8080/${req.url}`
+
+    console.log('[ROOT CAMERA PROXY] Request for:', req.url)
+    console.log('[ROOT CAMERA PROXY] Upstream URL:', upstreamUrl)
+
+    try {
+      const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+      if (!upstream.body) return res.status(500).send('No upstream body')
+      const contentType = upstream.headers.get('content-type')
+      if (contentType) res.setHeader('Content-Type', contentType)
+      Readable.from(upstream.body).pipe(res)
+    } catch (err) {
+      console.error('[ROOT CAMERA PROXY] Error proxying:', err)
+      res.status(500).send('Proxy failed')
+    }
+  })
+
   app.use('/api/camera/flu/*catchall', async (req, res) => {
     const path = (Array.isArray(req.params.catchall) ? req.params.catchall.join('/') : req.params.catchall) || ''
     const queryString = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
@@ -82,25 +101,6 @@ export function createServer() {
     } else {
       const nodeStream = Readable.from(upstream.body)
       nodeStream.pipe(res)
-    }
-  })
-
-  app.use('/*catchall', async (req, res, next) => {
-    if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
-    const upstreamUrl = `http://93.157.173.6:8080/${req.url}`
-
-    console.log('[ROOT CAMERA PROXY] Request for:', req.url)
-    console.log('[ROOT CAMERA PROXY] Upstream URL:', upstreamUrl)
-
-    try {
-      const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-      if (!upstream.body) return res.status(500).send('No upstream body')
-      const contentType = upstream.headers.get('content-type')
-      if (contentType) res.setHeader('Content-Type', contentType)
-      Readable.from(upstream.body).pipe(res)
-    } catch (err) {
-      console.error('[ROOT CAMERA PROXY] Error proxying:', err)
-      res.status(500).send('Proxy failed')
     }
   })
 
