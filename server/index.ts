@@ -46,12 +46,22 @@ export function createServer() {
 
     if (contentType?.includes('text/html')) {
       let body = await upstream.text()
-      body = body.replace(/(src|href)="\/flu\//g, `$1=/api/camera/${req.params.id}/flu/`)
+      body = body.replace(/(src|href)="\/flu\/([^"]+)"/g, `$1="/api/camera/flu/$2"`)
       res.send(body)
     } else {
       const nodeStream = Readable.from(upstream.body)
       nodeStream.pipe(res)
     }
+  })
+
+  app.use('/api/camera/flu/*', async (req, res) => {
+    const path = req.params[0] || ''
+    const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
+    const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+    const contentType = upstream.headers.get('content-type')
+    if (contentType) res.setHeader('Content-Type', contentType)
+    const nodeStream = Readable.from(upstream.body)
+    nodeStream.pipe(res)
   })
 
   app.post("/api/notify-telegram", handleTelegramNotification);
