@@ -217,8 +217,15 @@ export default function ProjectDetail4() {
           {/* Bottom gallery - 3 images */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:py-[128px]">
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              <iframe
+              {/* <iframe
                 src="/api/camera/27"
+                title="Installation live stream"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+              /> */}
+              <iframe
+                src="https://leir-00.art/api/camera/27/embed.html?realtime&token=3685696e50cfb8c8c"
                 title="Installation live stream"
                 className="w-full h-full"
                 frameBorder="0"
