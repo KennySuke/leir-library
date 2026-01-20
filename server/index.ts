@@ -35,25 +35,8 @@ export function createServer() {
       wsProxy.ws(req, socket, head);
     }
   });
-    
-  app.use('/api/camera/:id/*catchall', async (req, res) => {
-    const path = req.params.catchall || ''
-    const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
 
-    const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-    const contentType = upstream.headers.get('content-type')
-    if (contentType) res.setHeader('Content-Type', contentType)
-
-    if (contentType?.includes('text/html')) {
-      let body = await upstream.text()
-      body = body.replace(/(src|href)="\/flu\/([^"]+)"/g, `$1="/api/camera/flu/$2"`)
-      res.send(body)
-    } else {
-      const nodeStream = Readable.from(upstream.body)
-      nodeStream.pipe(res)
-    }
-  })
-
+  
   app.use('/api/camera/flu/*catchall', async (req, res) => {
     const path = req.params.catchall || ''
     const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
@@ -82,7 +65,24 @@ export function createServer() {
       res.status(500).send('Proxy failed')
     }
   })
+    
+  app.use('/api/camera/:id/*catchall', async (req, res) => {
+    const path = req.params.catchall || ''
+    const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
 
+    const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+    const contentType = upstream.headers.get('content-type')
+    if (contentType) res.setHeader('Content-Type', contentType)
+
+    if (contentType?.includes('text/html')) {
+      let body = await upstream.text()
+      body = body.replace(/(src|href)="\/flu\/([^"]+)"/g, `$1="/api/camera/flu/$2"`)
+      res.send(body)
+    } else {
+      const nodeStream = Readable.from(upstream.body)
+      nodeStream.pipe(res)
+    }
+  })
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
