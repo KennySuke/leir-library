@@ -37,7 +37,7 @@ export function createServer() {
   });
     
   app.use('/api/camera/:id/*catchall', async (req, res) => {
-    const path = req.params.rest || ''
+    const path = req.params.catchall || ''
     const upstreamUrl = `http://93.157.173.6:8080/${req.params.id}/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
 
     const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
