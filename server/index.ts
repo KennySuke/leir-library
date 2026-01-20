@@ -39,7 +39,8 @@ export function createServer() {
   
   app.use('/api/camera/flu/*catchall', async (req, res) => {
     const path = req.params.catchall || ''
-    const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
+    const queryString = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''
+    const upstreamUrl = new URL(`/flu/${path}${queryString}`, 'http://93.157.173.6:8080').toString()
 
     console.log('[FLU PROXY] Request for:', req.url)
     console.log('[FLU PROXY] Upstream URL:', upstreamUrl)
