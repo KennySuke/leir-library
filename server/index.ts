@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import { createProxyServer } from 'http-proxy';
 import { Readable } from "stream";
 import { handleDemo } from "./routes/demo";
 import { handleTelegramNotification } from "./routes/telegram";
@@ -22,7 +23,7 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
-  import { createProxyServer } from 'http-proxy';
+  
 
 const wsProxy = createProxyServer({
   target: 'http://93.157.173.6:8080',
