@@ -225,7 +225,7 @@ export default function ProjectDetail4() {
                 allow="autoplay; fullscreen"
               /> */}
               <iframe
-                src="https://leir-00.art/api/camera/27/embed.html?realtime&token=3685696e50cfb8c8c"
+                src="https://leir-00.art/api/camera/27/embed.html?token=3685696e50cfb8c8c"
                 title="Installation live stream"
                 className="w-full h-full"
                 frameBorder="0"
