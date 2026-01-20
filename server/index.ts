@@ -37,7 +37,7 @@ export function createServer() {
   });
 
   
-  app.use('/*catchall', async (req, res, next) => {
+  app.use('/:catchall', async (req, res, next) => {
     if (!req.path.match(/\.(m3u8|ts)(\?|$)/)) return next()
     const upstreamUrl = `http://93.157.173.6:8080/${req.url}`
 
