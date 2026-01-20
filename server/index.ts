@@ -57,12 +57,32 @@ export function createServer() {
   app.use('/api/camera/flu/*catchall', async (req, res) => {
     const path = req.params.catchall || ''
     const upstreamUrl = `http://93.157.173.6:8080/flu/${path}${req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : ''}`
-    const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
-    const contentType = upstream.headers.get('content-type')
-    if (contentType) res.setHeader('Content-Type', contentType)
-    const nodeStream = Readable.from(upstream.body)
-    nodeStream.pipe(res)
+
+    console.log('[FLU PROXY] Request for:', req.url)
+    console.log('[FLU PROXY] Upstream URL:', upstreamUrl)
+
+    try {
+      const upstream = await fetch(upstreamUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } })
+      console.log('[FLU PROXY] Upstream status:', upstream.status)
+
+      const contentType = upstream.headers.get('content-type')
+      console.log('[FLU PROXY] Content-Type:', contentType)
+      if (contentType) res.setHeader('Content-Type', contentType)
+
+      if (!upstream.body) {
+        console.error('[FLU PROXY] No upstream body for', upstreamUrl)
+        res.status(500).send('No upstream body')
+        return
+      }
+
+      const nodeStream = Readable.from(upstream.body)
+      nodeStream.pipe(res)
+    } catch (err) {
+      console.error('[FLU PROXY] Error proxying:', err)
+      res.status(500).send('Proxy failed')
+    }
   })
+
 
   app.post("/api/notify-telegram", handleTelegramNotification);
 
