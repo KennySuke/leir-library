@@ -232,7 +232,7 @@ export default function ProjectDetail4() {
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
               <iframe
-                src="https://leir-00.art/api/camera/70/embed.html?token=3685696e50cfb8c8c"
+                src="https://leir-00.art/api/camera/69/embed.html?token=3685696e50cfb8c8c"
                 title="Installation live stream"
                 className="w-full h-full"
                 frameBorder="0"
@@ -241,7 +241,7 @@ export default function ProjectDetail4() {
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
               <iframe
-                src="https://leir-00.art/api/camera/127/embed.html?token=3685696e50cfb8c8c"
+                src="https://leir-00.art/api/camera/441/embed.html?token=3685696e50cfb8c8c"
                 title="Installation live stream"
                 className="w-full h-full"
                 frameBorder="0"
