@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlurUpImage from "@/components/BlurUpImage";
@@ -14,12 +15,13 @@ export default function ProjectDetail4() {
             <div className="relative w-full max-w-[1668px] mx-auto px-4">
               {/* Camera frame background */}
               <div className="relative w-full aspect-[1668/938]">
-                <BlurUpImage
-                  src="/ProjectDetail4/eye_corner_frame.png"
-                  thumb="/thumbs/ProjectDetail4/eye_corner_frame.png"
-                  alt="Eye corner camera frame"
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full">
+                  <BlurUpImage
+                    src="/ProjectDetail4/eye_corner_frame.png"
+                    thumb="/thumbs/ProjectDetail4/eye_corner_frame.png"
+                    alt="Eye corner camera frame"
+                  />
+                </div>
 
                 {/* Centered overlay content */}
                 <div className="absolute inset-0 flex items-center justify-center px-4 md:px-8 lg:px-[199px] py-[126px]">
@@ -118,12 +120,13 @@ export default function ProjectDetail4() {
           {/* Section with 3 columns: image + text with keywords + image */}
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full px-4">
             {/* Left image */}
-            <BlurUpImage
-              src="/ProjectDetail4/2.png"
-              thumb="/thumbs/ProjectDetail4/2.png"
-              alt="Detail view 1"
-              className="w-full lg:w-[581px] aspect-[581/327] object-cover"
-            />
+            <div className="w-full lg:w-[581px] aspect-[581/327]">
+              <BlurUpImage
+                src="/ProjectDetail4/2.png"
+                thumb="/thumbs/ProjectDetail4/2.png"
+                alt="Detail view 1"
+              />
+            </div>
 
             {/* Middle text with keywords */}
             <div className="flex flex-col gap-3 lg:gap-[14px] w-full lg:w-[564px]">
@@ -156,12 +159,13 @@ export default function ProjectDetail4() {
             </div>
 
             {/* Right image */}
-            <BlurUpImage
-              src="/ProjectDetail4/1.png"
-              thumb="/thumbs/ProjectDetail4/1.png"
-              alt="Detail view 2"
-              className="w-full lg:w-[588px] aspect-square object-cover"
-            />
+            <div className="w-full lg:w-[588px] aspect-square">
+              <BlurUpImage
+                src="/ProjectDetail4/1.png"
+                thumb="/thumbs/ProjectDetail4/1.png"
+                alt="Detail view 2"
+              />
+            </div>
           </div>
 
           {/* Large title section */}
@@ -206,24 +210,18 @@ export default function ProjectDetail4() {
             </div>
 
             {/* Right image */}
-            <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Online cameras grid"
-              className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
-            />
+            <div className="w-full lg:w-[1095px] aspect-[1095/569]">
+              <BlurUpImage
+                src="/ProjectDetail4/3.png"
+                thumb="/thumbs/ProjectDetail4/3.png"
+                alt="Online cameras grid"
+              />
+            </div>
           </div>
 
           {/* Bottom gallery - 3 images */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[87px] pt-0 lg:py-[128px]">
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              {/* <iframe
-                src="/api/camera/27"
-                title="Installation live stream"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-              /> */}
               <iframe
                 src="https://leir-00.art/api/camera/27/embed.html?token=3685696e50cfb8c8c"
                 title="Installation live stream"
@@ -233,20 +231,22 @@ export default function ProjectDetail4() {
               />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Online cameras grid"
-              className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
-            />
+              <iframe
+                src="https://leir-00.art/api/camera/70/embed.html?token=3685696e50cfb8c8c"
+                title="Installation live stream"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+              />
             </div>
             <div className="w-full aspect-video bg-black rounded-lg overflow-hidden border border-white/20">
-              <BlurUpImage
-              src="/ProjectDetail4/3.png"
-              thumb="/thumbs/ProjectDetail4/3.png"
-              alt="Online cameras grid"
-              className="w-full lg:w-[1095px] aspect-[1095/569] object-cover"
-            />
+              <iframe
+                src="https://leir-00.art/api/camera/127/embed.html?token=3685696e50cfb8c8c"
+                title="Installation live stream"
+                className="w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
+              />
             </div>
           </div>
         </div>
