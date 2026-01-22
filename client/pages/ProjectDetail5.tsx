@@ -95,7 +95,7 @@ export default function ProjectDetail5() {
               </div>
 
               {/* Right image */}
-              <div className="w-full lg:w-[1300px] order-1 lg:order-2 relative z-10">
+              <div className="w-full lg:w-[1500px] order-1 lg:order-2 relative z-10">
                 <BlurUpImage
                   src="/ProjectDetail5/main.png"
                   thumb="/thumbs/ProjectDetail5/main.png"
