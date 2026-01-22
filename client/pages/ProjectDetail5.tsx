@@ -13,7 +13,7 @@ export default function ProjectDetail5() {
           <div className="flex flex-col items-center gap-0 lg:gap-[-38px] w-full">
             <div className="flex flex-col lg:flex-row items-start w-full px-4 lg:pl-[150px] lg:pr-0 relative">
               {/* Left content */}
-              <div className="flex flex-col gap-6 lg:gap-[30px] w-full lg:w-2/5 lg:flex-shrink-0 order-2 lg:order-1">
+              <div className="flex flex-col gap-6 lg:gap-[30px] w-full lg:w-3/5 lg:flex-shrink-0 order-2 lg:order-1">
                 {/* Title and year */}
                 <div className="flex flex-col gap-0 lg:gap-[-2px]">
                   <h1 className="text-4xl md:text-5xl lg:text-[77px] font-bold leading-none">
@@ -95,7 +95,7 @@ export default function ProjectDetail5() {
               </div>
 
               {/* Right image */}
-              <div className="w-full lg:w-[1154px] lg:max-w-[100vw] lg:absolute lg:right-0 lg:flex-shrink-0 order-1 lg:order-2 relative z-10">
+              <div className="w-full lg:w-[1154px] lg:max-w-[100vw] lg:absolute lg:right-0 lg:top-[-50px] lg:flex-shrink-0 order-1 lg:order-2 relative z-10">
                 <BlurUpImage
                   src="/ProjectDetail5/main.png"
                   thumb="/thumbs/ProjectDetail5/main.png"
