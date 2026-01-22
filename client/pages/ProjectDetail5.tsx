@@ -149,13 +149,13 @@ export default function ProjectDetail5() {
                 src="/ProjectDetail5/lab2.png"
                 thumb="/thumbs/ProjectDetail5/lab2.png"
                 alt="Laboratory work 2"
-                className="absolute top-0 left-0 w-full lg:w-[577px] aspect-[577/640] object-cover"
+                className="absolute top-0 left-0 w-full lg:w-[484px] aspect-[484/461] object-cover"
               />
               <BlurUpImage
                 src="/ProjectDetail5/lab4.png"
                 thumb="/thumbs/ProjectDetail5/lab4.png"
                 alt="Laboratory work 4"
-                className="absolute bottom-0 right-0 w-[60%] lg:w-[444px] aspect-[222/347] object-cover transform rotate-[64deg] lg:-translate-y-12 lg:-translate-x-12"
+                className="absolute top-0 right-0 w-[60%] lg:w-[444px] aspect-[222/347] object-cover transform rotate-[64deg] lg:-translate-y-12 lg:-translate-x-12"
               />
             </div>
           </div>
