@@ -28,9 +28,9 @@ export default function ProjectDetail5() {
                 <div className="border-2 border-white/70 p-4 lg:px-[21px] lg:py-[16px] w-full lg:w-[545px]">
                   <div className="text-lg lg:text-xl mb-0">
                     <span className="font-bold">
-                      Leir, <a href="https://kertanov.cc/" target="_blank" rel="noopener noreferrer">Виктор Кертанов</a>,
+                      Leir, <a className="underline" href="https://kertanov.cc/" target="_blank" rel="noopener noreferrer">Виктор Кертанов</a>,
                       <br />
-                      <a href="https://dariasetevinets.com/main" target="_blank" rel="noopener noreferrer">Дарья Сетевинец</a>, Сизенов Александр
+                      <a className="underline" href="https://dariasetevinets.com/main" target="_blank" rel="noopener noreferrer">Дарья Сетевинец</a>, Сизенов Александр
                     </span>
                     <br />
                     <span className="font-normal">
