@@ -144,7 +144,7 @@ export default function ProjectDetail5() {
             </div>
 
             {/* Right images (overlapping/rotated effect) */}
-            <div className="relative w-full lg:w-[577px] h-[400px]">
+            <div className="relative w-full lg:w-[577px] h-[200px]">
               <BlurUpImage
                 src="/ProjectDetail5/lab2.png"
                 thumb="/thumbs/ProjectDetail5/lab2.png"
