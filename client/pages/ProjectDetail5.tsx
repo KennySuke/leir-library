@@ -105,22 +105,27 @@ export default function ProjectDetail5() {
             </div>
           </div>
 
-          {/* Full width installation image */}
-          <div className="w-full px-4">
-            <BlurUpImage
-              src="/ProjectDetail5/installation.jpg"
-              thumb="/thumbs/ProjectDetail5/installation.jpg"
-              alt="Installation view"
-              className="w-full aspect-video object-cover"
-            />
+          {/* Vimeo player */}
+          <div className="flex justify-center h-auto pb-10 w-full">
+            <div className="w-full lg:w-[60%] aspect-video">
+              <iframe
+                src="https://player.vimeo.com/video/1138207770"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Section: Lab image + Text + Rotated images */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4">
             {/* Left lab image */}
             <BlurUpImage
-              src="/ProjectDetail5/lab1.jpg"
-              thumb="/thumbs/ProjectDetail5/lab1.jpg"
+              src="/ProjectDetail5/lab1.png"
+              thumb="/thumbs/ProjectDetail5/lab1.png"
               alt="Laboratory work 1"
               className="w-full lg:w-[555px] aspect-[3/4] object-cover"
             />
@@ -141,14 +146,14 @@ export default function ProjectDetail5() {
             {/* Right images (overlapping/rotated effect) */}
             <div className="relative w-full lg:w-[577px] h-[400px] lg:h-[640px]">
               <BlurUpImage
-                src="/ProjectDetail5/lab2.jpg"
-                thumb="/thumbs/ProjectDetail5/lab2.jpg"
+                src="/ProjectDetail5/lab2.png"
+                thumb="/thumbs/ProjectDetail5/lab2.png"
                 alt="Laboratory work 2"
                 className="absolute top-0 left-0 w-full lg:w-[577px] aspect-[577/640] object-cover"
               />
               <BlurUpImage
-                src="/ProjectDetail5/lab4.jpg"
-                thumb="/thumbs/ProjectDetail5/lab4.jpg"
+                src="/ProjectDetail5/lab4.png"
+                thumb="/thumbs/ProjectDetail5/lab4.png"
                 alt="Laboratory work 4"
                 className="absolute bottom-0 right-0 w-[60%] lg:w-[444px] aspect-[222/347] object-cover transform rotate-[64deg] lg:-translate-x-12"
               />
@@ -158,8 +163,8 @@ export default function ProjectDetail5() {
           {/* Section: Large image + Text */}
           <div className="flex flex-col lg:flex-row justify-between items-end gap-8 lg:gap-12 w-full px-4 lg:pr-[180px]">
             <BlurUpImage
-              src="/ProjectDetail5/guys2.jpg"
-              thumb="/thumbs/ProjectDetail5/guys2.jpg"
+              src="/ProjectDetail5/guys2.png"
+              thumb="/thumbs/ProjectDetail5/guys2.png"
               alt="Artists group"
               className="w-full lg:w-[1468px] aspect-[1468/685] object-cover"
             />
@@ -193,10 +198,9 @@ export default function ProjectDetail5() {
               <span className="font-bold">художественный жест</span>.
             </div>
 
-            <BlurUpImage
-              src="/ProjectDetail5/lab3.jpg"
-              thumb="/thumbs/ProjectDetail5/lab3.jpg"
-              alt="Laboratory work 3"
+            <img
+              src="/ProjectDetail5/lab3.gif"
+              alt="Lab"
               className="w-full lg:w-[1066px] aspect-[533/300] object-cover"
             />
           </div>
@@ -204,8 +208,8 @@ export default function ProjectDetail5() {
           {/* Section: Lab image + Text */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:px-[262px]">
             <BlurUpImage
-              src="/ProjectDetail5/lab5.jpg"
-              thumb="/thumbs/ProjectDetail5/lab5.jpg"
+              src="/ProjectDetail5/lab5.png"
+              thumb="/thumbs/ProjectDetail5/lab5.png"
               alt="Laboratory work 5"
               className="w-full lg:w-[718px] aspect-[718/539] object-cover"
             />
@@ -242,12 +246,15 @@ export default function ProjectDetail5() {
               .
             </div>
 
-            <div className="relative w-full lg:w-[720px] h-[600px] lg:h-[720px]">
-              <BlurUpImage
-                src="/ProjectDetail5/lab3_2.jpg"
-                thumb="/thumbs/ProjectDetail5/lab3_2.jpg"
-                alt="Laboratory detail rotated"
-                className="w-full h-full object-cover transform rotate-90"
+            <div className="w-full aspect-video lg:aspect-[592/592]">
+              <iframe
+                src="https://player.vimeo.com/video/1154492549"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full lg:w-[592px] aspect-[1/1] object-cover"
               />
             </div>
           </div>
@@ -255,12 +262,11 @@ export default function ProjectDetail5() {
           {/* Section: Rotated portrait + Text */}
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4 lg:pr-[180px] h-auto lg:h-[936px]">
             <div className="relative w-full lg:w-auto h-[600px] lg:h-full flex items-center justify-center">
-              <BlurUpImage
-                src="/ProjectDetail5/me.jpg"
-                thumb="/thumbs/ProjectDetail5/me.jpg"
-                alt="Artist portrait"
-                className="h-full w-auto object-contain transform rotate-90"
-              />
+              <img
+              src="/ProjectDetail5/me.gif"
+              alt="Me"
+              className="h-auto object-cover"
+            />
             </div>
 
             <div className="w-full lg:w-[550px] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
@@ -298,8 +304,8 @@ export default function ProjectDetail5() {
 
               <div className="w-full lg:w-auto lg:absolute lg:right-0 lg:top-[133px]">
                 <BlurUpImage
-                  src="/ProjectDetail5/guys3.jpg"
-                  thumb="/thumbs/ProjectDetail5/guys3.jpg"
+                  src="/ProjectDetail5/guys.png"
+                  thumb="/thumbs/ProjectDetail5/guys.png"
                   alt="Artists group final"
                   className="w-full lg:w-[806px] aspect-[62/59] object-cover"
                 />
