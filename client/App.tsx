@@ -15,6 +15,7 @@ import Art from "./pages/Art";
 import ProjectDetail2 from "./pages/ProjectDetail2";
 import ProjectDetail3 from "./pages/ProjectDetail3";
 import ProjectDetail4 from "./pages/ProjectDetail4";
+import ProjectDetail5 from "./pages/ProjectDetail5";
 import { useTelegramVisitorTracker } from "./hooks/use-telegram-visitor-tracker";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const AppContent = () => {
       <Route path="/projects/project-2" element={<ProjectDetail2 />} />
       <Route path="/projects/project-3" element={<ProjectDetail3 />} />
       <Route path="/projects/project-4" element={<ProjectDetail4 />} />
+      <Route path="/projects/project-5" element={<ProjectDetail5 />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
