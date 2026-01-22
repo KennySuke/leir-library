@@ -121,7 +121,7 @@ export default function ProjectDetail5() {
           </div>
 
           {/* Section: Lab image + Text + Rotated images */}
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 w-full px-4">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-12 w-full px-4">
             {/* Left lab image */}
             <BlurUpImage
               src="/ProjectDetail5/lab1.png"
@@ -144,7 +144,7 @@ export default function ProjectDetail5() {
             </div>
 
             {/* Right images (overlapping/rotated effect) */}
-            <div className="relative w-full lg:w-[577px] h-[200px]">
+            <div className="relative w-full lg:w-[577px] h-[520px]">
               <BlurUpImage
                 src="/ProjectDetail5/lab2.png"
                 thumb="/thumbs/ProjectDetail5/lab2.png"
@@ -155,7 +155,7 @@ export default function ProjectDetail5() {
                 src="/ProjectDetail5/lab4.png"
                 thumb="/thumbs/ProjectDetail5/lab4.png"
                 alt="Laboratory work 4"
-                className="absolute bottom-0 right-0 w-[60%] lg:w-[444px] aspect-[222/347] object-cover transform rotate-[64deg] lg:-translate-x-12"
+                className="absolute bottom-0 right-0 w-[60%] lg:w-[444px] aspect-[222/347] object-cover transform rotate-[64deg] lg:-translate-y-12 lg:-translate-x-12"
               />
             </div>
           </div>
