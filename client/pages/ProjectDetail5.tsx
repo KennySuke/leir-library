@@ -263,7 +263,7 @@ export default function ProjectDetail5() {
               <img
               src="/ProjectDetail5/me.gif"
               alt="Me"
-              className="h-auto object-cover rotate-90 origin-center"
+              className="h-auto object-cover rotate-90 origin-center -ml-1"
             />
             </div>
 
