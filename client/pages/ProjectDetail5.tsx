@@ -303,7 +303,7 @@ export default function ProjectDetail5() {
               src="/ProjectDetail5/guys.png"
               thumb="/thumbs/ProjectDetail5/guys.png"
               alt="Artists group final"
-              className="w-full lg:w-[1400px] aspect-[62/59] object-cover"
+              className="w-full lg:w-[800px] aspect-[62/59] object-cover"
               />
           </div>
 
