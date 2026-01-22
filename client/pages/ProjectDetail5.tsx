@@ -301,14 +301,12 @@ export default function ProjectDetail5() {
                 </span>
             </div>
           
-            <div className="w-full lg:w-auto lg:absolute lg:right-0 lg:top-[133px]">
-              <BlurUpImage
-                src="/ProjectDetail5/guys.png"
-                thumb="/thumbs/ProjectDetail5/guys.png"
-                alt="Artists group final"
-                className="w-full lg:w-[806px] aspect-[62/59] object-cover"
-              />
-            </div>
+            <BlurUpImage
+              src="/ProjectDetail5/guys.png"
+              thumb="/thumbs/ProjectDetail5/guys.png"
+              alt="Artists group final"
+              className="w-full lg:w-[806px] aspect-[62/59] object-cover"
+            />
           </div>
 
         </div>
