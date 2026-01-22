@@ -282,7 +282,7 @@ export default function ProjectDetail5() {
           </div>
 
           {/* Final section: Text + Image */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-20 w-full max-w-10xl">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-12 w-full max-w-8xl">
             <div className="w-full lg:w-[610px] text-base md:text-lg lg:text-xl text-justify leading-relaxed">
                 Наш проект — это не только результат лабораторных экспериментов,
                 но и размышление о границах искусства, о телесности, о том, как
